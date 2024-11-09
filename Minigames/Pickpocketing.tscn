@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://ybbi0ladnwaf"]
+
+[ext_resource type="Script" path="res://Minigames/Pickpocketing.gd" id="1_urosk"]
+[ext_resource type="Texture2D" uid="uid://veuuyskirlt2" path="res://Art/Key Items 16x16/02.png" id="2_d6i5i"]
+[ext_resource type="Texture2D" uid="uid://hiuojui7s1i6" path="res://Art/exclamation-mark_ver_1.jpg" id="3_n4kqu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk25h"]
+size = Vector2(21, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35f1r"]
+size = Vector2(12, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwswm"]
+size = Vector2(12, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcger"]
+size = Vector2(22, 20)
+
+[node name="Pickpocketing" type="Node2D"]
+script = ExtResource("1_urosk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 320)
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+offset_left = 305.0
+offset_top = 46.0
+offset_right = 552.0
+offset_bottom = 89.0
+theme_override_colors/default_color = Color(0.8, 0, 0, 1)
+text = "Be careful!"
+
+[node name="DisplaceTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ShakeScreenTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="TracingArea" type="Area2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="TracingArea"]
+position = Vector2(207, -191)
+rotation = 0.634111
+scale = Vector2(1.09291, 1.13043)
+points = PackedVector2Array(182.644, 244.584, 144, 217, 108, 212, 69, 227, 51, 275, 57, 327, 87, 350, 128, 355, 158.283, 340.967, 175.713, 317.594, 189.067, 299.314, 194.184, 300.068, 189.655, 332.936, 444.13, 341.97, 442.398, 369.555, 437.697, 420.115, 445.092, 431.329, 478.199, 433.045, 490.925, 422.898, 497.295, 370.054, 500.154, 339.471, 561.447, 340.912, 560.062, 370.447, 557.487, 428.28, 566.551, 437.208, 610.087, 439.196, 621.491, 433.284, 627.209, 372.118, 630.3, 261.21, 631.099, 235.386, 612.192, 222.475, 570.477, 221.388, 545.111, 232.836, 540.758, 285.345, 185.14, 270.262, 143.468, 264.753, 113.266, 265.363, 87.6617, 282.47, 91.0896, 306.387, 118.3, 312.295, 136.533, 300.43)
+width = 5.0
+default_color = Color(0.0470588, 0.0901961, 1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TracingArea"]
+polygon = PackedVector2Array(201, 151, 186, 102, 159, 75, 116, 64, 70, 95, 41, 144, 51, 183, 82, 212, 119, 219, 174, 201, 181, 208, 156, 235, 327, 371, 372, 408, 349, 436, 314, 476, 313, 489, 338, 510, 355, 509, 420, 439, 478, 483, 414, 561, 416, 573, 451, 601, 462, 603, 509, 552, 585, 454, 602, 431, 595, 410, 559, 383, 532, 377, 513, 398, 493, 423, 235, 216, 208, 194, 182, 173, 153, 145, 128, 127, 97, 126, 85, 147, 103, 167, 129, 168, 129, 174, 100, 173, 78, 148, 94, 120, 130, 121, 158, 141, 188, 170, 240, 213, 492, 415, 509, 394, 530, 371, 562, 377, 600, 406, 608, 433, 589, 457, 515, 553, 465, 609, 448, 607, 410, 575, 408, 559, 468, 484, 420, 446, 357, 515, 337, 516, 307, 492, 308, 474, 345, 432, 364, 408, 320, 373, 147, 236, 172, 208, 119, 225, 80, 218, 47, 185, 35, 144, 66, 90, 115, 58, 161, 69, 191, 99, 207, 149)
+
+[node name="StartingArea" type="Area2D" parent="TracingArea"]
+position = Vector2(206, 150)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/StartingArea"]
+shape = SubResource("RectangleShape2D_vk25h")
+
+[node name="StartLabel" type="Label" parent="TracingArea/StartingArea"]
+offset_right = 58.0
+offset_bottom = 14.0
+theme_override_font_sizes/font_size = 10
+text = "Start Here"
+
+[node name="GraceArea" type="Area2D" parent="TracingArea"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TracingArea/GraceArea"]
+polygon = PackedVector2Array(197, 152, 182, 103, 157, 77, 116, 68, 72, 97, 46, 145, 54, 182, 84, 209, 120, 216, 173, 198, 184, 207, 160, 235, 330, 369, 376, 409, 351, 438, 318, 477, 316, 488, 340, 507, 354, 506, 419, 435, 482, 482, 418, 562, 420, 572, 453, 599, 462, 600, 505, 550, 582, 453, 597, 431, 592, 411, 557, 385, 533, 381, 515, 400, 492, 426, 231, 220, 179, 175, 151, 146, 126, 130, 99, 129, 89, 148, 104, 164, 130, 165, 129, 179, 98, 177, 74, 147, 93, 117, 132, 118, 160, 138, 190, 169, 242, 211, 492, 410, 507, 391, 529, 368, 563, 374, 602, 404, 611, 432, 591, 459, 517, 555, 467, 612, 448, 610, 407, 576, 404, 560, 465, 484, 420, 450, 359, 518, 336, 519, 304, 493, 305, 472, 343, 431, 361, 409, 318, 376, 143, 236, 167, 211, 119, 229, 77, 220, 44, 187, 32, 144, 63, 88, 115, 55, 164, 67, 194, 98, 211, 148)
+
+[node name="DisplaceArea" type="Area2D" parent="TracingArea"]
+position = Vector2(335, 291)
+
+[node name="Sprite2D" type="Sprite2D" parent="TracingArea/DisplaceArea"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_n4kqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/DisplaceArea"]
+position = Vector2(6, 4)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_35f1r")
+
+[node name="DisplaceArea2" type="Area2D" parent="TracingArea"]
+position = Vector2(262, 326)
+
+[node name="Sprite2D" type="Sprite2D" parent="TracingArea/DisplaceArea2"]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_n4kqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/DisplaceArea2"]
+position = Vector2(6, 1.5)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_nwswm")
+
+[node name="WinArea" type="Area2D" parent="TracingArea"]
+position = Vector2(133, 171)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/WinArea"]
+position = Vector2(2.38419e-07, 0)
+shape = SubResource("RectangleShape2D_wcger")
+
+[node name="Sprite2D" type="Sprite2D" parent="TracingArea/WinArea"]
+texture = ExtResource("2_d6i5i")
+
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="ShakeScreenTimer" to="." method="_on_shake_screen_timer_timeout"]
+[connection signal="mouse_entered" from="TracingArea" to="." method="_on_tracing_area_mouse_entered"]
+[connection signal="mouse_exited" from="TracingArea" to="." method="_on_tracing_area_mouse_exited"]
+[connection signal="mouse_exited" from="TracingArea/StartingArea" to="." method="_on_starting_area_mouse_exited"]
+[connection signal="mouse_exited" from="TracingArea/GraceArea" to="." method="_on_grace_area_mouse_exited"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea" to="." method="_on_shake_area_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea" to="." method="_on_displace_area_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_shake_area_2_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_displace_area_2_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/WinArea" to="." method="_on_win_area_mouse_entered"]

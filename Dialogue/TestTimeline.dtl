@@ -1,0 +1,14 @@
+unit_test_character: Cum
+Player: Cum ??
+[text_input text="Respond" var="CumAnswer"]
+[wait time="1.0"]
+if {CumAnswer} == "yes":
+	Player: good
+else:
+	bad
+What next?
+- cum
+	Player: love that
+	[signal arg="cum"]
+- custom styles
+	cool
