@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://jtf4ybrargj2"]
+
+[ext_resource type="Script" path="res://Minigames/witch_hunt.gd" id="1_crdg7"]
+
+[node name="WitchHunt" type="Node2D"]
+script = ExtResource("1_crdg7")
+
+[node name="CatsContainer" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 639.0
+offset_bottom = 102.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 320)

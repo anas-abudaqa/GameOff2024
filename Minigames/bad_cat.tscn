@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://qd5f03dix1bo"]
+
+[ext_resource type="Script" path="res://Minigames/bad_cat.gd" id="1_shm21"]
+[ext_resource type="Texture2D" uid="uid://dtfc4f686b2cm" path="res://Art/Tiny Rogue.png" id="2_jmm3c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klig2"]
+atlas = ExtResource("2_jmm3c")
+region = Rect2(0, 80, 16, 16)
+
+[node name="BadCat" type="Node2D"]
+script = ExtResource("1_shm21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_klig2")
+
+[node name="ExpiryTimer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -45.0
+offset_right = 20.0
+offset_bottom = -22.0
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="timeout" from="ExpiryTimer" to="." method="_on_expiry_timer_timeout"]
