@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqvregjwuy0dy"]
+[gd_scene load_steps=11 format=3 uid="uid://dqvregjwuy0dy"]
 
 [ext_resource type="Script" path="res://Minigames/ImagePuzzle.gd" id="1_aohml"]
 [ext_resource type="Texture2D" uid="uid://brts0xb204817" path="res://Art/cuties-modified.png" id="2_2ey77"]
 [ext_resource type="Texture2D" uid="uid://c7kqd825smnjs" path="res://Art/cuties-modified(1).png" id="3_ikx7t"]
 [ext_resource type="Texture2D" uid="uid://lscivg5kx0ux" path="res://Art/cuties-modified(3).png" id="4_l3o6v"]
+[ext_resource type="Texture2D" uid="uid://de2nw5b06lh4m" path="res://Art/Player_bubugame_transp.png" id="5_bcqgm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pcr8m"]
 
@@ -80,6 +81,10 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AlignmentArea"]
 position = Vector2(0.5, -121)
 shape = SubResource("RectangleShape2D_jk7qk")
+
+[node name="PlayerBubugameTransp" type="Sprite2D" parent="."]
+position = Vector2(13, -148)
+texture = ExtResource("5_bcqgm")
 
 [connection signal="mouse_entered" from="ImagePiece1" to="." method="_on_image_piece_1_mouse_entered"]
 [connection signal="mouse_exited" from="ImagePiece1" to="." method="_on_image_piece_1_mouse_exited"]

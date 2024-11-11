@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://5mbman63u7u7"]
+
+[ext_resource type="Script" path="res://Minigames/alignment_spot.gd" id="1_y2td2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kc38q"]
+radius = 20.0
+
+[node name="AlignmentSpot" type="Area2D"]
+script = ExtResource("1_y2td2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kc38q")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

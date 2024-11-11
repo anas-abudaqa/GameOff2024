@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://by3cohx6oxti2"]
+
+[ext_resource type="Script" path="res://Minigames/whispering_ghosts.gd" id="1_a8boe"]
+[ext_resource type="PackedScene" uid="uid://cso7m76l0cgn" path="res://Minigames/ghost_whisperer.tscn" id="2_ex3t6"]
+[ext_resource type="PackedScene" uid="uid://5mbman63u7u7" path="res://Minigames/alignment_spot.tscn" id="2_hb26s"]
+
+[node name="WhisperingGhosts" type="Node2D"]
+script = ExtResource("1_a8boe")
+
+[node name="AlignmentSpots" type="HBoxContainer" parent="."]
+offset_right = 640.0
+offset_bottom = 100.0
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AlignmentSpot" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(50, 50)
+assigned_number = 1
+
+[node name="AlignmentSpot2" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(110, 50)
+assigned_number = 2
+
+[node name="GhostWhisperer" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(138, 216)
+number = 1
+
+[node name="GhostWhisperer2" parent="." instance=ExtResource("2_ex3t6")]
+number = 2
+
+[connection signal="GhostCorrectlyPlaced" from="AlignmentSpots/AlignmentSpot" to="." method="_on_alignment_spot_ghost_correctly_placed"]
+[connection signal="GhostRemoved" from="AlignmentSpots/AlignmentSpot" to="." method="_on_alignment_spot_ghost_removed"]
+[connection signal="GhostCorrectlyPlaced" from="AlignmentSpots/AlignmentSpot2" to="." method="_on_alignment_spot_2_ghost_correctly_placed"]
+[connection signal="GhostRemoved" from="AlignmentSpots/AlignmentSpot2" to="." method="_on_alignment_spot_2_ghost_removed"]

@@ -15,6 +15,7 @@ scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_klig2")
 
 [node name="ExpiryTimer" type="Timer" parent="."]
+wait_time = 2.5
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0

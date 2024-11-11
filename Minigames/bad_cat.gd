@@ -18,6 +18,7 @@ func spawn(spawn_position: Vector2):
 #called when player presses the correct button, give letter and score
 func _on_assigned_letter_pressed(letter: String):
 	if letter == assigned_letter:
+		print("Ha Ha fuck you ", letter, " ", score)
 		CatDespawned.emit(assigned_letter, score)
 		queue_free()
 

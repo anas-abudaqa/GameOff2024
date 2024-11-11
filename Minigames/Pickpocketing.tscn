@@ -102,15 +102,15 @@ shape = SubResource("RectangleShape2D_wcger")
 [node name="Sprite2D" type="Sprite2D" parent="TracingArea/WinArea"]
 texture = ExtResource("2_d6i5i")
 
-[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
 [connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
 [connection signal="timeout" from="ShakeScreenTimer" to="." method="_on_shake_screen_timer_timeout"]
 [connection signal="mouse_entered" from="TracingArea" to="." method="_on_tracing_area_mouse_entered"]
 [connection signal="mouse_exited" from="TracingArea" to="." method="_on_tracing_area_mouse_exited"]
 [connection signal="mouse_exited" from="TracingArea/StartingArea" to="." method="_on_starting_area_mouse_exited"]
 [connection signal="mouse_exited" from="TracingArea/GraceArea" to="." method="_on_grace_area_mouse_exited"]
-[connection signal="mouse_entered" from="TracingArea/DisplaceArea" to="." method="_on_shake_area_mouse_entered"]
 [connection signal="mouse_entered" from="TracingArea/DisplaceArea" to="." method="_on_displace_area_mouse_entered"]
-[connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_shake_area_2_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea" to="." method="_on_shake_area_mouse_entered"]
 [connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_displace_area_2_mouse_entered"]
+[connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_shake_area_2_mouse_entered"]
 [connection signal="mouse_entered" from="TracingArea/WinArea" to="." method="_on_win_area_mouse_entered"]

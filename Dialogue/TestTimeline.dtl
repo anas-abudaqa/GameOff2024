@@ -1,4 +1,4 @@
-unit_test_character: Cum
+Player: Cum
 Player: Cum ??
 [text_input text="Respond" var="CumAnswer"]
 [wait time="1.0"]

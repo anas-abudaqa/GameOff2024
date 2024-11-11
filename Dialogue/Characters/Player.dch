@@ -6,7 +6,7 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "Customstyle"
+"style": ""
 },
 "default_portrait": "Happy",
 "description": "",
@@ -17,11 +17,11 @@
 "portraits": {
 "Happy": {
 "export_overrides": {
-"image": "\"res://Art/cuties.png\""
+"image": "\"res://Art/Player_bubugame_small - Copy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 }
 },

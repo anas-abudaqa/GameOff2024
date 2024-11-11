@@ -14,11 +14,12 @@ func _ready():
 func spawn(spawn_position: Vector2):
 	global_position = spawn_position
 	label.text = assigned_letter
+	
 
 #called when player presses the correct button, give letter and score
 func _on_assigned_letter_pressed(letter: String):
 	if letter == assigned_letter:
-		print("Yo we got consumed by this letter and score ", letter, score)
+		print("Yo we got consumed by this letter and score ", letter, " ", score)
 		CatDespawned.emit(assigned_letter, score)
 		queue_free()
 

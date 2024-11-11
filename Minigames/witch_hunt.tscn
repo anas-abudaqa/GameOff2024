@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://jtf4ybrargj2"]
+[gd_scene load_steps=5 format=3 uid="uid://jtf4ybrargj2"]
 
 [ext_resource type="Script" path="res://Minigames/witch_hunt.gd" id="1_crdg7"]
+[ext_resource type="Texture2D" uid="uid://cogcmfxuvtago" path="res://Art/Pixel UI pack 3/06.png" id="2_bkyn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wum8"]
+atlas = ExtResource("2_bkyn5")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebje"]
+atlas = ExtResource("2_bkyn5")
+region = Rect2(0, 16, 48, 16)
 
 [node name="WitchHunt" type="Node2D"]
 script = ExtResource("1_crdg7")
@@ -8,6 +17,27 @@ script = ExtResource("1_crdg7")
 [node name="CatsContainer" type="Node2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="ScoreProgressBar" type="TextureProgressBar" parent="."]
+offset_top = 37.0
+offset_right = 331.0
+offset_bottom = 105.0
+size_flags_horizontal = 3
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_right = 3
+texture_under = SubResource("AtlasTexture_0wum8")
+texture_progress = SubResource("AtlasTexture_lebje")
+
+[node name="Label" type="Label" parent="ScoreProgressBar"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -1.0
+offset_right = 195.0
+offset_bottom = 22.0
+text = "Progress Left"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -15,10 +45,31 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="GameTimer" type="Timer" parent="Control"]
+wait_time = 70.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="RichTextLabel" parent="Control"]
 layout_mode = 0
+offset_left = 443.0
+offset_top = 36.0
+offset_right = 561.0
+offset_bottom = 113.0
+theme_override_colors/default_color = Color(0.870588, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "70"
+
+[node name="UI" type="MarginContainer" parent="."]
+visible = false
 offset_right = 639.0
 offset_bottom = 102.0
 
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+layout_mode = 2
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 320)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Control/GameTimer" to="." method="_on_game_timer_timeout"]

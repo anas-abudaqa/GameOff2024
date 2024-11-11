@@ -52,8 +52,9 @@ text/autopauses={}
 variables={
 "CumAnswer": ""
 }
-layout/style_list=["res://Dialogue/Customstyle.tres"]
-layout/default_style="res://Dialogue/Customstyle.tres"
+layout/style_list=[]
+layout/default_style=""
+glossary/default_case_sensitive=true
 
 [display]
 
