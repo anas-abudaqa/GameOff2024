@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi2tgcgrvrauc"]
+
+[ext_resource type="Script" path="res://Minigames/the_ritual.gd" id="1_0imjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wukvg"]
+size = Vector2(37, 292)
+
+[node name="TheRitual" type="Node2D"]
+script = ExtResource("1_0imjx")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(237, 307)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_wukvg")

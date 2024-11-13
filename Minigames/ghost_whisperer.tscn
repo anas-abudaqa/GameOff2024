@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cso7m76l0cgn"]
+[gd_scene load_steps=5 format=3 uid="uid://cso7m76l0cgn"]
 
 [ext_resource type="Texture2D" uid="uid://3ckmq1pewc8s" path="res://Art/Key Items 16x16/16.png" id="1_fnvnq"]
 [ext_resource type="Script" path="res://Minigames/ghost_whisperer.gd" id="1_r34mk"]
+[ext_resource type="AudioStream" uid="uid://c1f0n58bdeunk" path="res://Music/Fireball.wav" id="3_j3fx2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kerhc"]
-radius = 18.0278
 
 [node name="GhostWhisperer" type="Area2D"]
 script = ExtResource("1_r34mk")
@@ -17,6 +17,12 @@ texture = ExtResource("1_fnvnq")
 shape = SubResource("CircleShape2D_kerhc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j3fx2")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -44.0
+offset_right = 20.0
+offset_bottom = -21.0
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

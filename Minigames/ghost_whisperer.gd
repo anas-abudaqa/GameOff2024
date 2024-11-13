@@ -1,23 +1,30 @@
 extends Area2D
 
 @export var number: int
+@export var label_text: String
+@onready var label = $Label
+@onready var audio_stream_player_2d = $AudioStreamPlayer2D
 
-var mouse_is_hovering: bool = false
+var ghost_selected: bool = false
 
 # Ghost should detect only its own mouse and dragging movement
 
 func _ready():
-	pass # Replace with function body.
+	label.text = label_text
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_pressed("LMB") and mouse_is_hovering:
-		#global_position = global_position.lerp(get_global_mouse_position(), delta*200) 
+	if ghost_selected:
 		global_position = get_global_mouse_position()
-
-func _on_mouse_entered():
-	mouse_is_hovering = true
+		#global_position = global_position.lerp(get_global_mouse_position(), delta*200) 
 
 
-func _on_mouse_exited():
-	mouse_is_hovering = false
+
+#use the built in signal to better detect when we're on this shape specifically and prevent affecting multiple ghostwhisperers at once
+func _on_input_event(viewport, event, shape_idx):
+	if event.is_action_pressed("LMB"):
+		ghost_selected = true
+	elif event.is_action_released("LMB"):
+		ghost_selected = false
+		audio_stream_player_2d.play()
+		#global_position = get_global_mouse_position()

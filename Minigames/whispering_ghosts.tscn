@@ -21,14 +21,84 @@ assigned_number = 1
 position = Vector2(110, 50)
 assigned_number = 2
 
+[node name="AlignmentSpot3" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(170, 50)
+assigned_number = 3
+
+[node name="AlignmentSpot4" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(230, 50)
+assigned_number = 4
+
+[node name="AlignmentSpot5" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(290, 50)
+assigned_number = 5
+
+[node name="AlignmentSpot6" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(350, 50)
+assigned_number = 6
+
+[node name="AlignmentSpot7" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(410, 50)
+assigned_number = 7
+
+[node name="AlignmentSpot8" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(470, 50)
+assigned_number = 8
+
+[node name="AlignmentSpot9" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(530, 50)
+assigned_number = 9
+
+[node name="AlignmentSpot10" parent="AlignmentSpots" instance=ExtResource("2_hb26s")]
+position = Vector2(590, 50)
+assigned_number = 10
+
 [node name="GhostWhisperer" parent="." instance=ExtResource("2_ex3t6")]
-position = Vector2(138, 216)
+position = Vector2(231, 425)
 number = 1
+label_text = "IN"
 
 [node name="GhostWhisperer2" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(433, 388)
 number = 2
+label_text = "K BI"
 
-[connection signal="GhostCorrectlyPlaced" from="AlignmentSpots/AlignmentSpot" to="." method="_on_alignment_spot_ghost_correctly_placed"]
-[connection signal="GhostRemoved" from="AlignmentSpots/AlignmentSpot" to="." method="_on_alignment_spot_ghost_removed"]
-[connection signal="GhostCorrectlyPlaced" from="AlignmentSpots/AlignmentSpot2" to="." method="_on_alignment_spot_2_ghost_correctly_placed"]
-[connection signal="GhostRemoved" from="AlignmentSpots/AlignmentSpot2" to="." method="_on_alignment_spot_2_ghost_removed"]
+[node name="GhostWhisperer3" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(365, 312)
+number = 3
+label_text = "NDS"
+
+[node name="GhostWhisperer4" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(460, 179)
+number = 4
+label_text = "W"
+
+[node name="GhostWhisperer5" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(509, 424)
+number = 5
+label_text = "HAT"
+
+[node name="GhostWhisperer6" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(70, 324)
+number = 6
+label_text = "WOR"
+
+[node name="GhostWhisperer7" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(271, 177)
+number = 7
+label_text = "DS"
+
+[node name="GhostWhisperer8" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(552, 265)
+number = 8
+label_text = "CA"
+
+[node name="GhostWhisperer9" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(157, 242)
+number = 9
+label_text = "NNO"
+
+[node name="GhostWhisperer10" parent="." instance=ExtResource("2_ex3t6")]
+position = Vector2(577, 416)
+number = 10
+label_text = "T"

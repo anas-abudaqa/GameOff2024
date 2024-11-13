@@ -1,7 +1,7 @@
 extends Area2D
 
 signal GhostCorrectlyPlaced(assigned_number: int)
-signal GhostRemoved(assigned_number: int)
+signal CorrectGhostRemoved(assigned_number: int)
 
 @export var assigned_number: int
 
@@ -15,11 +15,12 @@ func _process(delta):
 func _on_area_entered(area):
 	#snap to alignment position
 	area.global_position = global_position
-	area.mouse_is_hovering = false
+	area.ghost_selected = false
 	#check if the assigned number
 	if assigned_number == area.number:
 		GhostCorrectlyPlaced.emit(area.number)
 
 
 func _on_area_exited(area):
-	GhostRemoved.emit(area.number)
+	if assigned_number == area.number:
+		CorrectGhostRemoved.emit(area.number)
