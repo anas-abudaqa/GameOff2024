@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://ybbi0ladnwaf"]
 
 [ext_resource type="Script" path="res://Minigames/Pickpocketing.gd" id="1_urosk"]
-[ext_resource type="Texture2D" uid="uid://veuuyskirlt2" path="res://Art/Key Items 16x16/02.png" id="2_d6i5i"]
+[ext_resource type="Texture2D" path="res://Art/Key Items 16x16/02.png" id="2_d6i5i"]
 [ext_resource type="Texture2D" uid="uid://hiuojui7s1i6" path="res://Art/exclamation-mark_ver_1.jpg" id="3_n4kqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vk25h"]

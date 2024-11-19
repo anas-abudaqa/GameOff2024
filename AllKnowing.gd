@@ -1,5 +1,11 @@
 extends Node
 
+var has_lab_key: bool = false
+var obtained_brainjar7: bool = false
+var obtained_undeadheart: bool = false
+var obtained_damnedtongue: bool = false
+var obtained_sacrificeblood: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

@@ -1,0 +1,10 @@
+if {CorvusQuest.found_lab} == true:
+	DrCorvus: Locked shed in the courtyard? What are you..-
+	DrCorvus: Didn't I say to finish your business and leave? Hurry out of here now!
+	Player: (He knows something)
+	set {CorvusQuest.current_chapter} = 3
+else:
+	DrCorvus: Still here? Do not dally here for long. This place is abandoned for a reason
+	Player: If it's abandoned, what are you doing here?
+	DrCorvus: Certainly not interfere in other people's business. Now would you leave me alone?
+	Player: ....

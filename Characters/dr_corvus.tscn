@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3n1r8h65ypsh"]
+
+[ext_resource type="Script" path="res://Characters/dr_corvus.gd" id="1_vlkm7"]
+[ext_resource type="Texture2D" uid="uid://xrn1bbd4x5m4" path="res://Art/Sprites/NS_Sprite.png" id="2_vuxs7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qh824"]
+size = Vector2(15, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgc2e"]
+size = Vector2(31, 32)
+
+[node name="DrCorvus" type="Area2D"]
+script = ExtResource("1_vlkm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.847059, 0.847059, 0.847059, 1)
+position = Vector2(-2, 0)
+scale = Vector2(1, 1.1)
+texture = ExtResource("2_vuxs7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qh824")
+
+[node name="DialogueInteractable" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractable"]
+shape = SubResource("RectangleShape2D_pgc2e")

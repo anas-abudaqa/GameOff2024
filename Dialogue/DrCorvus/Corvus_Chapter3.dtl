@@ -1,0 +1,10 @@
+Player: So you really know nothing about that shed in the churchyard?
+DrCorvus: If it will make you leave, I do know the shed has been locked down for a while.
+Player: Why has it been locked down?
+DrCorvus: I haven't the slightest idea. 
+DrCorvus: And no,  I certainly do not have the key
+DrCorvus: So you should ignore this shed and finish your business here
+DrCorvus: You are not exactly welcome here, so I will pretend you don't exist
+DrCorvus: You should do the same. Now scram!
+Player: (That was a bit suspicious)
+set {CorvusQuest.current_chapter} = 4

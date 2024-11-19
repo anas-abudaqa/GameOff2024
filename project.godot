@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Off 24"
-run/main_scene="res://Levels/test_level.tscn"
+run/main_scene="res://Levels/main_level.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,10 +23,18 @@ AllKnowing="*res://AllKnowing.gd"
 [dialogic]
 
 directories/dch_directory={
-"Player": "res://Dialogue/Characters/Player.dch",
+"DrCorvus": "res://Dialogue/DrCorvus/DrCorvus.dch",
+"Ezekiel": "res://Dialogue/Ezekiel/Ezekiel.dch",
+"Player": "res://Dialogue/Player/Player.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"Corvus_Chapter1": "res://Dialogue/DrCorvus/Corvus_Chapter1.dtl",
+"Corvus_Chapter2": "res://Dialogue/DrCorvus/Corvus_Chapter2.dtl",
+"Corvus_Chapter3": "res://Dialogue/DrCorvus/Corvus_Chapter3.dtl",
+"Corvus_Chapter4": "res://Dialogue/DrCorvus/Corvus_Chapter4.dtl",
+"Lab_Locked": "res://Dialogue/DrCorvus/Lab_Locked.dtl",
+"ObtainedBrainJar": "res://Dialogue/Interactions/ObtainedBrainJar.dtl",
 "TestTimeline": "res://Dialogue/TestTimeline.dtl"
 }
 extensions_folder="res://addons/dialogic_additions"
@@ -50,16 +58,20 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
+"CorvusQuest": {
+"current_chapter": 1,
+"found_lab": false
+},
 "CumAnswer": ""
 }
-layout/style_list=[]
-layout/default_style=""
+layout/style_list=["res://Dialogue/Custom_Style.tres"]
+layout/default_style="res://Dialogue/Custom_Style.tres"
 glossary/default_case_sensitive=true
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=640
+window/size/viewport_width=480
+window/size/viewport_height=480
 window/size/resizable=false
 window/size/window_width_override=1000
 window/size/window_height_override=1000
@@ -93,7 +105,7 @@ Down={
 }
 Interact={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"echo":false,"script":null)
 ]
 }
 LMB={
@@ -118,8 +130,10 @@ dialogic_default_action={
 
 [layer_names]
 
-2d_physics/layer_1="Mouse"
-2d_physics/layer_2="Alignment"
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactable"
+2d_physics/layer_8="Mouse"
 
 [rendering]
 

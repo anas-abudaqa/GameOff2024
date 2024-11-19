@@ -1,0 +1,160 @@
+[gd_scene load_steps=23 format=3 uid="uid://bs66xlfofhhh0"]
+
+[ext_resource type="Texture2D" uid="uid://f7y8byyv4njt" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Columns/Column_09.png" id="1_dlalb"]
+[ext_resource type="Texture2D" uid="uid://bt5t4mbm10vhy" path="res://Art/Torch/Torch Animated.png" id="1_lpcq5"]
+[ext_resource type="Texture2D" uid="uid://cxt0ycukp2si4" path="res://Art/Torch/Fire Animated.png" id="2_opdcp"]
+[ext_resource type="Texture2D" uid="uid://c4ivnna0rl3na" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="2_t78uy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiwm7"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf67p"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_627vb"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34gwh"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akojk"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36juh"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7fkf"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3vk5"]
+atlas = ExtResource("2_opdcp")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt76c"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urhd8"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_er1st"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vedqe"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iluf3"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4ld7"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t85x0"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v57f"]
+atlas = ExtResource("1_lpcq5")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5si8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiwm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf67p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_627vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34gwh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_akojk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36juh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7fkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3vk5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt76c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urhd8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_er1st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vedqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iluf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4ld7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t85x0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v57f")
+}],
+"loop": true,
+"name": &"IdleTorch",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyxy7"]
+radius = 3.85791
+height = 58.0
+
+[node name="Torch" type="Area2D"]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+
+[node name="Column" type="Sprite2D" parent="."]
+texture = ExtResource("1_dlalb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_5si8f")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.97398
+offset = Vector2(1, -5)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(1, 0.789063)
+shadow_enabled = true
+texture = ExtResource("2_t78uy")
+texture_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_eyxy7")

@@ -1,28 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://lr2o2glw0me4"]
+[gd_scene load_steps=7 format=3 uid="uid://bbsro2j63lcxl"]
 
-[ext_resource type="Script" path="res://Characters/player.gd" id="1_fexje"]
-[ext_resource type="Texture2D" uid="uid://dtfc4f686b2cm" path="res://Art/Tiny Rogue.png" id="2_f043o"]
+[ext_resource type="Script" path="res://Characters/player.gd" id="1_y4w10"]
+[ext_resource type="Texture2D" uid="uid://dc2jti0awahfr" path="res://Art/Sprites/Player_Sprite.png" id="2_hbwn0"]
+[ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="3_pbg2f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8ilf"]
-atlas = ExtResource("2_f043o")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0rdn"]
+atlas = ExtResource("2_hbwn0")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d51kx"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqt2d"]
+size = Vector2(20, 35)
 
-[node name="Player" type="Area2D"]
-script = ExtResource("1_fexje")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sf46o"]
+size = Vector2(10, 20)
+
+[node name="Player" type="CharacterBody2D"]
+z_index = 5
+script = ExtResource("1_y4w10")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_u8ilf")
+texture = SubResource("AtlasTexture_d0rdn")
+offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_d51kx")
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_mqt2d")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("3_pbg2f")
+texture_scale = 0.3
 
-[node name="CollisionRayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 16)
-collide_with_areas = true
+[node name="InteractableDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableDetector"]
+position = Vector2(15, 5)
+shape = SubResource("RectangleShape2D_sf46o")

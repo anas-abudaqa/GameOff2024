@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://u4hiwj6oq71h"]
+
+[ext_resource type="Script" path="res://Levels/shed_exterior.gd" id="1_cuylx"]
+[ext_resource type="Texture2D" uid="uid://c6r4scibxvkat" path="res://Art/Tilesets_Cemetery/Objects_Cemetery.png" id="1_xx4xp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul6il"]
+atlas = ExtResource("1_xx4xp")
+region = Rect2(294, 0, 63, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpctq"]
+size = Vector2(60, 56)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_goep8"]
+polygon = PackedVector2Array(-36, 16, 35, 16, 36, -53, 12, -76, -11, -77, -36, -56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lij1i"]
+size = Vector2(68.5, 27.5)
+
+[node name="ShedExterior" type="Area2D"]
+script = ExtResource("1_cuylx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -30)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_ul6il")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 11)
+shape = SubResource("RectangleShape2D_kpctq")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_goep8")
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-0.25, 44.25)
+shape = SubResource("RectangleShape2D_lij1i")

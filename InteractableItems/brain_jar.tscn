@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://3jf2kntbt568"]
+
+[ext_resource type="Script" path="res://InteractableItems/brain_jar.gd" id="1_vv08a"]
+[ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="2_i6a8d"]
+[ext_resource type="Texture2D" uid="uid://cpgmijswio2yg" path="res://Art/Misc/BrainJar.png" id="2_mju86"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gb7nl"]
+size = Vector2(17, 20)
+
+[node name="BrainJar" type="Area2D"]
+script = ExtResource("1_vv08a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mju86")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.529412, 0.282353, 0.294118, 1)
+texture = ExtResource("2_i6a8d")
+texture_scale = 0.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_gb7nl")

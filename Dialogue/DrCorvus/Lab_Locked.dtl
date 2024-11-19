@@ -1,0 +1,4 @@
+You try opening the door, but it is locked.
+Player: I wonder why this shed is locked
+Player: Maybe someone has the key?
+set {CorvusQuest.found_lab} = true

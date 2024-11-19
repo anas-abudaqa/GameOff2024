@@ -1,0 +1,6 @@
+Ezekiel: Huh, a visitor?
+DrCorvus: Here to pay a tribute to our forgotten saint? Or to visit an old relative in the cemetery?
+Player: I'm Aveline. I'm here on, uhm, some business.
+DrCorvus: You can call me Dr. Corvus
+DrCorvus: Now Aveline, I suggest you finish your business here and leave promptly. This place is not for the likes of you
+set {CorvusQuest.current_chapter} = 2
