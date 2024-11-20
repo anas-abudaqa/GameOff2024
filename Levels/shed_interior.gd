@@ -1,6 +1,6 @@
-extends Area2D
+extends Node2D
 
-const SHED_INTERIOR_SCENE = "res://Levels/shed_interior.tscn"
+const MAIN_AREA_SCENE = preload("res://Levels/main_level.tscn") 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -11,11 +11,8 @@ func _process(delta):
 	pass
 
 func interact():
-	prompt_door()
+	leave_area()
 	
-
-func prompt_door():
-	if !AllKnowing.has_lab_key:
-		Dialogic.start("Lab_Locked")
-	else: 
-		get_tree().change_scene_to_file(SHED_INTERIOR_SCENE)
+func leave_area():
+	AllKnowing.player_spawn_location = Vector2(-860, 100)
+	get_tree().change_scene_to_packed(MAIN_AREA_SCENE)

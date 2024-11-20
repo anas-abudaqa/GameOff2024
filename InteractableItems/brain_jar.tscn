@@ -8,6 +8,7 @@
 size = Vector2(17, 20)
 
 [node name="BrainJar" type="Area2D"]
+z_index = 6
 script = ExtResource("1_vv08a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -15,6 +16,7 @@ texture = ExtResource("2_mju86")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.529412, 0.282353, 0.294118, 1)
+energy = 0.8
 texture = ExtResource("2_i6a8d")
 texture_scale = 0.5
 

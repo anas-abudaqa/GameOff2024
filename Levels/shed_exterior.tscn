@@ -11,7 +11,7 @@ region = Rect2(294, 0, 63, 96)
 size = Vector2(60, 56)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_goep8"]
-polygon = PackedVector2Array(-36, 16, 35, 16, 36, -53, 12, -76, -11, -77, -36, -56)
+polygon = PackedVector2Array(-36, -4, 35, -4, 36, -53, 12, -76, -11, -77, -36, -56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lij1i"]
 size = Vector2(68.5, 27.5)

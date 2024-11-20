@@ -10,6 +10,7 @@ size = Vector2(15, 31)
 size = Vector2(31, 32)
 
 [node name="DrCorvus" type="Area2D"]
+z_index = 5
 script = ExtResource("1_vlkm7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
