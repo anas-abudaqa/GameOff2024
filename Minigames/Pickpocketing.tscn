@@ -1,10 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://ybbi0ladnwaf"]
+[gd_scene load_steps=9 format=3 uid="uid://ybbi0ladnwaf"]
 
 [ext_resource type="Script" path="res://Minigames/Pickpocketing.gd" id="1_urosk"]
 [ext_resource type="Texture2D" uid="uid://hiuojui7s1i6" path="res://Art/exclamation-mark_ver_1.jpg" id="3_n4kqu"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3b6ep"]
+radius = 2.0
+
+[sub_resource type="Curve2D" id="Curve2D_tpyqw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 63.3333, 306.667, 0, 0, 0, 0, 91.6667, 338.333, 0, 0, 0, 0, 145, 371.667, 0, 0, 0, 0, 193.333, 401.667, 0, 0, 0, 0, 231.667, 405, 0, 0, 0, 0, 251.667, 383.333, 0, 0, 0, 0, 256.667, 316.667, 0, 0, 0, 0, 243.333, 250, 0, 0, 0, 0, 256.667, 226.667, 0, 0, 0, 0, 276.667, 216.667, 0, 0, 0, 0, 305, 211.667, 0, 0, 0, 0, 356.667, 228.333, 0, 0, 0, 0, 393.333, 240, 0, 0, 0, 0, 430, 265, 0, 0, 0, 0, 466.667, 308.333, 0, 0, 0, 0, 495, 371.667, 0, 0, 0, 0, 500, 420, 0, 0, 0, 0, 496.667, 476.667, 0, 0, 0, 0, 466.667, 526.667, 0, 0, 0, 0, 420, 565, 0, 0, 0, 0, 373.333, 590, 0, 0, 0, 0, 323.333, 626.667, 0, 0, 0, 0, 305, 670, 0, 0, 0, 0, 311.667, 706.667, 0, 0, 0, 0, 330, 730, 0, 0, 0, 0, 358.333, 746.667, 0, 0, 0, 0, 581.667, 745, 0, 0, 0, 0, 643.333, 726.667, 0, 0, 0, 0, 688.333, 695, 0, 0, 0, 0, 716.667, 646.667, 0, 0, 0, 0, 718.333, 235)
+}
+point_count = 31
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vk25h"]
-size = Vector2(21, 24)
+size = Vector2(14.0256, 27.4358)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_35f1r"]
 size = Vector2(12, 22)
@@ -18,8 +27,15 @@ size = Vector2(22, 20)
 [node name="Pickpocketing" type="Node2D"]
 script = ExtResource("1_urosk")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(320, 320)
+[node name="Player" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(39, 186)
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(7, 7)
+shape = SubResource("CircleShape2D_3b6ep")
 
 [node name="InfoLabel" type="RichTextLabel" parent="."]
 offset_left = 305.0
@@ -37,37 +53,66 @@ one_shot = true
 wait_time = 1.5
 one_shot = true
 
-[node name="TracingArea" type="Area2D" parent="."]
+[node name="StartingPosition" type="Marker2D" parent="."]
+position = Vector2(35, 182)
 
-[node name="Line2D" type="Line2D" parent="TracingArea"]
-position = Vector2(207, -191)
-rotation = 0.634111
-scale = Vector2(1.09291, 1.13043)
-points = PackedVector2Array(182.644, 244.584, 144, 217, 108, 212, 69, 227, 51, 275, 57, 327, 87, 350, 128, 355, 158.283, 340.967, 175.713, 317.594, 189.067, 299.314, 194.184, 300.068, 189.655, 332.936, 444.13, 341.97, 442.398, 369.555, 437.697, 420.115, 445.092, 431.329, 478.199, 433.045, 490.925, 422.898, 497.295, 370.054, 500.154, 339.471, 561.447, 340.912, 560.062, 370.447, 557.487, 428.28, 566.551, 437.208, 610.087, 439.196, 621.491, 433.284, 627.209, 372.118, 630.3, 261.21, 631.099, 235.386, 612.192, 222.475, 570.477, 221.388, 545.111, 232.836, 540.758, 285.345, 185.14, 270.262, 143.468, 264.753, 113.266, 265.363, 87.6617, 282.47, 91.0896, 306.387, 118.3, 312.295, 136.533, 300.43)
-width = 5.0
-default_color = Color(0.0470588, 0.0901961, 1, 1)
+[node name="GameStartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="TracingArea" type="Area2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="Line2D2" type="Line2D" parent="TracingArea"]
+position = Vector2(5, -11.6667)
+points = PackedVector2Array(58.3333, 320, 91.6667, 351.667, 128.333, 375, 165, 398.333, 206.667, 416.667, 228.333, 413.333, 241.667, 398.333, 248.333, 365, 251.667, 330, 246.667, 300, 236.667, 271.667, 236.667, 253.333, 251.667, 238.333, 278.333, 228.333, 310, 225, 356.667, 238.333, 403.333, 260, 440, 291.667, 475, 343.333, 491.667, 386.667, 495, 438.333, 490, 490, 460, 533.333, 425, 568.333, 398.333, 586.667, 366.667, 605, 335, 620, 311.667, 648.333, 298.333, 681.667, 308.333, 718.333, 328.333, 741.667, 353.333, 756.667, 575, 756.667, 608.333, 748.333, 638.333, 738.333, 663.333, 723.333, 685, 705, 701.667, 680, 713.333, 653.333, 716.667, 623.333, 716.667, 586.667, 716.667, 398.333, 716.667, 251.667)
+width = 20.0
+default_color = Color(0.333333, 0, 0.611765, 1)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TracingArea"]
-polygon = PackedVector2Array(201, 151, 186, 102, 159, 75, 116, 64, 70, 95, 41, 144, 51, 183, 82, 212, 119, 219, 174, 201, 181, 208, 156, 235, 327, 371, 372, 408, 349, 436, 314, 476, 313, 489, 338, 510, 355, 509, 420, 439, 478, 483, 414, 561, 416, 573, 451, 601, 462, 603, 509, 552, 585, 454, 602, 431, 595, 410, 559, 383, 532, 377, 513, 398, 493, 423, 235, 216, 208, 194, 182, 173, 153, 145, 128, 127, 97, 126, 85, 147, 103, 167, 129, 168, 129, 174, 100, 173, 78, 148, 94, 120, 130, 121, 158, 141, 188, 170, 240, 213, 492, 415, 509, 394, 530, 371, 562, 377, 600, 406, 608, 433, 589, 457, 515, 553, 465, 609, 448, 607, 410, 575, 408, 559, 468, 484, 420, 446, 357, 515, 337, 516, 307, 492, 308, 474, 345, 432, 364, 408, 320, 373, 147, 236, 172, 208, 119, 225, 80, 218, 47, 185, 35, 144, 66, 90, 115, 58, 161, 69, 191, 99, 207, 149)
+polygon = PackedVector2Array(70, 305, 101.667, 333.333, 173.333, 380, 213.333, 398.333, 230, 395, 240, 383.333, 246.667, 353.333, 250, 318.333, 245, 290, 235, 260, 235, 240, 253.333, 221.667, 283.333, 210, 315, 206.667, 363.333, 220, 411.667, 243.333, 450, 275, 485, 326.667, 503.333, 373.333, 506.667, 425, 501.667, 480, 470, 526.667, 440.906, 565.954, 413.333, 585, 356.667, 616.667, 330, 648.333, 318.333, 673.333, 323.333, 695, 340, 718.333, 360, 731.667, 575, 730, 646.667, 710, 676.667, 688.333, 705, 641.667, 708.333, 238.333, 708.333, 231.667, 733.333, 231.667, 735, 240, 735, 646.667, 700, 706.667, 655, 738.333, 583.333, 761.667, 355, 761.667, 323.333, 743.333, 303.333, 715, 290, 673.333, 306.667, 625, 333.333, 596.667, 420, 545, 458.333, 518.333, 488.333, 475, 493.333, 426.667, 490, 376.667, 473.333, 333.333, 440, 285, 403.333, 255, 360, 233.333, 315, 220, 286.667, 223.333, 260, 233.333, 248.333, 245, 248.333, 258.333, 258.333, 286.667, 263.333, 318.333, 260, 355, 253.333, 390, 236.667, 408.333, 210, 413.333, 163.333, 391.667, 91.6667, 346.667, 60, 316.667)
+
+[node name="Path2D" type="Path2D" parent="TracingArea"]
+curve = SubResource("Curve2D_tpyqw")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TracingArea/Path2D"]
+position = Vector2(63.3333, 306.667)
+rotation = 0.840885
+loop = false
+
+[node name="Camera2D" type="Camera2D" parent="TracingArea/Path2D/PathFollow2D"]
+position = Vector2(147.09, -284.367)
+rotation = -0.840897
+scale = Vector2(1.66667, 1.66667)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="Marker2D" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D"]
+position = Vector2(6.40637, -12.1594)
 
 [node name="StartingArea" type="Area2D" parent="TracingArea"]
-position = Vector2(206, 150)
+position = Vector2(58.3334, 301.667)
+scale = Vector2(2.61426, 1.15421)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/StartingArea"]
+position = Vector2(-2.64645e-05, -0.000280142)
 shape = SubResource("RectangleShape2D_vk25h")
 
 [node name="StartLabel" type="Label" parent="TracingArea/StartingArea"]
-offset_right = 58.0
-offset_bottom = 14.0
+offset_left = -17.0
+offset_top = -48.0
+offset_right = 35.0
+offset_bottom = -26.0
 theme_override_font_sizes/font_size = 10
 text = "Start Here"
 
 [node name="GraceArea" type="Area2D" parent="TracingArea"]
+visible = false
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TracingArea/GraceArea"]
-polygon = PackedVector2Array(197, 152, 182, 103, 157, 77, 116, 68, 72, 97, 46, 145, 54, 182, 84, 209, 120, 216, 173, 198, 184, 207, 160, 235, 330, 369, 376, 409, 351, 438, 318, 477, 316, 488, 340, 507, 354, 506, 419, 435, 482, 482, 418, 562, 420, 572, 453, 599, 462, 600, 505, 550, 582, 453, 597, 431, 592, 411, 557, 385, 533, 381, 515, 400, 492, 426, 231, 220, 179, 175, 151, 146, 126, 130, 99, 129, 89, 148, 104, 164, 130, 165, 129, 179, 98, 177, 74, 147, 93, 117, 132, 118, 160, 138, 190, 169, 242, 211, 492, 410, 507, 391, 529, 368, 563, 374, 602, 404, 611, 432, 591, 459, 517, 555, 467, 612, 448, 610, 407, 576, 404, 560, 465, 484, 420, 450, 359, 518, 336, 519, 304, 493, 305, 472, 343, 431, 361, 409, 318, 376, 143, 236, 167, 211, 119, 229, 77, 220, 44, 187, 32, 144, 63, 88, 115, 55, 164, 67, 194, 98, 211, 148)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TracingArea/GraceArea"]
+polygon = PackedVector2Array(71.6667, 300, 96.6667, 326.667, 181.667, 380, 213.333, 391.667, 228.333, 390, 236.667, 381.667, 248.333, 321.667, 231.667, 260, 230, 235, 250, 218.333, 283.333, 206.667, 316.667, 203.333, 368.333, 218.333, 416.667, 241.667, 455, 275, 493.333, 330, 506.667, 373.333, 511.667, 428.333, 506.667, 481.667, 470, 536.667, 440, 563.333, 351.667, 616.667, 328.333, 646.667, 315, 673.333, 323.333, 701.667, 338.333, 720, 358.333, 733.333, 576.667, 731.667, 648.333, 711.667, 678.333, 690, 706.667, 641.667, 710, 238.333, 731.667, 238.333, 735, 621.667, 730, 646.667, 698.333, 705, 651.667, 736.667, 585, 756.667, 355, 756.667, 323.333, 740, 305, 715, 291.667, 671.667, 310, 625, 333.333, 600, 421.667, 548.333, 458.333, 513.333, 485, 475, 486.667, 376.667, 470, 335, 441.667, 290, 405, 258.333, 318.333, 225, 285, 230, 265, 236.667, 255, 250, 270, 318.333, 260, 390, 241.667, 413.333, 211.667, 418.333, 158.333, 395, 90, 350, 55, 313.333)
 
 [node name="DisplaceArea" type="Area2D" parent="TracingArea"]
+visible = false
 position = Vector2(335, 291)
 
 [node name="Sprite2D" type="Sprite2D" parent="TracingArea/DisplaceArea"]
@@ -80,6 +125,7 @@ rotation = 0.785398
 shape = SubResource("RectangleShape2D_35f1r")
 
 [node name="DisplaceArea2" type="Area2D" parent="TracingArea"]
+visible = false
 position = Vector2(262, 326)
 
 [node name="Sprite2D" type="Sprite2D" parent="TracingArea/DisplaceArea2"]
@@ -92,7 +138,7 @@ rotation = 0.785398
 shape = SubResource("RectangleShape2D_nwswm")
 
 [node name="WinArea" type="Area2D" parent="TracingArea"]
-position = Vector2(133, 171)
+position = Vector2(720, 218.333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/WinArea"]
 position = Vector2(2.38419e-07, 0)
@@ -100,9 +146,14 @@ shape = SubResource("RectangleShape2D_wcger")
 
 [node name="Sprite2D" type="Sprite2D" parent="TracingArea/WinArea"]
 
-[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
 [connection signal="timeout" from="ShakeScreenTimer" to="." method="_on_shake_screen_timer_timeout"]
+[connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]
 [connection signal="mouse_entered" from="TracingArea" to="." method="_on_tracing_area_mouse_entered"]
 [connection signal="mouse_exited" from="TracingArea" to="." method="_on_tracing_area_mouse_exited"]
 [connection signal="mouse_exited" from="TracingArea/StartingArea" to="." method="_on_starting_area_mouse_exited"]
@@ -112,3 +163,4 @@ shape = SubResource("RectangleShape2D_wcger")
 [connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_displace_area_2_mouse_entered"]
 [connection signal="mouse_entered" from="TracingArea/DisplaceArea2" to="." method="_on_shake_area_2_mouse_entered"]
 [connection signal="mouse_entered" from="TracingArea/WinArea" to="." method="_on_win_area_mouse_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
