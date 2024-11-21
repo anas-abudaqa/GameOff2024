@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3j3eic8m6fsx"]
+
+[ext_resource type="Texture2D" uid="uid://b7jujx8xu1wct" path="res://Art/Misc/Star.png" id="1_fq3c1"]
+[ext_resource type="Script" path="res://InteractableItems/star_entrance.gd" id="1_xyn6h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsec8"]
+size = Vector2(91, 50)
+
+[node name="StarEntrance" type="Node2D"]
+modulate = Color(0.501961, 0.501961, 0.501961, 1)
+script = ExtResource("1_xyn6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fq3c1")
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_jsec8")

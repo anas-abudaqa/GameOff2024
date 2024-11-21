@@ -100,8 +100,8 @@ shape = SubResource("RectangleShape2D_wcger")
 
 [node name="Sprite2D" type="Sprite2D" parent="TracingArea/WinArea"]
 
-[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
 [connection signal="timeout" from="ShakeScreenTimer" to="." method="_on_shake_screen_timer_timeout"]
 [connection signal="mouse_entered" from="TracingArea" to="." method="_on_tracing_area_mouse_entered"]
 [connection signal="mouse_exited" from="TracingArea" to="." method="_on_tracing_area_mouse_exited"]
