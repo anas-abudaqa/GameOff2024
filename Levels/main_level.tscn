@@ -57605,12 +57605,11 @@ sources/0 = SubResource("TileSetAtlasSource_cnj12")
 script = ExtResource("1_earby")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(-3, 0)
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_a4ua5")]
-position = Vector2(-275, -87)
+position = Vector2(316, 587)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 

@@ -23,6 +23,7 @@ AllKnowing="*res://AllKnowing.gd"
 [dialogic]
 
 directories/dch_directory={
+"Cat": "res://Dialogue/Cat/Cat.dch",
 "DrCorvus": "res://Dialogue/DrCorvus/DrCorvus.dch",
 "Ezekiel": "res://Dialogue/Ezekiel/Ezekiel.dch",
 "Player": "res://Dialogue/Player/Player.dch",
@@ -33,6 +34,7 @@ directories/dtl_directory={
 "Corvus_Chapter2": "res://Dialogue/DrCorvus/Corvus_Chapter2.dtl",
 "Corvus_Chapter3": "res://Dialogue/DrCorvus/Corvus_Chapter3.dtl",
 "Corvus_Chapter4": "res://Dialogue/DrCorvus/Corvus_Chapter4.dtl",
+"Corvus_Chapter5": "res://Dialogue/DrCorvus/Corvus_Chapter5.dtl",
 "Lab_Locked": "res://Dialogue/DrCorvus/Lab_Locked.dtl",
 "Notes_Consciousness": "res://Dialogue/DrCorvus/Notes_Consciousness.dtl",
 "Notes_Emotion": "res://Dialogue/DrCorvus/Notes_Emotion.dtl",
@@ -41,6 +43,7 @@ directories/dtl_directory={
 "Notes_MotorControl": "res://Dialogue/DrCorvus/Notes_MotorControl.dtl",
 "Notes_Perception": "res://Dialogue/DrCorvus/Notes_Perception.dtl",
 "ObtainedBrainJar": "res://Dialogue/Interactions/ObtainedBrainJar.dtl",
+"Obtained_LabKey": "res://Dialogue/DrCorvus/Obtained_LabKey.dtl",
 "TestTimeline": "res://Dialogue/TestTimeline.dtl",
 "Weird_Star": "res://Dialogue/Interactions/Weird_Star.dtl"
 }

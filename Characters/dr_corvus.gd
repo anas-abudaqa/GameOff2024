@@ -15,7 +15,7 @@ func interact():
 	
 	
 func start_dialogue_chapter(chapter: int):
-	print("this is our chapter: ", chapter)
+	#print("this is our chapter: ", chapter)
 	match(chapter):
 		1:
 			Dialogic.start("Corvus_Chapter1")

@@ -18,4 +18,5 @@ func prompt_door():
 	if !AllKnowing.has_lab_key:
 		Dialogic.start("Lab_Locked")
 	else: 
+		AllKnowing.player_spawn_location = global_position + Vector2(0, -70) 
 		get_tree().change_scene_to_file(SHED_INTERIOR_SCENE)

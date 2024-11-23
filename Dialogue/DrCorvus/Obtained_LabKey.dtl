@@ -1,0 +1,3 @@
+Success!
+You have obtained a mysterious looking key!
+set {CorvusQuest.current_chapter} = 5

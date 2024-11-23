@@ -1,4 +1,5 @@
 DrCorvus: ....
 Player: (I see something shiny in his pocket)
 - Reach into his pocket
+	[signal arg="Pickpocket"]
 - Do nothing

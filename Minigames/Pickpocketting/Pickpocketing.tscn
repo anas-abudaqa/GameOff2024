@@ -1,0 +1,244 @@
+[gd_scene load_steps=14 format=3 uid="uid://ybbi0ladnwaf"]
+
+[ext_resource type="Script" path="res://Minigames/Pickpocketting/Pickpocketing.gd" id="1_hye36"]
+[ext_resource type="Texture2D" uid="uid://ba8s4xa31l71i" path="res://Art/Abstract_background_pack/abstractbackground (23).png" id="2_icpo8"]
+[ext_resource type="Texture2D" uid="uid://dlnko40y6dlps" path="res://Art/Pickpocket/back17.png" id="3_6re4u"]
+[ext_resource type="Texture2D" uid="uid://ctrea8qoe5kcx" path="res://Art/Pixel UI pack 3/All.png" id="4_8m3af"]
+[ext_resource type="Texture2D" uid="uid://pdde68342nxt" path="res://Art/Pickpocket/—Pngtree—start button in pixel art_7949383.png" id="4_rwcvh"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="5_n0nsp"]
+[ext_resource type="Texture2D" uid="uid://dauaa1qewqu1e" path="res://Art/Pickpocket/—Pngtree—finish button in pixel art_8364588.png" id="6_ihj3k"]
+[ext_resource type="AudioStream" uid="uid://cgst7dbdy1jg1" path="res://Music/Pickpocket/PlayerImpact_error_006.ogg" id="8_74auf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bs8rb"]
+size = Vector2(2, 2.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rn2k"]
+atlas = ExtResource("4_8m3af")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="Curve2D" id="Curve2D_tpyqw"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 63.3333, 306.667, 0, 0, 0, 0, 91.6667, 338.333, 0, 0, 0, 0, 145, 371.667, 0, 0, 0, 0, 193.333, 400, 0, 0, 0, 0, 211.667, 406.667, 0, 0, 0, 0, 233.333, 401.667, 0, 0, 0, 0, 243.333, 391.667, 0, 0, 0, 0, 250, 378.333, 0, 0, 0, 0, 253.333, 360, 0, 0, 0, 0, 255, 340, 0, 0, 0, 0, 256.667, 316.667, 0, 0, 0, 0, 253.333, 300, 0, 0, 0, 0, 250, 285, 0, 0, 0, 0, 240, 260, 0, 0, 0, 0, 241.667, 241.667, 0, 0, 0, 0, 246.667, 233.333, 0, 0, 0, 0, 256.667, 225, 0, 0, 0, 0, 283.333, 216.667, 0, 0, 0, 0, 313.333, 213.333, 0, 0, 0, 0, 338.333, 220, 0, 0, 0, 0, 358.333, 226.667, 0, 0, 0, 0, 391.667, 240, 0, 0, 0, 0, 411.667, 250, 0, 0, 0, 0, 430, 265, 0, 0, 0, 0, 446.667, 283.333, 0, 0, 0, 0, 465, 310, 0, 0, 0, 0, 480, 331.667, 0, 0, 0, 0, 496.667, 371.667, 0, 0, 0, 0, 500, 420, 0, 0, 0, 0, 496.667, 476.667, 0, 0, 0, 0, 463.333, 526.667, 0, 0, 0, 0, 431.667, 555, 0, 0, 0, 0, 398.333, 578.333, 0, 0, 0, 0, 373.333, 590, 0, 0, 0, 0, 340, 608.333, 0, 0, 0, 0, 323.333, 626.667, 0, 0, 0, 0, 311.667, 648.333, 0, 0, 0, 0, 305, 670, 0, 0, 0, 0, 306.667, 688.333, 0, 0, 0, 0, 311.667, 706.667, 0, 0, 0, 0, 321.667, 720, 0, 0, 0, 0, 330, 730, 0, 0, 0, 0, 341.667, 738.333, 0, 0, 0, 0, 358.333, 746.667, 0, 0, 0, 0, 581.667, 745, 0, 0, 0, 0, 611.667, 736.667, 0, 0, 0, 0, 630, 731.667, 0, 0, 0, 0, 645, 726.667, 0, 0, 0, 0, 661.667, 718.333, 0, 0, 0, 0, 671.667, 710, 0, 0, 0, 0, 688.333, 695, 0, 0, 0, 0, 701.667, 678.333, 0, 0, 0, 0, 710, 663.333, 0, 0, 0, 0, 716.667, 651.667, 0, 0, 0, 0, 716.667, 648.333, 0, 0, 0, 0, 721.667, 630, 0, 0, 0, 0, 721.667, 478.333, 0, 0, 0, 0, 721.667, 233.333)
+}
+point_count = 58
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vk25h"]
+size = Vector2(35.7016, 33.0965)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcger"]
+size = Vector2(23.0001, 32.4998)
+
+[node name="Pickpocketing" type="Node2D"]
+script = ExtResource("1_hye36")
+
+[node name="BackgroundImage" type="Sprite2D" parent="."]
+modulate = Color(0.270588, 0.270588, 0.270588, 1)
+position = Vector2(239.353, 238.659)
+rotation = 1.5708
+scale = Vector2(0.284682, 0.496951)
+texture = ExtResource("2_icpo8")
+
+[node name="Player" type="Area2D" parent="."]
+z_index = 3
+position = Vector2(57, 148)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(0, -0.199997)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_6re4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_bs8rb")
+
+[node name="Lives" type="Node2D" parent="Player"]
+
+[node name="Lives1" type="Sprite2D" parent="Player/Lives"]
+modulate = Color(1, 1, 0.388235, 1)
+position = Vector2(0, -6)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_1rn2k")
+
+[node name="Lives2" type="Sprite2D" parent="Player/Lives"]
+modulate = Color(1, 1, 0.388235, 1)
+position = Vector2(-4, 6)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_1rn2k")
+
+[node name="Lives3" type="Sprite2D" parent="Player/Lives"]
+modulate = Color(1, 1, 0.388235, 1)
+position = Vector2(4, 6)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_1rn2k")
+
+[node name="Lives4" type="Sprite2D" parent="Player/Lives"]
+modulate = Color(1, 1, 0.388235, 1)
+position = Vector2(-7, -1)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_1rn2k")
+
+[node name="Lives5" type="Sprite2D" parent="Player/Lives"]
+modulate = Color(1, 1, 0.388235, 1)
+position = Vector2(7, -1)
+scale = Vector2(0.15, 0.15)
+texture = SubResource("AtlasTexture_1rn2k")
+
+[node name="StartingPosition" type="Marker2D" parent="."]
+position = Vector2(35, 181)
+
+[node name="DisplaceTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ShakeScreenTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="GameStartTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="TracingArea" type="Area2D" parent="."]
+scale = Vector2(0.6, 0.6)
+
+[node name="TraceLine" type="Line2D" parent="TracingArea"]
+z_index = 1
+position = Vector2(5, -11.6667)
+points = PackedVector2Array(58.3333, 320, 91.6667, 351.667, 128.333, 375, 165, 398.333, 206.667, 416.667, 228.333, 413.333, 241.667, 398.333, 248.333, 365, 251.667, 330, 246.667, 300, 236.667, 271.667, 236.667, 253.333, 251.667, 238.333, 278.333, 228.333, 310, 225, 356.667, 238.333, 403.333, 260, 440, 291.667, 475, 343.333, 491.667, 386.667, 495, 438.333, 490, 490, 460, 533.333, 425, 568.333, 398.333, 586.667, 366.667, 605, 335, 620, 311.667, 648.333, 298.333, 681.667, 308.333, 718.333, 328.333, 741.667, 353.333, 756.667, 575, 756.667, 608.333, 748.333, 638.333, 738.333, 663.333, 723.333, 685, 705, 701.667, 680, 713.333, 653.333, 716.667, 623.333, 716.667, 586.667, 716.667, 398.333, 716.667, 251.667)
+width = 15.0
+default_color = Color(0.333333, 0, 0.611765, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TracingArea"]
+polygon = PackedVector2Array(68.3333, 303.333, 101.667, 333.333, 173.333, 380, 213.333, 398.333, 230, 395, 240, 383.333, 246.667, 353.333, 250, 318.333, 245, 290, 235, 261.667, 235, 238.333, 253.333, 220, 283.333, 210, 315, 205, 365, 220, 411.667, 241.667, 451.667, 275, 486.667, 328.333, 505, 373.333, 508.333, 426.667, 503.333, 480, 470, 526.667, 436.667, 561.667, 405, 583.333, 381.667, 596.667, 351.667, 613.333, 345, 615, 323.333, 641.667, 311.667, 670, 320, 703.333, 338.333, 723.333, 360, 736.667, 578.333, 736.667, 611.667, 730, 640, 720, 683.333, 688.333, 700, 665, 711.667, 638.333, 713.333, 611.667, 713.333, 243.48, 710, 245, 710, 236.667, 703.333, 226.667, 741.667, 226.667, 733.333, 236.667, 733.333, 245, 730, 243.894, 730, 611.667, 728.333, 628.333, 726.667, 643.333, 713.333, 673.333, 696.667, 698.333, 671.667, 720, 646.667, 733.333, 615, 745, 578.333, 753.333, 356.667, 753.333, 328.333, 736.667, 306.667, 711.667, 295, 670, 311.667, 630, 335, 601.667, 370, 585, 421.667, 553.333, 458.333, 518.333, 488.333, 475, 491.667, 428.333, 490, 375, 471.667, 333.333, 438.333, 285, 403.333, 255, 361.667, 235, 315, 221.667, 286.667, 223.333, 260, 233.333, 248.333, 245, 248.333, 258.333, 258.333, 286.667, 263.333, 318.333, 260, 355, 253.333, 390, 236.667, 408.333, 210, 413.333, 163.333, 391.667, 91.6667, 346.667, 58.3333, 315, 50, 315, 41.6667, 311.667, 65, 288.333, 68.3333, 298.333)
+
+[node name="Path2D" type="Path2D" parent="TracingArea"]
+curve = SubResource("Curve2D_tpyqw")
+
+[node name="InfoLabel" type="RichTextLabel" parent="TracingArea/Path2D"]
+visible = false
+texture_filter = 2
+offset_left = -23.3333
+offset_top = 216.667
+offset_right = 44.6667
+offset_bottom = 235.667
+rotation = 0.000356609
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0.8, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_n0nsp")
+theme_override_font_sizes/normal_font_size = 10
+text = "Be careful!"
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TracingArea/Path2D"]
+position = Vector2(63.3333, 306.667)
+rotation = 0.840885
+loop = false
+
+[node name="Camera2D" type="Camera2D" parent="TracingArea/Path2D/PathFollow2D"]
+position = Vector2(-5.81837, 1.50323)
+rotation = -0.840897
+scale = Vector2(1.66667, 1.66667)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="ObstacleSpawnPositions" type="Node2D" parent="TracingArea/Path2D/PathFollow2D"]
+position = Vector2(-270.769, -157.288)
+rotation = -0.840885
+scale = Vector2(1.66667, 1.66667)
+
+[node name="Marker2D" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
+position = Vector2(35, 149)
+
+[node name="Marker2D2" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
+position = Vector2(5.72205e-06, 181)
+
+[node name="Marker2D3" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
+position = Vector2(35, 214)
+
+[node name="Marker2D4" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
+position = Vector2(73, 181)
+
+[node name="StartingArea" type="Area2D" parent="TracingArea"]
+z_index = 1
+position = Vector2(58.3334, 301.667)
+scale = Vector2(2.61426, 1.15421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/StartingArea"]
+position = Vector2(-2.563e-05, -0.000290632)
+shape = SubResource("RectangleShape2D_vk25h")
+
+[node name="Sprite2D" type="Sprite2D" parent="TracingArea/StartingArea"]
+modulate = Color(0.87451, 0.870588, 0.87451, 0.905882)
+z_index = 1
+position = Vector2(-2.61068e-05, -0.000280142)
+scale = Vector2(0.0114069, 0.0262926)
+texture = ExtResource("4_rwcvh")
+
+[node name="CountdownText" type="RichTextLabel" parent="TracingArea/StartingArea"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -5.10026
+offset_top = -41.876
+offset_right = 12.8997
+offset_bottom = -0.875965
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(1, 1, 0.572549, 1)
+theme_override_fonts/normal_font = ExtResource("5_n0nsp")
+theme_override_font_sizes/normal_font_size = 16
+text = "1"
+
+[node name="GraceArea" type="Area2D" parent="TracingArea"]
+
+[node name="BufferLine" type="Line2D" parent="TracingArea/GraceArea"]
+position = Vector2(5, -11.6667)
+points = PackedVector2Array(58.3333, 320, 91.6667, 351.667, 128.333, 375, 165, 398.333, 206.667, 416.667, 228.333, 413.333, 241.667, 398.333, 248.333, 365, 251.667, 330, 246.667, 300, 236.667, 271.667, 236.667, 253.333, 251.667, 238.333, 278.333, 228.333, 310, 225, 356.667, 238.333, 403.333, 260, 440, 291.667, 475, 343.333, 491.667, 386.667, 495, 438.333, 490, 490, 460, 533.333, 425, 568.333, 398.333, 586.667, 366.667, 605, 335, 620, 311.667, 648.333, 298.333, 681.667, 308.333, 718.333, 328.333, 741.667, 353.333, 756.667, 575, 756.667, 608.333, 748.333, 638.333, 738.333, 663.333, 723.333, 685, 705, 701.667, 680, 713.333, 653.333, 716.667, 623.333, 716.667, 586.667, 716.667, 398.333, 716.667, 251.667)
+width = 20.0
+default_color = Color(0.752941, 0.72549, 0, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TracingArea/GraceArea"]
+polygon = PackedVector2Array(60, 283.333, 71.6667, 301.667, 103.333, 331.667, 175, 378.333, 213.333, 395, 228.333, 391.667, 236.667, 381.667, 243.333, 351.667, 246.667, 320, 241.667, 291.667, 231.667, 261.667, 231.667, 236.667, 250, 218.333, 283.333, 206.667, 316.667, 203.333, 368.333, 218.333, 416.667, 241.667, 455, 275, 488.333, 325, 490, 328.333, 506.667, 373.333, 510, 426.667, 505, 481.667, 473.333, 528.333, 438.333, 563.333, 408.333, 585, 376.99, 602.516, 346.667, 616.667, 326.667, 641.667, 315, 670, 315, 673.333, 321.667, 698.333, 323.333, 701.667, 326.667, 706.667, 340, 721.667, 361.667, 735, 506.667, 735, 578.333, 735, 610, 726.667, 638.333, 716.667, 648.333, 711.667, 661.667, 703.333, 678.333, 690, 681.667, 686.667, 698.333, 663.333, 708.333, 638.333, 711.667, 611.667, 711.667, 348.333, 711.667, 238.333, 695, 210, 750, 210, 731.667, 238.333, 731.667, 611.667, 728.333, 645, 716.667, 673.333, 696.667, 701.667, 674.212, 720.277, 648.333, 736.667, 616.667, 746.667, 581.667, 755, 511.667, 755, 353.333, 755, 326.667, 738.333, 305, 713.333, 293.333, 671.667, 291.667, 668.333, 293.333, 666.667, 306.667, 631.667, 333.333, 600, 365, 585, 396.667, 566.667, 423.333, 548.333, 458.333, 513.333, 485, 475, 490, 426.667, 486.667, 376.667, 470, 335, 436.667, 286.667, 405, 258.333, 358.333, 236.667, 315, 223.333, 286.667, 226.667, 263.333, 235, 251.667, 246.667, 251.667, 258.333, 261.667, 285, 266.667, 318.333, 263.333, 353.333, 256.667, 391.667, 238.333, 411.667, 210, 415, 166.667, 396.667, 90, 348.333, 56.6667, 316.667, 36.6667, 300)
+
+[node name="WinArea" type="Area2D" parent="TracingArea"]
+position = Vector2(721.667, 223.333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TracingArea/WinArea"]
+position = Vector2(0.166626, 5.41675)
+shape = SubResource("RectangleShape2D_wcger")
+
+[node name="Sprite2D" type="Sprite2D" parent="TracingArea/WinArea"]
+modulate = Color(0.87451, 0.870588, 0.87451, 0.905882)
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("6_ihj3k")
+
+[node name="KeepOutArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KeepOutArea"]
+polygon = PackedVector2Array(36, 479, 482, 482, 480, 380, 440, 375, 437, 387, 430, 404, 418, 422, 406, 432, 390, 442, 370.807, 448.278, 350, 454, 212, 454, 195, 443, 182, 428, 174, 401, 184, 378, 200, 359, 218, 351, 238, 339, 254, 328, 272, 310, 284, 294, 290, 284, 293, 256, 291, 226, 281, 201, 262, 173, 242, 156, 214, 143, 189, 136, 172, 137, 159, 142, 152, 148, 152, 155, 157, 170, 161, 192, 155, 235, 144, 248, 125, 250, 95, 236, 53, 210, 32, 186, 43, 179, 62, 198, 106, 226, 128, 236, 137, 234, 142, 228, 148, 193, 144, 175, 138, 157, 138, 141, 150, 130, 169, 123, 191, 121, 222, 130, 251, 145, 274, 165, 295, 197, 305, 223, 307, 258, 304, 289, 284, 319, 263, 339, 247, 351, 227, 362, 209, 370, 197, 385, 190, 402, 194, 420, 199, 426, 204, 432, 217, 440, 346, 440, 365, 436, 383, 430, 397, 422, 408, 412, 418, 398, 425, 383, 426, 274, 426, 143, 441, 143, 440, 375, 480, 380, 480, 142, 480, 0, 0, 0, 2, 479)
+
+[node name="HitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_74auf")
+
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shake_timer_timeout"]
+[connection signal="timeout" from="DisplaceTimer" to="." method="_on_shakeimer_timeout"]
+[connection signal="timeout" from="ShakeScreenTimer" to="." method="_on_shake_screen_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="timeout" from="GameStartTimer" to="." method="_on_game_start_timer_timeout"]
+[connection signal="mouse_entered" from="TracingArea" to="." method="_on_tracing_area_mouse_entered"]
+[connection signal="mouse_exited" from="TracingArea" to="." method="_on_tracing_area_mouse_exited"]
+[connection signal="input_event" from="TracingArea/StartingArea" to="." method="_on_starting_area_input_event"]
+[connection signal="mouse_exited" from="TracingArea/GraceArea" to="." method="_on_grace_area_mouse_exited"]
+[connection signal="mouse_entered" from="TracingArea/WinArea" to="." method="_on_win_area_mouse_entered"]

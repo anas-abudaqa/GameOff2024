@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bbnnkkl26yaof"
+path="res://.godot/imported/Counting Apples.ttf-6e592d7c9c35422a6c1838b50bf5f9c5.fontdata"
+
+[deps]
+
+source_file="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Counting Apples.ttf"
+dest_files=["res://.godot/imported/Counting Apples.ttf-6e592d7c9c35422a6c1838b50bf5f9c5.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}
