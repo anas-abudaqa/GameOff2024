@@ -172,7 +172,7 @@ func game_won():
 		#background_image.skew -= lerp(0, -2, 0.2*delta)
 
 
-func _on_starting_area_input_event(viewport, event, shape_idx):
+func _on_starting_area_input_event(_viewport, event, _shape_idx):
 	if event.is_action_pressed("LMB"):
 		reset()
 

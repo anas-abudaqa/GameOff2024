@@ -13,9 +13,6 @@ func _ready():
 		player_node.global_position = AllKnowing.player_spawn_location
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_dialogic_signal(minigame: String):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dqvregjwuy0dy"]
+[gd_scene load_steps=35 format=3 uid="uid://dqvregjwuy0dy"]
 
 [ext_resource type="Script" path="res://Minigames/HeartPiecer/heart_piecer.gd" id="1_rgnox"]
 [ext_resource type="Texture2D" uid="uid://b5mrayrqt4sgt" path="res://Art/Abstract_background_pack/abstractbackground (43).png" id="2_1x75s"]
@@ -6,7 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://c6g1jrpq5jx88" path="res://Art/HeartPiecer/Heart1_background-modified(1).png" id="3_dco2n"]
 [ext_resource type="Texture2D" uid="uid://dyu71p8y2t7ws" path="res://Art/HeartPiecer/Heart1_background-modified(2).png" id="4_6m4fp"]
 [ext_resource type="Texture2D" uid="uid://c8r27xj1pe04v" path="res://Art/HeartPiecer/Heart1_background-modified(3).png" id="5_xaa0l"]
+[ext_resource type="Texture2D" uid="uid://d07v11xoyf5th" path="res://Art/HeartPiecer/Heart_Animation_Blue.png" id="7_fxxed"]
 [ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="7_grft2"]
+[ext_resource type="Texture2D" uid="uid://cqv57hehbp1i4" path="res://Art/HeartPiecer/Heart2/Heart2_Background-modified.png" id="7_m6elp"]
+[ext_resource type="Texture2D" uid="uid://ce65uelejljlf" path="res://Art/HeartPiecer/Heart2/Heart2_Background-modified(1).png" id="8_wyujg"]
+[ext_resource type="Texture2D" uid="uid://brgef4ea7ff11" path="res://Art/HeartPiecer/Heart2/Heart2_Background-modified(2).png" id="9_6oj2y"]
+[ext_resource type="Texture2D" uid="uid://bnxyfdk7yd7fp" path="res://Art/HeartPiecer/Heart2/Heart2_Background-modified(4).png" id="10_k0uun"]
+[ext_resource type="Texture2D" uid="uid://b6w4qvegowl4m" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified.png" id="11_y6oru"]
+[ext_resource type="Texture2D" uid="uid://bhedik8esvl24" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(1).png" id="12_7lpl7"]
+[ext_resource type="Texture2D" uid="uid://c78essm5l81p3" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(2).png" id="13_622ko"]
+[ext_resource type="Texture2D" uid="uid://gtk0ny8hhq76" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(3).png" id="14_jqhst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7qk"]
 size = Vector2(10, 240)
@@ -16,9 +25,106 @@ size = Vector2(10, 240)
 [sub_resource type="CircleShape2D" id="CircleShape2D_648a4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w5b3q"]
-radius = 157.579
+radius = 165.019
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gah5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfc4g"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_suppd"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6m05"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8iak"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p6t3"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upxxj"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uqp3"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c3cc"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1tf30"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hpkn"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xughy"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uye0y"]
+atlas = ExtResource("7_fxxed")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8251"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfc4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_suppd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6m05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8iak")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p6t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upxxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uqp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c3cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1tf30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hpkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xughy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uye0y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="HeartPiecer" type="Node2D"]
 script = ExtResource("1_rgnox")
@@ -32,7 +138,7 @@ texture = ExtResource("2_1x75s")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="RoundTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 2.0
 one_shot = true
 
 [node name="RoundTransitionTimer" type="Timer" parent="."]
@@ -55,8 +161,10 @@ points = PackedVector2Array(0, -239, 0, 0)
 default_color = Color(1, 1, 0, 0.678431)
 
 [node name="Round1ImagePieces" type="Node2D" parent="."]
+visible = false
 
 [node name="ImagePiece1" type="Area2D" parent="Round1ImagePieces"]
+rotation = 1.39626
 
 [node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece1"]
 scale = Vector2(6.5, 6.5)
@@ -76,6 +184,7 @@ shape = SubResource("CircleShape2D_pcr8m")
 
 [node name="ImagePiece2" type="Area2D" parent="Round1ImagePieces"]
 modulate = Color(1, 1, 0, 1)
+rotation = 4.18879
 
 [node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece2"]
 scale = Vector2(6.5, 6.5)
@@ -95,6 +204,7 @@ shape = SubResource("CircleShape2D_648a4")
 
 [node name="ImagePiece3" type="Area2D" parent="Round1ImagePieces"]
 modulate = Color(1, 0, 0, 1)
+rotation = 2.79253
 
 [node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece3"]
 scale = Vector2(6.5, 6.5)
@@ -114,6 +224,7 @@ shape = SubResource("CircleShape2D_648a4")
 
 [node name="ImagePieceLast" type="Area2D" parent="Round1ImagePieces"]
 modulate = Color(0, 1, 0, 1)
+rotation = 2.0944
 
 [node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePieceLast"]
 scale = Vector2(6.5, 6.5)
@@ -132,8 +243,176 @@ collision_mask = 0
 shape = SubResource("CircleShape2D_gah5d")
 
 [node name="Round2ImagePieces" type="Node2D" parent="."]
+visible = false
+
+[node name="ImagePieceR21" type="Area2D" parent="Round2ImagePieces"]
+rotation = 1.39626
+
+[node name="Sprite2D" type="Sprite2D" parent="Round2ImagePieces/ImagePieceR21"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("7_m6elp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round2ImagePieces/ImagePieceR21"]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(3.9544, -202.388, 0, -248.75, 49.3508, -243.885, 126.54, -214.174, 205.475, -148.393, 240.594, -61.7219, 244.32, 6.82455, 229.051, 93.2716, 178.304, 173.669, 100.538, 228.364, -16.6122, 248.773, -110.302, 223.549, -190.822, 165.514, -238.977, 81.4198, -248.361, -4.82695, -229.799, -99.4768, -173.471, -179.539, -94.9575, -228.029, -41.25, -246.25, -1.25, -247.5, -3.43165, -203.69, -81.342, -179.35, -113.75, -165, -132.242, -142.63, -161.057, -115.979, -181.47, -64.9994, -188.273, -40.8133, -196.813, -6.77919, -188.118, 30.2938, -182.103, 68.1637, -159.722, 113.996, -123.511, 153.383, -78.1064, 176.62, -45.1575, 191.315, 3.3573, 189.715, 48.75, 190, 86.25, 175, 116.25, 158.75, 144.043, 133.288, 189.364, 77.815, 206.732, 0.912556, 195.21, -63.314, 173.48, -112.84, 110.33, -172.208, 81.508, -188.713, 41.6816, -193.197)
+
+[node name="AlignmentPiece" type="Area2D" parent="Round2ImagePieces/ImagePieceR21"]
+position = Vector2(0, -206)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round2ImagePieces/ImagePieceR21/AlignmentPiece"]
+shape = SubResource("CircleShape2D_pcr8m")
+
+[node name="ImagePieceR22" type="Area2D" parent="Round2ImagePieces"]
+modulate = Color(1, 1, 0, 1)
+rotation = 4.18879
+
+[node name="Sprite2D" type="Sprite2D" parent="Round2ImagePieces/ImagePieceR22"]
+position = Vector2(-7, 1)
+scale = Vector2(6.62871, 6.54968)
+texture = ExtResource("8_wyujg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round2ImagePieces/ImagePieceR22"]
+scale = Vector2(0.9, 0.9)
+polygon = PackedVector2Array(-1.11111, -173.333, -33.6531, -163.932, -92.2222, -147.778, -117.778, -130, -142.222, -106.667, -161.111, -76.6667, -175.556, -42.2222, -177.778, 0, -175.556, 38.8889, -162.222, 70, -146.667, 97.7778, -121.111, 130, -97.7778, 143.333, -66.6667, 162.222, -41.1111, 171.111, 1.11111, 171.111, 42.2222, 168.889, 101.111, 141.111, 123.333, 115.556, 157.778, 66.6667, 168.889, 0, 165.556, -41.1111, 146.667, -91.1111, 95.5556, -142.222, 43.3333, -161.111, 2.22222, -172.222, 1, -147, 5.55556, -127.778, 47.7778, -117.778, 72.2222, -104.444, 100, -81.1111, 114.444, -52.2222, 125.556, -21.1111, 124.444, 14.4444, 122.222, 45.5556, 105.556, 67.7778, 92.2222, 86.6667, 58.8889, 112.222, 1.11111, 127.778, -60, 111.111, -100, 74.4445, -118.889, 45.5555, -122.222, 11.1111, -124.444, -15.5556, -118.889, -42.2222, -102.222, -72.2222, -83.3333, -91.1111, -63.3333, -105.556, -33.3333, -124.444, 0, -126.667)
+
+[node name="AlignmentPiece2" type="Area2D" parent="Round2ImagePieces/ImagePieceR22"]
+position = Vector2(0, -151)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round2ImagePieces/ImagePieceR22/AlignmentPiece2"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePieceR23" type="Area2D" parent="Round2ImagePieces"]
+modulate = Color(1, 0, 0, 1)
+rotation = 2.79253
+
+[node name="Sprite2D" type="Sprite2D" parent="Round2ImagePieces/ImagePieceR23"]
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("9_6oj2y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round2ImagePieces/ImagePieceR23"]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-1.66667, -188.333, -15, -186.667, -51.6667, -181.667, -73.3333, -168.333, -116.667, -140, -151.667, -105, -175, -63.3333, -183.333, -21.6667, -180, 26.6667, -176.667, 65, -158.333, 93.3333, -148.333, 108.333, -138.333, 118.333, -118.333, 136.667, -88.3333, 165, -61.6667, 171.667, 1.66667, 188.333, 33.3333, 180, 86.6667, 166.667, 135, 128.333, 145, 113.333, 181.667, 63.3333, 185, 15, 185, -28.3333, 181.667, -38.3333, 173.333, -66.6667, 163.333, -95, 148.333, -118.333, 106.667, -155, 71.6667, -175, 31.6667, -185, 1.66667, -186.667, 1, -147, 4.99998, -138.333, 46.6666, -128.333, 76.6666, -110, 123.333, -60, 136.667, -3.33336, 123.333, 65, 75, 118.333, 1.66669, 136.667, -66.6666, 121.667, -115, 76.6667, -135, 15, -130, -53.3333, -95, -96.6666, -50, -128.333, -2.38956e-05, -136.667)
+
+[node name="AlignmentPiece3" type="Area2D" parent="Round2ImagePieces/ImagePieceR23"]
+position = Vector2(-1, -98)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round2ImagePieces/ImagePieceR23/AlignmentPiece3"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePieceR2Last" type="Area2D" parent="Round2ImagePieces"]
+modulate = Color(0, 1, 0, 1)
+rotation = 2.0944
+
+[node name="Sprite2D" type="Sprite2D" parent="Round2ImagePieces/ImagePieceR2Last"]
+scale = Vector2(6.2, 6.2)
+texture = ExtResource("10_k0uun")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round2ImagePieces/ImagePieceR2Last"]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_w5b3q")
+
+[node name="AlignmentPieceLast" type="Area2D" parent="Round2ImagePieces/ImagePieceR2Last"]
+position = Vector2(-1, -50)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round2ImagePieces/ImagePieceR2Last/AlignmentPieceLast"]
+shape = SubResource("CircleShape2D_gah5d")
 
 [node name="Round3ImagePieces" type="Node2D" parent="."]
+visible = false
+
+[node name="ImagePieceR31" type="Area2D" parent="Round3ImagePieces"]
+rotation = 1.39626
+
+[node name="Sprite2D" type="Sprite2D" parent="Round3ImagePieces/ImagePieceR31"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("11_y6oru")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round3ImagePieces/ImagePieceR31"]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(2.5, -176.25, 0, -248.75, 49.3508, -243.885, 126.54, -214.174, 205.475, -148.393, 240.594, -61.7219, 244.32, 6.82455, 229.051, 93.2716, 178.304, 173.669, 100.538, 228.364, -16.6122, 248.773, -110.302, 223.549, -190.822, 165.514, -238.977, 81.4198, -248.361, -4.82695, -229.799, -99.4768, -173.471, -179.539, -94.9575, -228.029, -41.25, -246.25, -1.25, -247.5, 1.25, -177.5, -75, -163.75, -111.25, -143.75, -130, -120, -145, -90, -157.5, -56.25, -167.5, -22.5, -171.25, 2.5, -170, 30, -168.75, 60, -146.25, 102.5, -112.5, 138.75, -62.5, 166.25, -22.5, 173.75, 45, 176.25, 83.75, 156.25, 115, 135, 133.75, 116.25, 163.75, 66.25, 166.25, 1.25, 166.25, -55, 150, -93.75, 112.5, -142.5, 71.25, -160, 45, -173.75)
+
+[node name="AlignmentPiece" type="Area2D" parent="Round3ImagePieces/ImagePieceR31"]
+position = Vector2(0, -206)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round3ImagePieces/ImagePieceR31/AlignmentPiece"]
+shape = SubResource("CircleShape2D_pcr8m")
+
+[node name="ImagePieceR32" type="Area2D" parent="Round3ImagePieces"]
+modulate = Color(1, 1, 0, 1)
+rotation = 4.18879
+
+[node name="Sprite2D" type="Sprite2D" parent="Round3ImagePieces/ImagePieceR32"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("12_7lpl7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round3ImagePieces/ImagePieceR32"]
+scale = Vector2(0.9, 0.9)
+polygon = PackedVector2Array(-27.7778, -153.333, -81.1111, -136.667, -118.889, -101.111, -138.889, -45.5556, -147.778, -11.1111, -147.778, 52.2222, -130, 82.2222, -102.222, 115.556, -38.8889, 151.111, 35.5556, 153.333, 85.5556, 130, 113.333, 104.444, 143.333, 53.3333, 144.444, -41.1111, 131.111, -80, 95.5556, -126.667, 38.8889, -151.111, 3.33333, -154.444, 1, -147, 2.22222, -116.667, 22.2222, -115.556, 64.4445, -98.8889, 94.4445, -74.4445, 102.222, -68.8889, 110, -44.4444, 114.444, -18.8889, 115.556, 1.11111, 110, 45.5556, 100, 64.4445, 84.4445, 76.6667, 58.8889, 102.222, 33.3333, 114.444, 4.44444, 115.556, -31.1111, 114.444, -64.4445, 94.4445, -97.7778, 66.6667, -111.111, 38.8889, -117.778, 13.3333, -114.444, -14.4444, -107.778, -45.5556, -95.5556, -68.8889, -76.6667, -85.5556, -58.8889, -96.6667, -32.2222, -113.333, 0, -115.556, 1.11111, -154.444)
+
+[node name="AlignmentPiece2" type="Area2D" parent="Round3ImagePieces/ImagePieceR32"]
+position = Vector2(0, -151)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round3ImagePieces/ImagePieceR32/AlignmentPiece2"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePieceR33" type="Area2D" parent="Round3ImagePieces"]
+modulate = Color(1, 0, 0, 1)
+rotation = 2.79253
+
+[node name="Sprite2D" type="Sprite2D" parent="Round3ImagePieces/ImagePieceR33"]
+scale = Vector2(6.4, 6.4)
+texture = ExtResource("13_622ko")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round3ImagePieces/ImagePieceR33"]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-1.66667, -165, -43.3333, -166.667, -73.3333, -148.333, -130.632, -107.406, -143.333, -98.3333, -161.667, -56.6667, -171.667, -6.66667, -166.667, 53.3333, -148.333, 90, -123.333, 118.333, -88.3333, 146.667, -43.3333, 168.333, 1.66667, 168.333, 51.6667, 168.333, 91.6667, 141.667, 158.333, 75, 170, -1.66667, 165, -51.6667, 148.333, -101.667, 81.6667, -150, 33.3333, -170, 1.66667, -170, 1, -147, 0, -113.333, 46.6667, -105, 103.333, -53.3333, 113.333, -1.66667, 105, 51.6667, 58.3333, 100, 0, 115, -58.3333, 98.3333, -98.3333, 56.6667, -113.333, 10, -103.333, -51.6667, -78.3333, -83.3333, -31.6667, -110, -1.66667, -113.333)
+
+[node name="AlignmentPiece3" type="Area2D" parent="Round3ImagePieces/ImagePieceR33"]
+position = Vector2(-1, -98)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round3ImagePieces/ImagePieceR33/AlignmentPiece3"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePieceR3Last" type="Area2D" parent="Round3ImagePieces"]
+modulate = Color(0, 1, 0, 1)
+rotation = 2.0944
+
+[node name="Sprite2D" type="Sprite2D" parent="Round3ImagePieces/ImagePieceR3Last"]
+scale = Vector2(5.5, 5.5)
+texture = ExtResource("14_jqhst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round3ImagePieces/ImagePieceR3Last"]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_w5b3q")
+
+[node name="AlignmentPieceLast" type="Area2D" parent="Round3ImagePieces/ImagePieceR3Last"]
+position = Vector2(-1, -50)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round3ImagePieces/ImagePieceR3Last/AlignmentPieceLast"]
+shape = SubResource("CircleShape2D_gah5d")
+
+[node name="HeartbeatAnimation" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(6.5, 6.5)
+sprite_frames = SubResource("SpriteFrames_g8251")
+animation = &"Idle"
+frame_progress = 0.19257
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -165,3 +444,11 @@ text = " Round:
 [connection signal="input_event" from="Round1ImagePieces/ImagePiece2" to="." method="_on_image_piece_2_input_event"]
 [connection signal="input_event" from="Round1ImagePieces/ImagePiece3" to="." method="_on_image_piece_3_input_event"]
 [connection signal="input_event" from="Round1ImagePieces/ImagePieceLast" to="." method="_on_image_piece_last_input_event"]
+[connection signal="input_event" from="Round2ImagePieces/ImagePieceR21" to="." method="_on_image_piece_r_21_input_event"]
+[connection signal="input_event" from="Round2ImagePieces/ImagePieceR22" to="." method="_on_image_piece_r_22_input_event"]
+[connection signal="input_event" from="Round2ImagePieces/ImagePieceR23" to="." method="_on_image_piece_r_23_input_event"]
+[connection signal="input_event" from="Round2ImagePieces/ImagePieceR2Last" to="." method="_on_image_piece_r_2_last_input_event"]
+[connection signal="input_event" from="Round3ImagePieces/ImagePieceR31" to="." method="_on_image_piece_r_31_input_event"]
+[connection signal="input_event" from="Round3ImagePieces/ImagePieceR32" to="." method="_on_image_piece_r_32_input_event"]
+[connection signal="input_event" from="Round3ImagePieces/ImagePieceR33" to="." method="_on_image_piece_r_33_input_event"]
+[connection signal="input_event" from="Round3ImagePieces/ImagePieceR3Last" to="." method="_on_image_piece_r_3_last_input_event"]

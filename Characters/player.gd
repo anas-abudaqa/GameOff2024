@@ -7,7 +7,7 @@ const SPEED = 100.0
 
 var direction_vector = Vector2.ZERO
 
-func _physics_process(delta):
+func _physics_process(_delta):
 
 	if Input.is_action_just_pressed("Interact"):
 		print("Checking for interactables")

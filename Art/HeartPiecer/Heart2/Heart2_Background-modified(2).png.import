@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://07bmkno1cry2"
-path="res://.godot/imported/Heart1-modified(2).png-215e8323ba606d4cfe043ef3e77fcf42.ctex"
+uid="uid://brgef4ea7ff11"
+path="res://.godot/imported/Heart2_Background-modified(2).png-34c0151b879086fcca8c5083d5241dea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/HeartPiecer/Old/Heart1-modified(2).png"
-dest_files=["res://.godot/imported/Heart1-modified(2).png-215e8323ba606d4cfe043ef3e77fcf42.ctex"]
+source_file="res://Art/HeartPiecer/Heart2/Heart2_Background-modified(2).png"
+dest_files=["res://.godot/imported/Heart2_Background-modified(2).png-34c0151b879086fcca8c5083d5241dea.ctex"]
 
 [params]
 
