@@ -1,0 +1,167 @@
+[gd_scene load_steps=13 format=3 uid="uid://dqvregjwuy0dy"]
+
+[ext_resource type="Script" path="res://Minigames/HeartPiecer/heart_piecer.gd" id="1_rgnox"]
+[ext_resource type="Texture2D" uid="uid://b5mrayrqt4sgt" path="res://Art/Abstract_background_pack/abstractbackground (43).png" id="2_1x75s"]
+[ext_resource type="Texture2D" uid="uid://fa1clcoq86uo" path="res://Art/HeartPiecer/Heart1_background-modified.png" id="2_cw23q"]
+[ext_resource type="Texture2D" uid="uid://c6g1jrpq5jx88" path="res://Art/HeartPiecer/Heart1_background-modified(1).png" id="3_dco2n"]
+[ext_resource type="Texture2D" uid="uid://dyu71p8y2t7ws" path="res://Art/HeartPiecer/Heart1_background-modified(2).png" id="4_6m4fp"]
+[ext_resource type="Texture2D" uid="uid://c8r27xj1pe04v" path="res://Art/HeartPiecer/Heart1_background-modified(3).png" id="5_xaa0l"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="7_grft2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7qk"]
+size = Vector2(10, 240)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pcr8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_648a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w5b3q"]
+radius = 157.579
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gah5d"]
+
+[node name="HeartPiecer" type="Node2D"]
+script = ExtResource("1_rgnox")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.0941176, 0.247059, 1, 1)
+position = Vector2(-0.5, -0.499986)
+scale = Vector2(0.248438, 0.44537)
+texture = ExtResource("2_1x75s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RoundTimer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+
+[node name="RoundTransitionTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AlignmentArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AlignmentArea"]
+position = Vector2(0.5, -121)
+shape = SubResource("RectangleShape2D_jk7qk")
+
+[node name="Line2D" type="Line2D" parent="AlignmentArea"]
+visible = false
+position = Vector2(0, -0.0772128)
+scale = Vector2(1, 1.00772)
+points = PackedVector2Array(0, -239, 0, 0)
+default_color = Color(1, 1, 0, 0.678431)
+
+[node name="Round1ImagePieces" type="Node2D" parent="."]
+
+[node name="ImagePiece1" type="Area2D" parent="Round1ImagePieces"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece1"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("2_cw23q")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round1ImagePieces/ImagePiece1"]
+scale = Vector2(0.8, 0.8)
+polygon = PackedVector2Array(2.10258, -193.642, 0, -248.75, 49.3508, -243.885, 126.54, -214.174, 205.475, -148.393, 240.594, -61.7219, 244.32, 6.82455, 229.051, 93.2716, 178.304, 173.669, 100.538, 228.364, -16.6122, 248.773, -110.302, 223.549, -190.822, 165.514, -238.977, 81.4198, -248.361, -4.82695, -229.799, -99.4768, -173.471, -179.539, -94.9575, -228.029, -41.25, -246.25, -1.25, -247.5, 0.39505, -193.184, -85.2716, -174.805, -146.587, -123.603, -176.25, -88.75, -178, -55, -192.102, 0.22995, -176.758, 71.1538, -130.389, 138.34, -78.3045, 175.627, 0.687477, 193.809, 77.9839, 174.928, 142.212, 131.181, 180.962, 64.0641, 193.184, 0.39505, 185.953, -47.0809, 162.027, -105.639, 103.035, -158.462, 45.9511, -187.09)
+
+[node name="AlignmentPiece" type="Area2D" parent="Round1ImagePieces/ImagePiece1"]
+position = Vector2(0, -206)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round1ImagePieces/ImagePiece1/AlignmentPiece"]
+shape = SubResource("CircleShape2D_pcr8m")
+
+[node name="ImagePiece2" type="Area2D" parent="Round1ImagePieces"]
+modulate = Color(1, 1, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece2"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("3_dco2n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round1ImagePieces/ImagePiece2"]
+scale = Vector2(0.9, 0.9)
+polygon = PackedVector2Array(-2.22222, -164.444, -33.6531, -163.932, -75.5555, -146.667, -102.656, -129.357, -128.889, -102.222, -150, -76.6667, -159.775, -32.8931, -165.556, 0, -164.696, 18.5597, -156.615, 57.0034, -146.451, 81.6818, -128.313, 102.276, -107.778, 126.667, -94.2226, 140.712, -48.8889, 158.889, -28.9048, 164.235, 0, 165.556, 56.9074, 153.103, 83.39, 144.647, 105.556, 126.667, 129.039, 104.383, 145.737, 72.2926, 160.347, 40.9619, 163.333, 21.1111, 165.836, -15.4273, 161.111, -44.4444, 142.222, -88.8889, 94.4445, -136.667, 43.3333, -161.111, 2.22222, -162.222, 1, -147, 5.55556, -127.778, 72.2222, -104.444, 114.444, -52.2222, 124.444, 14.4444, 105.556, 67.7778, 58.8889, 112.222, 1.11111, 127.778, -60, 111.111, -100, 74.4445, -122.222, 11.1111, -118.889, -42.2222, -83.3333, -91.1111, -35.5556, -122.222, 0, -126.667)
+
+[node name="AlignmentPiece2" type="Area2D" parent="Round1ImagePieces/ImagePiece2"]
+position = Vector2(0, -151)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round1ImagePieces/ImagePiece2/AlignmentPiece2"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePiece3" type="Area2D" parent="Round1ImagePieces"]
+modulate = Color(1, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePiece3"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("4_6m4fp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Round1ImagePieces/ImagePiece3"]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-8.10576, -175.96, -83, -156, -140, -110, -174, -32, -177, 22, -152, 85, -115, 132, -55, 170, 0, 183, 34.1464, 177.523, 63, 165, 118.668, 137.795, 167.551, 69.7927, 178, 24, 181.184, -20.4861, 159.102, -73.959, 152.169, -96.8974, 80.7297, -163.161, 40.0321, -169.338, 1.00108, -178.401, 1, -147, 1, -117, 65, -93.3333, 108, -45, 118, 14, 99, 63, 59, 102, -2.59188, 117.823, -51, 104, -96, 66, -115, 11, -107, -44, -73.3333, -86.6667, -25, -112, 1, -117)
+
+[node name="AlignmentPiece3" type="Area2D" parent="Round1ImagePieces/ImagePiece3"]
+position = Vector2(-1, -98)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round1ImagePieces/ImagePiece3/AlignmentPiece3"]
+shape = SubResource("CircleShape2D_648a4")
+
+[node name="ImagePieceLast" type="Area2D" parent="Round1ImagePieces"]
+modulate = Color(0, 1, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Round1ImagePieces/ImagePieceLast"]
+scale = Vector2(6.5, 6.5)
+texture = ExtResource("5_xaa0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round1ImagePieces/ImagePieceLast"]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CircleShape2D_w5b3q")
+
+[node name="AlignmentPieceLast" type="Area2D" parent="Round1ImagePieces/ImagePieceLast"]
+position = Vector2(-1, -50)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Round1ImagePieces/ImagePieceLast/AlignmentPieceLast"]
+shape = SubResource("CircleShape2D_gah5d")
+
+[node name="Round2ImagePieces" type="Node2D" parent="."]
+
+[node name="Round3ImagePieces" type="Node2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -240.0
+offset_top = -240.0
+offset_right = -92.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 155.0
+offset_bottom = 52.0
+theme_override_fonts/normal_font = ExtResource("7_grft2")
+text = " Round: 
+ Time Left: "
+
+[connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
+[connection signal="timeout" from="RoundTransitionTimer" to="." method="_on_round_transition_timer_timeout"]
+[connection signal="area_entered" from="AlignmentArea" to="." method="_on_alignment_area_area_entered"]
+[connection signal="area_exited" from="AlignmentArea" to="." method="_on_alignment_area_area_exited"]
+[connection signal="input_event" from="Round1ImagePieces/ImagePiece1" to="." method="_on_image_piece_1_input_event"]
+[connection signal="input_event" from="Round1ImagePieces/ImagePiece2" to="." method="_on_image_piece_2_input_event"]
+[connection signal="input_event" from="Round1ImagePieces/ImagePiece3" to="." method="_on_image_piece_3_input_event"]
+[connection signal="input_event" from="Round1ImagePieces/ImagePieceLast" to="." method="_on_image_piece_last_input_event"]

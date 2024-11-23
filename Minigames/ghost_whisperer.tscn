@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://cso7m76l0cgn"]
+[gd_scene load_steps=4 format=3 uid="uid://cso7m76l0cgn"]
 
-[ext_resource type="Texture2D" uid="uid://3ckmq1pewc8s" path="res://Art/Key Items 16x16/16.png" id="1_fnvnq"]
 [ext_resource type="Script" path="res://Minigames/ghost_whisperer.gd" id="1_r34mk"]
 [ext_resource type="AudioStream" uid="uid://c1f0n58bdeunk" path="res://Music/Fireball.wav" id="3_j3fx2"]
 
@@ -11,7 +10,6 @@ script = ExtResource("1_r34mk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(2, 2)
-texture = ExtResource("1_fnvnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_kerhc")

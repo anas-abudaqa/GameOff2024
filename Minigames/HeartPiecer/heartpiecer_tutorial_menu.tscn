@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8jmv5dquubal"]
+[gd_scene load_steps=9 format=3 uid="uid://cg7ccbk18lwoo"]
 
-[ext_resource type="Script" path="res://Minigames/Pickpocketting/pickpocketing_tutorial_menu.gd" id="1_ge2we"]
+[ext_resource type="Script" path="res://Minigames/HeartPiecer/heartpiecer_tutorial_menu.gd" id="1_pqpxu"]
 [ext_resource type="Texture2D" uid="uid://dto1g6epo0x6t" path="res://Art/Abstract_background_pack/abstractbackground (19).png" id="2_h5xff"]
 [ext_resource type="Texture2D" uid="uid://fmw7clqmty20" path="res://Art/Pixel UI pack 3/02.png" id="3_a8dsh"]
 [ext_resource type="Texture2D" uid="uid://b14ke7qanosni" path="res://Art/Abstract_background_pack/abstractbackground (15).png" id="4_bp1d4"]
@@ -14,19 +14,19 @@ modulate_color = Color(0.286275, 0.286275, 0.286275, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl4xv"]
 texture = ExtResource("6_2j1mg")
-modulate_color = Color(0.607843, 0, 0.282353, 1)
+modulate_color = Color(0, 0.168627, 0.956863, 1)
 
-[node name="PickPocketTutorialMenu" type="Control"]
+[node name="HeartPiecerTutorialMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ge2we")
+script = ExtResource("1_pqpxu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0.14902, 0.698039, 1)
+modulate = Color(0.772549, 0.14902, 0.478431, 1)
 z_index = -2
 position = Vector2(238, 237.5)
 scale = Vector2(0.273958, 0.469444)
@@ -45,7 +45,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_31p6a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
-modulate = Color(0.607843, 0, 0.584314, 1)
+modulate = Color(0.152941, 0.317647, 0.776471, 1)
 z_index = -1
 position = Vector2(119.5, 120.5)
 scale = Vector2(0.124479, 0.221296)
@@ -68,11 +68,14 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 0.682353, 1)
 theme_override_fonts/normal_font = ExtResource("5_paew2")
 theme_override_font_sizes/normal_font_size = 12
-text = "Move the cursor safely through the path. Click on start area to begin
+text = "Orient the layers of the photo correctly with respect to the top center of the window.
 
-Avoid obstacles and stay within the purple zone. The yellow zone acts as a buffer. 
+If the timer runs out before you finish a round, you restart the round 
 
-You have 5 tries before failing"
+LMB: Rotates clockwise
+RMB: Rotates anti-clockwise
+
+"
 
 [node name="StartButton" type="Button" parent="Panel"]
 custom_minimum_size = Vector2(50, 25)
