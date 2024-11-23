@@ -35,6 +35,10 @@ directories/dtl_directory={
 "Corvus_Chapter3": "res://Dialogue/DrCorvus/Corvus_Chapter3.dtl",
 "Corvus_Chapter4": "res://Dialogue/DrCorvus/Corvus_Chapter4.dtl",
 "Corvus_Chapter5": "res://Dialogue/DrCorvus/Corvus_Chapter5.dtl",
+"Ezekial_Chapter1": "res://Dialogue/Ezekiel/Ezekiel_Chapter1.dtl",
+"Ezekial_Chapter2": "res://Dialogue/Ezekiel/Ezekiel_Chapter2.dtl",
+"Ezekiel_Chapter3": "res://Dialogue/Ezekiel/Ezekiel_Chapter3.dtl",
+"Ezekiel_Chapter4": "res://Dialogue/Ezekiel/Ezekiel_Chapter4.dtl",
 "Lab_Locked": "res://Dialogue/DrCorvus/Lab_Locked.dtl",
 "Notes_Consciousness": "res://Dialogue/DrCorvus/Notes_Consciousness.dtl",
 "Notes_Emotion": "res://Dialogue/DrCorvus/Notes_Emotion.dtl",
@@ -72,7 +76,11 @@ variables={
 "current_chapter": 1,
 "found_lab": false
 },
-"CumAnswer": ""
+"CumAnswer": "",
+"EzekielQuest": {
+"current_chapter": 1,
+"dialogue_option1_consumed": false
+}
 }
 layout/style_list=["res://Dialogue/Custom_Style.tres"]
 layout/default_style="res://Dialogue/Custom_Style.tres"

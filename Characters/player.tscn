@@ -12,7 +12,7 @@ region = Rect2(0, 0, 64, 64)
 size = Vector2(20, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf46o"]
-size = Vector2(10, 20)
+size = Vector2(42, 58)
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
@@ -35,5 +35,5 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableDetector"]
-position = Vector2(15, 5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_sf46o")

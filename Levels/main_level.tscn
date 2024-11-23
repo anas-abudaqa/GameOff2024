@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://du2tgu1ks4yg0"]
+[gd_scene load_steps=126 format=3 uid="uid://du2tgu1ks4yg0"]
 
 [ext_resource type="Script" path="res://Levels/main_level.gd" id="1_earby"]
 [ext_resource type="PackedScene" uid="uid://bbsro2j63lcxl" path="res://Characters/player.tscn" id="3_a4ua5"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://gbnrylha548" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Gravestones/Gravestone_03.png" id="27_ko2qe"]
 [ext_resource type="Texture2D" uid="uid://dfefgre7xt2m4" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Crosses/Cross_12.png" id="28_otx1r"]
 [ext_resource type="Texture2D" uid="uid://b1qsuj4k5wsvc" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Gravestones/Gravestone_06.png" id="29_w4nuy"]
+[ext_resource type="PackedScene" uid="uid://bnpxacjr024gw" path="res://Characters/ezekiel.tscn" id="31_85bgc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rup05"]
 texture = ExtResource("12_20dcx")
@@ -57609,7 +57610,7 @@ position = Vector2(-3, 0)
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_a4ua5")]
-position = Vector2(316, 587)
+position = Vector2(229, -599)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -58048,6 +58049,9 @@ color = Color(0, 0.560784, 1, 1)
 
 [node name="StarEntrance" parent="Graveyard" instance=ExtResource("25_ujjji")]
 position = Vector2(-432, -889)
+
+[node name="Ezekiel" parent="Graveyard" instance=ExtResource("31_85bgc")]
+position = Vector2(350, -712)
 
 [editable path="Graveyard/TileMaps/RedTree1/Torch"]
 [editable path="Graveyard/TileMaps/RedTree1/Torch2"]

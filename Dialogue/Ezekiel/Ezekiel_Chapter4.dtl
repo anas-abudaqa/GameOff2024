@@ -1,0 +1,7 @@
+Player: <Empty Text Event>
+- Why do you look blue?
+	set {EzekielQuest.dialogue_options_consumed} += 1
+	<Empty Text Event>
+	<Empty Text Event>
+	if {EzekielQuest.dialogue_options_consumed} >= 2:
+		jump 
