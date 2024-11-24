@@ -27,5 +27,6 @@ func _on_pickpocket_won():
 
 func _on_heartpiecer_won():
 	#has_heart = true
-	obtained_undeadheart = true
+	#obtained_undeadheart = true
 	get_tree().change_scene_to_packed(MAIN_LEVEL)
+	Dialogic.start("Melded_Heart")

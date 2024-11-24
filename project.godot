@@ -41,7 +41,10 @@ directories/dtl_directory={
 "Ezekiel_Chapter4": "res://Dialogue/Ezekiel/Ezekiel_Chapter4.dtl",
 "Ezekiel_Chapter5": "res://Dialogue/Ezekiel/Ezekiel_Chapter5.dtl",
 "Ezekiel_Chapter6": "res://Dialogue/Ezekiel/Ezekiel_Chapter6.dtl",
+"Ezekiel_Chapter7": "res://Dialogue/Ezekiel/Ezekiel_Chapter7.dtl",
+"Ezekiel_Chapter8": "res://Dialogue/Ezekiel/Ezekiel_Chapter8.dtl",
 "Lab_Locked": "res://Dialogue/DrCorvus/Lab_Locked.dtl",
+"Melded_Heart": "res://Dialogue/Ezekiel/Melded_Heart.dtl",
 "Notes_Consciousness": "res://Dialogue/DrCorvus/Notes_Consciousness.dtl",
 "Notes_Emotion": "res://Dialogue/DrCorvus/Notes_Emotion.dtl",
 "Notes_Experiments": "res://Dialogue/DrCorvus/Notes_Experiments.dtl",
@@ -51,6 +54,7 @@ directories/dtl_directory={
 "ObtainedBrainJar": "res://Dialogue/Interactions/ObtainedBrainJar.dtl",
 "Obtained_Heart": "res://Dialogue/Ezekiel/Obtained_Heart.dtl",
 "Obtained_LabKey": "res://Dialogue/DrCorvus/Obtained_LabKey.dtl",
+"Obtained_Undead_Heart": "res://Dialogue/Ezekiel/Obtained_Undead_Heart.dtl",
 "TestTimeline": "res://Dialogue/TestTimeline.dtl",
 "Weird_Star": "res://Dialogue/Interactions/Weird_Star.dtl"
 }

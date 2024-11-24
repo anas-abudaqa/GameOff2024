@@ -15,15 +15,17 @@ func _ready():
 
 
 
-func _on_dialogic_signal(minigame: String):
-	match minigame:
+func _on_dialogic_signal(trigger: String):
+	match trigger:
 		"Pickpocket":
 			AllKnowing.player_spawn_location = player_node.global_position
 			get_tree().change_scene_to_packed(PICKPOCKETING_TUTORIAL_MENU)
 		"Heartpiecer":
 			AllKnowing.player_spawn_location = player_node.global_position
 			get_tree().change_scene_to_packed(HEARTPIECER_TUTORIAL_MENU)
-
+		"UndeadHeart":
+			Dialogic.start("Obtained_Undead_Heart")
+			
 func _on_shed_exterior_enter_shed():
 	AllKnowing.player_spawn_location = player_node.global_position
 	get_tree().change_scene_to_packed(SHED_INTERIOR)

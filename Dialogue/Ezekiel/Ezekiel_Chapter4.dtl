@@ -1,17 +1,18 @@
-if {EzekielQuest.dialogue_option1_consumed} AND {EzekielQuest.dialogue_option2_consumed} == true:
-	Ezekiel: Ughhhh
-	Ezekiel: The shed on the other side of the courtyard. He did something to me in there
-	Player: Who's he?
-	Ezekiel: UGHHHHH
-	Ezekiel: The crow took a piece of my heart
-	set {EzekielQuest.current_chapter} = 5
-	set {EzekielQuest.dialogue_option1_consumed} = false
-	set {EzekielQuest.dialogue_option2_consumed} = false
+if {EzekielQuest.dialogue_option1_consumed} == true:
+	if {EzekielQuest.dialogue_option2_consumed} == true:
+		Ezekiel: Ughhh........
+		Ezekiel: The shed hidden in the courtyard. He did something to me in there
+		Player: Who's he?
+		Ezekiel: U..Ughhhhh.......
+		Ezekiel: The crow took out a piece of me
+		set {EzekielQuest.current_chapter} = 5
+		set {EzekielQuest.dialogue_option1_consumed} = false
+		set {EzekielQuest.dialogue_option2_consumed} = false
 else:
 	Player: Ask
 	- Why are you in pain
 		Ezekiel: My chest.. It feels like there is a hole in my chest
-		Ezekiel: I don't feel my pulse
+		Ezekiel: I can't feel my heart
 		set {EzekielQuest.dialogue_option2_consumed} = true
 		jump 
 	- What do you mean?
