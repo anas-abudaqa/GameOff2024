@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://jtf4ybrargj2"]
+
+[ext_resource type="Script" path="res://Minigames/GhostHunter/ghost_hunter.gd" id="1_odkrd"]
+[ext_resource type="Texture2D" uid="uid://cogcmfxuvtago" path="res://Art/Pixel UI pack 3/06.png" id="2_21gwd"]
+[ext_resource type="PackedScene" uid="uid://bfnhv75l7qe5b" path="res://Minigames/GhostHunter/ghost.tscn" id="3_mgxr2"]
+[ext_resource type="PackedScene" uid="uid://qd5f03dix1bo" path="res://Minigames/GhostHunter/bad_ghost.tscn" id="4_7a6hf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wum8"]
+atlas = ExtResource("2_21gwd")
+region = Rect2(192, 16, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lebje"]
+atlas = ExtResource("2_21gwd")
+region = Rect2(0, 16, 48, 16)
+
+[node name="GhostHunter" type="Node2D"]
+script = ExtResource("1_odkrd")
+
+[node name="RoundsContainer" type="Node2D" parent="."]
+
+[node name="Round1" type="Line2D" parent="RoundsContainer"]
+visible = false
+points = PackedVector2Array(99, 238, 111, 178, 148, 132, 214, 112, 268, 113, 327, 139, 361, 182, 371.822, 237.945, 364, 303, 329, 352, 267, 379, 201, 379, 135, 347, 106, 298)
+
+[node name="Round2" type="Line2D" parent="RoundsContainer"]
+visible = false
+points = PackedVector2Array(42, 120, 126, 116, 242, 128, 279, 171, 306, 201, 302, 231, 274, 274, 209, 285, 114, 282, 67, 301, 54, 362, 62, 418, 134, 442, 201, 439, 315, 440, 397, 442, 436, 419, 442, 351, 433, 256, 422, 191, 394, 129, 347, 106)
+
+[node name="GhostContainer" type="Node2D" parent="."]
+
+[node name="PositionMarkersContainer" type="Node2D" parent="."]
+visible = false
+
+[node name="Marker2D" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(59, 190)
+
+[node name="Marker2D2" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(105, 253)
+
+[node name="Marker2D3" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(197, 291)
+
+[node name="Marker2D4" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(284, 294)
+
+[node name="Marker2D5" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(369, 300)
+
+[node name="Marker2D6" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(412, 358)
+
+[node name="Marker2D7" type="Marker2D" parent="PositionMarkersContainer"]
+position = Vector2(378, 413)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ScoreProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 2.0
+offset_top = -4.0
+offset_right = 333.0
+offset_bottom = 64.0
+size_flags_horizontal = 3
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_right = 3
+texture_under = SubResource("AtlasTexture_0wum8")
+texture_progress = SubResource("AtlasTexture_lebje")
+
+[node name="Label" type="Label" parent="ScoreProgressBar"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = -1.0
+offset_right = 195.0
+offset_bottom = 22.0
+text = "Progress Left"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameTimer" type="Timer" parent="Control"]
+wait_time = 70.0
+one_shot = true
+autostart = true
+
+[node name="TimerLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 359.0
+offset_top = 5.0
+offset_right = 477.0
+offset_bottom = 82.0
+theme_override_colors/default_color = Color(0.870588, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "70"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 240)
+
+[node name="Ghost" parent="." instance=ExtResource("3_mgxr2")]
+visible = false
+position = Vector2(247, 239)
+
+[node name="BadCat" parent="." instance=ExtResource("4_7a6hf")]
+visible = false
+position = Vector2(371, 240)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Control/GameTimer" to="." method="_on_game_timer_timeout"]

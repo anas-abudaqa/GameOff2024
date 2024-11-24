@@ -1,14 +1,16 @@
 Player: Woah. What just happened?
 Ezekiel: Thank you, kind stranger. \
 I feel the pain going away slowly.
-Player: What are you?
+Player: I can't believe what I'm seeing. What are you?
 Ezekiel: I do not know. But I have been here for a while. Not alive, yet not dead.
 Ezekiel: Enough about me. What are YOU doing in this foresaken place?
 Player: I'm on a quest to save my ill husband. A shaman told me of a ritual that can cure him, and that I will find the answers I seek here.
 Ezekiel: A shaman, you say?\
 I saw a man in robes near the blue trees on the other side of the cemetery. You might wanna talk to him
-Ezekiel: And, here take this. I feel strangely compelled to give it to you now.
-Ezekiel: I do not need it, I was "alive" without it so far anyway. And now that it is whole again, it does not hurt
-Ezekiel: Besides, I owe you one. 
-Player: I, uh, don't know what to say. Thanks, I guess!
+Ezekiel: And, here take this. I feel ominously compelled to give you this heart we put it together
+Ezekiel: I was "alive" without it so far, and now that it is whole again, it does not hurt
+Ezekiel: It's almost calling for you
+Player: Uhm... This is creeping me out. 
+Player: (Hmmmm, this might be one of the items I need for the ritual)
+Player: I, uh, don't know what to say. Thanks!
 [signal arg="UndeadHeart"]

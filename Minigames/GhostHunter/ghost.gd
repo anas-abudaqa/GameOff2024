@@ -1,6 +1,8 @@
 extends Node2D
 
-signal CatDespawned(assigned_letter: String, score: int)
+class_name  Ghost
+
+signal GhostDespawned(assigned_letter: String, score: int, position: Vector2)
 
 var assigned_letter: String = ""
 var score: int = 5
@@ -20,12 +22,12 @@ func spawn(spawn_position: Vector2):
 func _on_assigned_letter_pressed(letter: String):
 	if letter == assigned_letter:
 		print("Yo we got consumed by this letter and score ", letter, " ", score)
-		CatDespawned.emit(assigned_letter, score)
+		GhostDespawned.emit(assigned_letter, score, global_position)
 		queue_free()
 
-
-#if expired, 0 score given but we still need to consume the letter
+	
+#if expired, 0 score given but we still need to consume the	 letter
 func _on_expiry_timer_timeout():
-	CatDespawned.emit(assigned_letter, 0)
+	GhostDespawned.emit(assigned_letter, 0, global_position)
 	queue_free()
 
