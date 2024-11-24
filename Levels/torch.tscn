@@ -131,8 +131,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyxy7"]
-radius = 3.85791
-height = 58.0
+radius = 4.0
+height = 50.0
 
 [node name="Torch" type="Area2D"]
 z_index = -1

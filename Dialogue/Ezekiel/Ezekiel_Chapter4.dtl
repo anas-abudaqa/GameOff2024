@@ -1,7 +1,21 @@
-Player: <Empty Text Event>
-- Why do you look blue?
-	set {EzekielQuest.dialogue_options_consumed} += 1
-	<Empty Text Event>
-	<Empty Text Event>
-	if {EzekielQuest.dialogue_options_consumed} >= 2:
+if {EzekielQuest.dialogue_option1_consumed} AND {EzekielQuest.dialogue_option2_consumed} == true:
+	Ezekiel: Ughhhh
+	Ezekiel: The shed on the other side of the courtyard. He did something to me in there
+	Player: Who's he?
+	Ezekiel: UGHHHHH
+	Ezekiel: The crow took a piece of my heart
+	set {EzekielQuest.current_chapter} = 5
+	set {EzekielQuest.dialogue_option1_consumed} = false
+	set {EzekielQuest.dialogue_option2_consumed} = false
+else:
+	Player: Ask
+	- Why are you in pain
+		Ezekiel: My chest.. It feels like there is a hole in my chest
+		Ezekiel: I don't feel my pulse
+		set {EzekielQuest.dialogue_option2_consumed} = true
+		jump 
+	- What do you mean?
+		Ezekiel: I should be dead. I shouldn't be here. What happened to me?
+		Ezekiel: Ugh.... That crow. What did he do to me in there?
+		set {EzekielQuest.dialogue_option1_consumed} = true
 		jump 

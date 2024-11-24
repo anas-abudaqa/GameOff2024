@@ -8,8 +8,8 @@
 atlas = ExtResource("2_hbwn0")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqt2d"]
-size = Vector2(20, 35)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8dai8"]
+radius = 7.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf46o"]
 size = Vector2(42, 58)
@@ -24,7 +24,7 @@ offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_mqt2d")
+shape = SubResource("CapsuleShape2D_8dai8")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = ExtResource("3_pbg2f")

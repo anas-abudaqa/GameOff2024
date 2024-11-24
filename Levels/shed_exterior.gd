@@ -1,6 +1,8 @@
 extends Area2D
 
-const SHED_INTERIOR_SCENE = "res://Levels/shed_interior.tscn"
+signal EnterShed
+
+#const SHED_INTERIOR_SCENE = "res://Levels/shed_interior.tscn"
 # Called when the node enters the scene tree for the first time.
 
 
@@ -12,5 +14,4 @@ func prompt_door():
 	if !AllKnowing.has_lab_key:
 		Dialogic.start("Lab_Locked")
 	else: 
-		AllKnowing.player_spawn_location = global_position + Vector2(0, -70) 
-		get_tree().change_scene_to_file(SHED_INTERIOR_SCENE)
+		EnterShed.emit()

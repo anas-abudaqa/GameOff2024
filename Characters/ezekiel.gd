@@ -17,3 +17,7 @@ func start_dialogue_chapter(chapter: int):
 			Dialogic.start("Ezekiel_Chapter5")
 		6:
 			Dialogic.start("Ezekiel_Chapter6")
+		7:
+			Dialogic.start("Ezekiel_Chapter7")
+		8:
+			Dialogic.start("Ezekiel_Chapter8")
