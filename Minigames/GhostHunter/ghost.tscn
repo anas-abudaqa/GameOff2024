@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfnhv75l7qe5b"]
+[gd_scene load_steps=9 format=3 uid="uid://bfnhv75l7qe5b"]
 
 [ext_resource type="Script" path="res://Minigames/GhostHunter/ghost.gd" id="1_cihve"]
 [ext_resource type="Texture2D" uid="uid://canu42kk8w423" path="res://Art/GhostHunter/Ghost/ghost-Sheet.png" id="2_k7ifp"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="3_mdtt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lw7uj"]
 atlas = ExtResource("2_k7ifp")
@@ -48,19 +49,20 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_7uieh")
 animation = &"Idle"
 autoplay = "Idle"
-frame_progress = 0.0998806
+frame_progress = 0.0586537
 
 [node name="ExpiryTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.1
+one_shot = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -45.0
-offset_right = 20.0
-offset_bottom = -17.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -8.0
+offset_top = -48.0
+offset_right = 70.0
+offset_bottom = -18.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_mdtt0")
+theme_override_font_sizes/normal_font_size = 20
+text = "W"
 
 [connection signal="timeout" from="ExpiryTimer" to="." method="_on_expiry_timer_timeout"]

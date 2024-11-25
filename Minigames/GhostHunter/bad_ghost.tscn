@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://qd5f03dix1bo"]
+[gd_scene load_steps=9 format=3 uid="uid://qd5f03dix1bo"]
 
 [ext_resource type="Script" path="res://Minigames/GhostHunter/bad_ghost.gd" id="1_plffu"]
 [ext_resource type="Texture2D" uid="uid://canu42kk8w423" path="res://Art/GhostHunter/Ghost/ghost-Sheet.png" id="2_rgous"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="3_721ee"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lw7uj"]
 atlas = ExtResource("2_rgous")
@@ -39,26 +40,27 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="BadCat" type="Node2D"]
+[node name="BadGhost" type="Node2D"]
 script = ExtResource("1_plffu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.396078, 0.282353, 0.529412, 1)
+modulate = Color(0.529412, 0.282353, 0.294118, 1)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_yt153")
 animation = &"Idle"
 autoplay = "Idle"
 
 [node name="ExpiryTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.2
+one_shot = true
 
-[node name="Label" type="Label" parent="."]
-offset_left = -20.0
-offset_top = -45.0
-offset_right = 20.0
-offset_bottom = -22.0
-theme_override_font_sizes/font_size = 20
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -8.0
+offset_top = -48.0
+offset_right = 70.0
+offset_bottom = -18.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_721ee")
+theme_override_font_sizes/normal_font_size = 20
 
 [connection signal="timeout" from="ExpiryTimer" to="." method="_on_expiry_timer_timeout"]
