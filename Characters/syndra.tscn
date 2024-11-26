@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://2ajjk32d4loj"]
+
+[ext_resource type="Script" path="res://Characters/syndra.gd" id="1_lsukn"]
+[ext_resource type="Texture2D" uid="uid://dsfpi0fjauf23" path="res://Art/Sprites/Cat.png" id="2_2tcio"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kj1k7"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qap7l"]
+radius = 41.4286
+
+[node name="Syndra" type="Area2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_lsukn")
+
+[node name="Cat" type="Sprite2D" parent="."]
+texture = ExtResource("2_2tcio")
+
+[node name="Syndra" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_kj1k7")
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_qap7l")

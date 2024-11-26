@@ -27,6 +27,7 @@ directories/dch_directory={
 "DrCorvus": "res://Dialogue/DrCorvus/DrCorvus.dch",
 "Ezekiel": "res://Dialogue/Ezekiel/Ezekiel.dch",
 "Player": "res://Dialogue/Player/Player.dch",
+"Syndra": "res://Dialogue/Syndra/Syndra.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
@@ -43,6 +44,7 @@ directories/dtl_directory={
 "Ezekiel_Chapter6": "res://Dialogue/Ezekiel/Ezekiel_Chapter6.dtl",
 "Ezekiel_Chapter7": "res://Dialogue/Ezekiel/Ezekiel_Chapter7.dtl",
 "Ezekiel_Chapter8": "res://Dialogue/Ezekiel/Ezekiel_Chapter8.dtl",
+"Ghosts_Wacked": "res://Dialogue/Syndra/Ghosts_Wacked.dtl",
 "Lab_Locked": "res://Dialogue/DrCorvus/Lab_Locked.dtl",
 "Melded_Heart": "res://Dialogue/Ezekiel/Melded_Heart.dtl",
 "Notes_Consciousness": "res://Dialogue/DrCorvus/Notes_Consciousness.dtl",
@@ -55,6 +57,10 @@ directories/dtl_directory={
 "Obtained_Heart": "res://Dialogue/Ezekiel/Obtained_Heart.dtl",
 "Obtained_LabKey": "res://Dialogue/DrCorvus/Obtained_LabKey.dtl",
 "Obtained_Undead_Heart": "res://Dialogue/Ezekiel/Obtained_Undead_Heart.dtl",
+"Syndra_Chapter1": "res://Dialogue/Syndra/Syndra_Chapter1.dtl",
+"Syndra_Chapter2": "res://Dialogue/Syndra/Syndra_Chapter2.dtl",
+"Syndra_Chapter3": "res://Dialogue/Syndra/Syndra_Chapter3.dtl",
+"Syndra_Chapter4": "res://Dialogue/Syndra/Syndra_Chapter4.dtl",
 "TestTimeline": "res://Dialogue/TestTimeline.dtl",
 "Weird_Star": "res://Dialogue/Interactions/Weird_Star.dtl"
 }
@@ -88,6 +94,9 @@ variables={
 "current_chapter": 1,
 "dialogue_option1_consumed": false,
 "dialogue_option2_consumed": false
+},
+"SyndraQuest": {
+"current_chapter": 1
 }
 }
 layout/style_list=["res://Dialogue/Custom_Style.tres"]
@@ -146,11 +155,16 @@ RMB={
 }
 dialogic_default_action={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":4194309,"key_label":4194309,"unicode":0,"echo":false,"script":null)
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":88,"physical_keycode":0,"key_label":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
+]
+}
+Debug={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":4,"position":Vector2(248, 13),"global_position":Vector2(252, 54),"factor":1.0,"button_index":3,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
 

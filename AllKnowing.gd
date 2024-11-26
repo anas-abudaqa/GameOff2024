@@ -1,8 +1,9 @@
 extends Node
 
+
 var has_lab_key: bool = false
 var has_heart: bool = false
-
+var swap_syndra_sprite: bool = false
 var obtained_brainjar7: bool = false
 var obtained_undeadheart: bool = false
 var obtained_damnedtongue: bool = false
@@ -27,6 +28,12 @@ func _on_pickpocket_won():
 
 func _on_heartpiecer_won():
 	#has_heart = true
-	#obtained_undeadheart = true
+	obtained_undeadheart = true
 	get_tree().change_scene_to_packed(MAIN_LEVEL)
 	Dialogic.start("Melded_Heart")
+
+func _on_ghosthunt_won():
+	#has_heart = true
+	#obtained_undeadheart = true
+	get_tree().change_scene_to_packed(MAIN_LEVEL)
+	Dialogic.start("Ghosts_Whacked")

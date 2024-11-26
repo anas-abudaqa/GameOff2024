@@ -1,0 +1,13 @@
+if {AllKnowing.obtained_brainjar7} == true:
+	Cat: ......\
+?
+	Cat: *sniffs Aveline*
+	Cat: *hissssss*
+	Player: (Hmmm do I smell?)
+elif {AllKnowing.obtained_undeadheart} == true:
+	Cat: *hisss*..........?
+	Cat: .....?
+	Cat: *hisssss*
+	Player: (Hmmm, what did it react to?)
+else:
+	Cat: *hisssss*

@@ -1,0 +1,4 @@
+Cat: ....... *hissss*
+Player: (It looks starving. Why is a cat here in the first place)
+Player: (I should check up on it later)
+set {SyndraQuest.current_chapter} = 3

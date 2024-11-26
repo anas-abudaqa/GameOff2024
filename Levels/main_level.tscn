@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://du2tgu1ks4yg0"]
+[gd_scene load_steps=129 format=3 uid="uid://du2tgu1ks4yg0"]
 
 [ext_resource type="Script" path="res://Levels/main_level.gd" id="1_earby"]
 [ext_resource type="PackedScene" uid="uid://bbsro2j63lcxl" path="res://Characters/player.tscn" id="3_a4ua5"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bfc1tyomvsj1v" path="res://Art/TwilightVillage_RPG_Tileset.png" id="20_5ps1p"]
 [ext_resource type="Texture2D" uid="uid://c6yiehkl8yne2" path="res://Art/Stone_cemetery/Sculptures/Big_angel_sculpture/Sculpture_05.png" id="22_ljyl3"]
 [ext_resource type="Texture2D" uid="uid://doejjnasfypwm" path="res://Art/Texture/TX Plant.png" id="23_3qxr4"]
+[ext_resource type="PackedScene" uid="uid://2ajjk32d4loj" path="res://Characters/syndra.tscn" id="25_5kmpm"]
 [ext_resource type="Texture2D" uid="uid://dowdttf2mnw6n" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Gravestones/Gravestone_08.png" id="25_6n5ym"]
 [ext_resource type="PackedScene" uid="uid://d3j3eic8m6fsx" path="res://InteractableItems/star_entrance.tscn" id="25_ujjji"]
 [ext_resource type="Texture2D" uid="uid://dmcd17vh1lio3" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Gravestones/Grave_plate_01.png" id="26_jafh1"]
@@ -57964,7 +57965,7 @@ position = Vector2(-3, 0)
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_a4ua5")]
-position = Vector2(318, 603)
+position = Vector2(81, -63)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -58408,6 +58409,13 @@ position = Vector2(-432, -889)
 
 [node name="Ezekiel" parent="Graveyard" instance=ExtResource("31_85bgc")]
 position = Vector2(350, -712)
+
+[node name="Syndra" parent="." instance=ExtResource("25_5kmpm")]
+z_index = 5
+position = Vector2(202, -247)
+
+[node name="SyndraMarker1" type="Marker2D" parent="."]
+position = Vector2(484, -196)
 
 [connection signal="EnterShed" from="Churchyard/ShedExterior" to="." method="_on_shed_exterior_enter_shed"]
 

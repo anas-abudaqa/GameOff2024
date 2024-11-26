@@ -52,7 +52,7 @@ autoplay = "Idle"
 frame_progress = 0.0586537
 
 [node name="ExpiryTimer" type="Timer" parent="."]
-wait_time = 1.1
+wait_time = 2.0
 one_shot = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

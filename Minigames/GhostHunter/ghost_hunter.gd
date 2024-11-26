@@ -1,6 +1,9 @@
 extends Node2D
 
 signal LetterPressed(letter: String)
+signal GhostHuntWon
+
+const GHOSTHUNTER_TUTORIAL_MENU = preload("res://Minigames/GhostHunter/ghosthunter_tutorial_menu.tscn")
 
 @onready var ghost_container = $GhostContainer
 @onready var position_markers_container = $PositionMarkersContainer
@@ -37,6 +40,7 @@ var current_slot: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GhostHuntWon.connect(AllKnowing._on_ghosthunt_won)
 	#score_progress_bar.max_value = WINNING_SCORE
 	curse_label.visible = false
 	#turn off visibility of each marker2D in the container. Use visibility state to check if a spot is used or not
@@ -154,8 +158,8 @@ func _consume_ghost(letter: String, score: int, effect: String):
 	#print("Score is now: ", total_score)
 	score_label.text = "Score: " + str(total_score)
 	
-	if total_score >= WINNING_SCORE:
-		print("WE WON")
+	#if total_score >= WINNING_SCORE:
+		#print("WE WON")
 	
 	#go to next slot
 	current_slot += 1
@@ -165,8 +169,6 @@ func _consume_ghost(letter: String, score: int, effect: String):
 		is_cursed = true
 		curse_label.visible = true
 		curse_timer.start()
-	
-	
 	spawn_ghost()
 
 #Round is done if we run out of letters to assign
@@ -183,7 +185,6 @@ func assign_letter() -> String:
 		round_done()
 		return ""
 
-
 #Round is also done if we run out of slots to spawn ghosts in
 func get_spawn_coordinates() -> Vector2:
 	#check if we aren't at max slots first
@@ -194,8 +195,12 @@ func get_spawn_coordinates() -> Vector2:
 		return Vector2.ZERO
 
 
-
 func round_done():
+	#check if we have enough score to win the game
+	if total_score >= WINNING_SCORE:
+		game_won()
+		return
+	
 	#if the current round index is less than how many total rounds there are in the rounds container
 	if unused_letter_array.size() == 0:
 		#move all used letters back to unused letters before clearing used letters
@@ -208,11 +213,19 @@ func round_done():
 		#increment index and spawn new round
 		current_round_index += 1
 		spawn_round()
+	else:
+		game_lost()
 
+func game_won():
+	await get_tree().create_timer(1.5).timeout
+	GhostHuntWon.emit()
+
+func game_lost():
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_packed(GHOSTHUNTER_TUTORIAL_MENU)
 
 func _on_game_timer_timeout():
 	print("Time Out!")
-
 
 func _on_curse_timer_timeout():
 	is_cursed = false

@@ -1,0 +1,8 @@
+Player: *Huff.... Puff*
+Player: What the hell was that ? How did we fight them off?
+Player: What the hell are you??
+Cat: *crystal glimmers and shakes*
+Syndra: ....
+[signal arg="SyndraTransform"]
+Player: Woahhhh..... Who are you?
+set {SyndraQuest.current_chapter} = 5

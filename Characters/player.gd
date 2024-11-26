@@ -17,7 +17,11 @@ func _physics_process(_delta):
 			for interactable_child in detected_interactables:
 				#the parents have the interact function, not the interactable area2D itself
 				interactable_child.get_parent().interact()
-				
+	
+	if Input.is_action_just_pressed("Debug"):
+		AllKnowing.has_heart = true
+		Dialogic.start("Obtained_Heart")
+		AllKnowing.obtained_brainjar7 = true
 #-x, +x, -y, +y
 	direction_vector = Input.get_vector("Left", "Right", "Up", "Down")
 	if direction_vector.x:
