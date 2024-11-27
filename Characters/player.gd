@@ -22,6 +22,7 @@ func _physics_process(_delta):
 		AllKnowing.has_heart = true
 		Dialogic.start("Obtained_Heart")
 		AllKnowing.obtained_brainjar7 = true
+		AllKnowing.obtained_damnedtongue = true
 #-x, +x, -y, +y
 	direction_vector = Input.get_vector("Left", "Right", "Up", "Down")
 	if direction_vector.x:

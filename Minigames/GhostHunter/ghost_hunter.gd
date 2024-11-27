@@ -54,7 +54,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-	round_label.text = "Round: " + str(current_round_index)
+	round_label.text = "Round: " + str(current_round_index + 1)
 
 func _unhandled_input(event):
 	if !is_cursed:
@@ -67,17 +67,6 @@ func _unhandled_input(event):
 
 
 func spawn_round():
-
-	#turn off visbility of current round before proceeeding
-	#check if there is a current round first (in the first round this variable is not yet set)
-	#if current_round:
-		#current_round.visible = false
-	
-	#if it's  empty (in the first round it is never empty, so we need to add this check)
-	#if unused_letter_array.size() == 0:
-		##move all used letters back to unused letters before clearing used letters
-		#unused_letter_array.append_array(used_letter_array)
-		#used_letter_array.clear()
 	
 	var rounds = rounds_container.get_children()
 	current_round = rounds[current_round_index]

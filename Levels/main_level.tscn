@@ -57965,7 +57965,7 @@ position = Vector2(-3, 0)
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_a4ua5")]
-position = Vector2(81, -63)
+position = Vector2(-430, -797)
 collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -58405,7 +58405,7 @@ position = Vector2(-2, -32)
 color = Color(0, 0.560784, 1, 1)
 
 [node name="StarEntrance" parent="Graveyard" instance=ExtResource("25_ujjji")]
-position = Vector2(-432, -889)
+position = Vector2(-433, -885)
 
 [node name="Ezekiel" parent="Graveyard" instance=ExtResource("31_85bgc")]
 position = Vector2(350, -712)

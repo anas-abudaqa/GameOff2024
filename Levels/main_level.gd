@@ -8,6 +8,7 @@ const SHED_INTERIOR = preload("res://Levels/shed_interior.tscn")
 
 @onready var syndra_marker_1 = $SyndraMarker1
 @onready var syndra = $Syndra
+@onready var star_entrance = $Graveyard/StarEntrance
 
 var player_node: CharacterBody2D
 
@@ -38,7 +39,10 @@ func _on_dialogic_signal(trigger: String):
 		"Ghosthunt":
 			store_player_position()
 			get_tree().change_scene_to_packed(GHOSTHUNTER_TUTORIAL_MENU)
-			
+		"UnlockEntrance":
+			star_entrance.unlock_entrance()
+
+
 func _on_shed_exterior_enter_shed():
 	AllKnowing.player_spawn_location = player_node.global_position
 	get_tree().change_scene_to_packed(SHED_INTERIOR)
