@@ -1,0 +1,187 @@
+[gd_scene load_steps=18 format=3 uid="uid://cdx7u57sdjmdo"]
+
+[ext_resource type="Script" path="res://Characters/cave_enemy.gd" id="1_qm56x"]
+[ext_resource type="Texture2D" uid="uid://b1ahpucy2inq2" path="res://Art/Sprites/CaveEnemy.png" id="2_teypy"]
+[ext_resource type="Texture2D" uid="uid://dti5legfmehka" path="res://Art/Sprites/VisionCone.png" id="3_37x3t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucv7e"]
+atlas = ExtResource("2_teypy")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydg82"]
+atlas = ExtResource("2_teypy")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boyat"]
+atlas = ExtResource("2_teypy")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52ocv"]
+atlas = ExtResource("2_teypy")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwkgd"]
+atlas = ExtResource("2_teypy")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rr5v"]
+atlas = ExtResource("2_teypy")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt0mw"]
+atlas = ExtResource("2_teypy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tknjk"]
+atlas = ExtResource("2_teypy")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52tnq"]
+atlas = ExtResource("2_teypy")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tms1d"]
+atlas = ExtResource("2_teypy")
+region = Rect2(0, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vys7r"]
+atlas = ExtResource("2_teypy")
+region = Rect2(16, 96, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejuoi"]
+atlas = ExtResource("2_teypy")
+region = Rect2(32, 96, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o54v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucv7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydg82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boyat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydg82")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52ocv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwkgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rr5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwkgd")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wt0mw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tknjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52tnq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tknjk")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tms1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vys7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejuoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vys7r")
+}],
+"loop": true,
+"name": &"Up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q00vk"]
+radius = 6.11111
+
+[node name="CaveEnemy" type="Area2D"]
+scale = Vector2(1.8, 1.8)
+collision_layer = 9
+script = ExtResource("1_qm56x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.364706, 0.0470588, 0.301961, 1)
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_2o54v")
+animation = &"Up"
+frame_progress = 0.645602
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3.33333)
+shape = SubResource("CircleShape2D_q00vk")
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="LeftCone" type="CollisionPolygon2D" parent="DetectionArea"]
+visible = false
+position = Vector2(-37.7778, -0.555556)
+polygon = PackedVector2Array(-15, -24.5, -12, -24.5, -12, -23.5, -10, -23.5, -10, -22.5, -7, -22.5, -7, -21.5, -4, -21.5, -4, -20.5, -1, -20.5, -1, -19.5, 2, -19.5, 2, -18.5, 5, -18.5, 5, -17.5, 8, -17.5, 8, -16.5, 10, -16.5, 10, -15.5, 13, -15.5, 13, -14.5, 16, -14.5, 16, -13.5, 19, -13.5, 19, -12.5, 22, -12.5, 22, -11.5, 25, -11.5, 25, -10.5, 27, -10.5, 27, -9.5, 30, -9.5, 30, -8.5, 33, -8.5, 33, -7.5, 34, -7.5, 34, -6.5, 36, -6.5, 36, -5.5, 38, -5.5, 38, 0.5, 36, 0.5, 36, 1.5, 34, 1.5, 34, 2.5, 33, 2.5, 33, 3.5, 31, 3.5, 31, 4.5, 29, 4.5, 29, 5.5, 27, 5.5, 27, 6.5, 25, 6.5, 25, 7.5, 22, 7.5, 22, 8.5, 20, 8.5, 20, 9.5, 17, 9.5, 17, 10.5, 15, 10.5, 15, 11.5, 13, 11.5, 13, 12.5, 10, 12.5, 10, 13.5, 8, 13.5, 8, 14.5, 6, 14.5, 6, 15.5, 4, 15.5, 4, 16.5, 2, 16.5, 2, 17.5, -1, 17.5, -1, 18.5, -3, 18.5, -3, 19.5, -5, 19.5, -5, 20.5, -8, 20.5, -8, 21.5, -10, 21.5, -10, 22.5, -12, 22.5, -12, 23.5, -14, 23.5, -14, 24.5, -16, 24.5, -16, 25.5, -24, 25.5, -24, 24.5, -25, 24.5, -25, 23.5, -26, 23.5, -26, 22.5, -27, 22.5, -27, 21.5, -28, 21.5, -28, 20.5, -29, 20.5, -29, 19.5, -30, 19.5, -30, 18.5, -31, 18.5, -31, 17.5, -32, 17.5, -32, 15.5, -33, 15.5, -33, 14.5, -34, 14.5, -34, 12.5, -35, 12.5, -35, 10.5, -36, 10.5, -36, 8.5, -37, 8.5, -37, 4.5, -38, 4.5, -38, -6.5, -37, -6.5, -37, -10.5, -36, -10.5, -36, -12.5, -35, -12.5, -35, -14.5, -34, -14.5, -34, -16.5, -33, -16.5, -33, -17.5, -32, -17.5, -32, -19.5, -31, -19.5, -31, -20.5, -30, -20.5, -30, -21.5, -29, -21.5, -29, -22.5, -28, -22.5, -28, -23.5, -27, -23.5, -27, -24.5, -26, -24.5, -26, -25.5, -15, -25.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="DetectionArea/LeftCone"]
+texture = ExtResource("3_37x3t")
+
+[node name="RightCone" type="CollisionPolygon2D" parent="DetectionArea"]
+visible = false
+position = Vector2(36.6667, -0.555556)
+rotation = 3.14159
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(-15, -24.5, -12, -24.5, -12, -23.5, -10, -23.5, -10, -22.5, -7, -22.5, -7, -21.5, -4, -21.5, -4, -20.5, -1, -20.5, -1, -19.5, 2, -19.5, 2, -18.5, 5, -18.5, 5, -17.5, 8, -17.5, 8, -16.5, 10, -16.5, 10, -15.5, 13, -15.5, 13, -14.5, 16, -14.5, 16, -13.5, 19, -13.5, 19, -12.5, 22, -12.5, 22, -11.5, 25, -11.5, 25, -10.5, 27, -10.5, 27, -9.5, 30, -9.5, 30, -8.5, 33, -8.5, 33, -7.5, 34, -7.5, 34, -6.5, 36, -6.5, 36, -5.5, 38, -5.5, 38, 0.5, 36, 0.5, 36, 1.5, 34, 1.5, 34, 2.5, 33, 2.5, 33, 3.5, 31, 3.5, 31, 4.5, 29, 4.5, 29, 5.5, 27, 5.5, 27, 6.5, 25, 6.5, 25, 7.5, 22, 7.5, 22, 8.5, 20, 8.5, 20, 9.5, 17, 9.5, 17, 10.5, 15, 10.5, 15, 11.5, 13, 11.5, 13, 12.5, 10, 12.5, 10, 13.5, 8, 13.5, 8, 14.5, 6, 14.5, 6, 15.5, 4, 15.5, 4, 16.5, 2, 16.5, 2, 17.5, -1, 17.5, -1, 18.5, -3, 18.5, -3, 19.5, -5, 19.5, -5, 20.5, -8, 20.5, -8, 21.5, -10, 21.5, -10, 22.5, -12, 22.5, -12, 23.5, -14, 23.5, -14, 24.5, -16, 24.5, -16, 25.5, -24, 25.5, -24, 24.5, -25, 24.5, -25, 23.5, -26, 23.5, -26, 22.5, -27, 22.5, -27, 21.5, -28, 21.5, -28, 20.5, -29, 20.5, -29, 19.5, -30, 19.5, -30, 18.5, -31, 18.5, -31, 17.5, -32, 17.5, -32, 15.5, -33, 15.5, -33, 14.5, -34, 14.5, -34, 12.5, -35, 12.5, -35, 10.5, -36, 10.5, -36, 8.5, -37, 8.5, -37, 4.5, -38, 4.5, -38, -6.5, -37, -6.5, -37, -10.5, -36, -10.5, -36, -12.5, -35, -12.5, -35, -14.5, -34, -14.5, -34, -16.5, -33, -16.5, -33, -17.5, -32, -17.5, -32, -19.5, -31, -19.5, -31, -20.5, -30, -20.5, -30, -21.5, -29, -21.5, -29, -22.5, -28, -22.5, -28, -23.5, -27, -23.5, -27, -24.5, -26, -24.5, -26, -25.5, -15, -25.5)
+
+[node name="RightCone" type="Sprite2D" parent="DetectionArea/RightCone"]
+texture = ExtResource("3_37x3t")
+
+[node name="DownCone" type="CollisionPolygon2D" parent="DetectionArea"]
+visible = false
+position = Vector2(0, 32.7778)
+rotation = -1.5708
+polygon = PackedVector2Array(-15, -24.5, -12, -24.5, -12, -23.5, -10, -23.5, -10, -22.5, -7, -22.5, -7, -21.5, -4, -21.5, -4, -20.5, -1, -20.5, -1, -19.5, 2, -19.5, 2, -18.5, 5, -18.5, 5, -17.5, 8, -17.5, 8, -16.5, 10, -16.5, 10, -15.5, 13, -15.5, 13, -14.5, 16, -14.5, 16, -13.5, 19, -13.5, 19, -12.5, 22, -12.5, 22, -11.5, 25, -11.5, 25, -10.5, 27, -10.5, 27, -9.5, 30, -9.5, 30, -8.5, 33, -8.5, 33, -7.5, 34, -7.5, 34, -6.5, 36, -6.5, 36, -5.5, 38, -5.5, 38, 0.5, 36, 0.5, 36, 1.5, 34, 1.5, 34, 2.5, 33, 2.5, 33, 3.5, 31, 3.5, 31, 4.5, 29, 4.5, 29, 5.5, 27, 5.5, 27, 6.5, 25, 6.5, 25, 7.5, 22, 7.5, 22, 8.5, 20, 8.5, 20, 9.5, 17, 9.5, 17, 10.5, 15, 10.5, 15, 11.5, 13, 11.5, 13, 12.5, 10, 12.5, 10, 13.5, 8, 13.5, 8, 14.5, 6, 14.5, 6, 15.5, 4, 15.5, 4, 16.5, 2, 16.5, 2, 17.5, -1, 17.5, -1, 18.5, -3, 18.5, -3, 19.5, -5, 19.5, -5, 20.5, -8, 20.5, -8, 21.5, -10, 21.5, -10, 22.5, -12, 22.5, -12, 23.5, -14, 23.5, -14, 24.5, -16, 24.5, -16, 25.5, -24, 25.5, -24, 24.5, -25, 24.5, -25, 23.5, -26, 23.5, -26, 22.5, -27, 22.5, -27, 21.5, -28, 21.5, -28, 20.5, -29, 20.5, -29, 19.5, -30, 19.5, -30, 18.5, -31, 18.5, -31, 17.5, -32, 17.5, -32, 15.5, -33, 15.5, -33, 14.5, -34, 14.5, -34, 12.5, -35, 12.5, -35, 10.5, -36, 10.5, -36, 8.5, -37, 8.5, -37, 4.5, -38, 4.5, -38, -6.5, -37, -6.5, -37, -10.5, -36, -10.5, -36, -12.5, -35, -12.5, -35, -14.5, -34, -14.5, -34, -16.5, -33, -16.5, -33, -17.5, -32, -17.5, -32, -19.5, -31, -19.5, -31, -20.5, -30, -20.5, -30, -21.5, -29, -21.5, -29, -22.5, -28, -22.5, -28, -23.5, -27, -23.5, -27, -24.5, -26, -24.5, -26, -25.5, -15, -25.5)
+
+[node name="DownCone" type="Sprite2D" parent="DetectionArea/DownCone"]
+texture = ExtResource("3_37x3t")
+
+[node name="UpCone" type="CollisionPolygon2D" parent="DetectionArea"]
+visible = false
+position = Vector2(-2.77778, -43.8889)
+rotation = 1.5708
+polygon = PackedVector2Array(-15, -24.5, -12, -24.5, -12, -23.5, -10, -23.5, -10, -22.5, -7, -22.5, -7, -21.5, -4, -21.5, -4, -20.5, -1, -20.5, -1, -19.5, 2, -19.5, 2, -18.5, 5, -18.5, 5, -17.5, 8, -17.5, 8, -16.5, 10, -16.5, 10, -15.5, 13, -15.5, 13, -14.5, 16, -14.5, 16, -13.5, 19, -13.5, 19, -12.5, 22, -12.5, 22, -11.5, 25, -11.5, 25, -10.5, 27, -10.5, 27, -9.5, 30, -9.5, 30, -8.5, 33, -8.5, 33, -7.5, 34, -7.5, 34, -6.5, 36, -6.5, 36, -5.5, 38, -5.5, 38, 0.5, 36, 0.5, 36, 1.5, 34, 1.5, 34, 2.5, 33, 2.5, 33, 3.5, 31, 3.5, 31, 4.5, 29, 4.5, 29, 5.5, 27, 5.5, 27, 6.5, 25, 6.5, 25, 7.5, 22, 7.5, 22, 8.5, 20, 8.5, 20, 9.5, 17, 9.5, 17, 10.5, 15, 10.5, 15, 11.5, 13, 11.5, 13, 12.5, 10, 12.5, 10, 13.5, 8, 13.5, 8, 14.5, 6, 14.5, 6, 15.5, 4, 15.5, 4, 16.5, 2, 16.5, 2, 17.5, -1, 17.5, -1, 18.5, -3, 18.5, -3, 19.5, -5, 19.5, -5, 20.5, -8, 20.5, -8, 21.5, -10, 21.5, -10, 22.5, -12, 22.5, -12, 23.5, -14, 23.5, -14, 24.5, -16, 24.5, -16, 25.5, -24, 25.5, -24, 24.5, -25, 24.5, -25, 23.5, -26, 23.5, -26, 22.5, -27, 22.5, -27, 21.5, -28, 21.5, -28, 20.5, -29, 20.5, -29, 19.5, -30, 19.5, -30, 18.5, -31, 18.5, -31, 17.5, -32, 17.5, -32, 15.5, -33, 15.5, -33, 14.5, -34, 14.5, -34, 12.5, -35, 12.5, -35, 10.5, -36, 10.5, -36, 8.5, -37, 8.5, -37, 4.5, -38, 4.5, -38, -6.5, -37, -6.5, -37, -10.5, -36, -10.5, -36, -12.5, -35, -12.5, -35, -14.5, -34, -14.5, -34, -16.5, -33, -16.5, -33, -17.5, -32, -17.5, -32, -19.5, -31, -19.5, -31, -20.5, -30, -20.5, -30, -21.5, -29, -21.5, -29, -22.5, -28, -22.5, -28, -23.5, -27, -23.5, -27, -24.5, -26, -24.5, -26, -25.5, -15, -25.5)
+
+[node name="UpCone" type="Sprite2D" parent="DetectionArea/UpCone"]
+position = Vector2(3.8147e-06, 0)
+texture = ExtResource("3_37x3t")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

@@ -58418,6 +58418,7 @@ position = Vector2(202, -247)
 position = Vector2(484, -196)
 
 [connection signal="EnterShed" from="Churchyard/ShedExterior" to="." method="_on_shed_exterior_enter_shed"]
+[connection signal="EnterCave" from="Graveyard/StarEntrance" to="." method="_on_star_entrance_enter_cave"]
 
 [editable path="Graveyard/TileMaps/RedTree1/Torch"]
 [editable path="Graveyard/TileMaps/RedTree1/Torch2"]

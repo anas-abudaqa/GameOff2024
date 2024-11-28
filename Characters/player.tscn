@@ -14,8 +14,9 @@ radius = 7.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sf46o"]
 size = Vector2(42, 58)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 z_index = 5
+collision_layer = 3
 script = ExtResource("1_y4w10")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

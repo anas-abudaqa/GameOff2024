@@ -1,8 +1,11 @@
 extends Node2D
 
+signal EnterCave
 
 @onready var sprite_2d = $Sprite2D
 @onready var entrance = $Entrance
+
+
 
 var is_locked: bool = true
 
@@ -24,4 +27,4 @@ func unlock_entrance():
 	entrance.visible = true
 
 func enter():
-	print("Cum")
+	EnterCave.emit()

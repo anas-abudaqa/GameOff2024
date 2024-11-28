@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bulute7i5ksyy"]
+
+[ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="1_m6h4o"]
+[ext_resource type="Script" path="res://addons/vision_cone_2d/examples/enemy.gd" id="1_pxito"]
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("vision_renderer")]
+script = ExtResource("1_pxito")
+vision_renderer = NodePath("VisionCone2D/VisionConeRenderer")
+alert_color = Color(0.6, 0.270588, 0.247059, 0.368627)
+is_rotating = true
+rotation_speed = 0.001
+
+[node name="CharacterRenderer" type="Polygon2D" parent="."]
+rotation = -1.5708
+scale = Vector2(2, 2)
+color = Color(0.901961, 0.141176, 0.188235, 1)
+polygon = PackedVector2Array(-10, -10, 10, -10, 0, 10)
+
+[node name="VisionCone2D" parent="." instance=ExtResource("1_m6h4o")]
+rotation = -1.5708
+recalculate_if_static = false
+
+[node name="VisionConeRenderer" parent="VisionCone2D" index="0"]
+polygon = PackedVector2Array(183.999, 301.001, 0.999957, 12, -83.0011, 315, -79.0013, 348, -62.0201, 370.641, -49.0014, 388, -21.0014, 400, 27.9986, 400, 64.9986, 398, 94.9986, 393, 124.999, 384, 151.999, 362.001, 172.999, 332.001)
+
+[connection signal="body_entered" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_entered"]
+[connection signal="body_exited" from="VisionCone2D/VisionConeArea" to="." method="_on_vision_cone_area_body_exited"]
+
+[editable path="VisionCone2D"]
