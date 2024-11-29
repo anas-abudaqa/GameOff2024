@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3npaxs7od05v"]
+
+[ext_resource type="Texture2D" uid="uid://dkdd3wliv3nm2" path="res://Art/Texture/TX Props.png" id="1_1s7n3"]
+[ext_resource type="Script" path="res://InteractableItems/noise_maker.gd" id="1_7vayg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6vff"]
+atlas = ExtResource("1_1s7n3")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0ncj"]
+radius = 19.0
+
+[node name="NoiseMaker" type="Node2D"]
+script = ExtResource("1_7vayg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_v6vff")
+
+[node name="Interactable" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_y0ncj")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0)
+width = 1.0
+default_color = Color(1, 0.254902, 0.533333, 1)
+
+[node name="StopTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[connection signal="area_entered" from="Interactable" to="." method="_on_interactable_area_entered"]
+[connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]

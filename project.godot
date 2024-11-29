@@ -27,6 +27,7 @@ directories/dch_directory={
 "DrCorvus": "res://Dialogue/DrCorvus/DrCorvus.dch",
 "Ezekiel": "res://Dialogue/Ezekiel/Ezekiel.dch",
 "Player": "res://Dialogue/Player/Player.dch",
+"Shaman": "res://Dialogue/Shaman/Shaman.dch",
 "Syndra": "res://Dialogue/Syndra/Syndra.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }

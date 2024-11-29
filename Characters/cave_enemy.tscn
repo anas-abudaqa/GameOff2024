@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdx7u57sdjmdo"]
+[gd_scene load_steps=19 format=3 uid="uid://cdx7u57sdjmdo"]
 
 [ext_resource type="Script" path="res://Characters/cave_enemy.gd" id="1_qm56x"]
 [ext_resource type="Texture2D" uid="uid://b1ahpucy2inq2" path="res://Art/Sprites/CaveEnemy.png" id="2_teypy"]
 [ext_resource type="Texture2D" uid="uid://dti5legfmehka" path="res://Art/Sprites/VisionCone.png" id="3_37x3t"]
+[ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="4_edii5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ucv7e"]
 atlas = ExtResource("2_teypy")
@@ -141,6 +142,11 @@ frame_progress = 0.645602
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.33333)
 shape = SubResource("CircleShape2D_q00vk")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("4_edii5")
+texture_scale = 0.3
 
 [node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0

@@ -2,10 +2,13 @@ extends Area2D
 
 signal PlayerDetected
 
-@export var movement_direction: String
-@export var can_move: bool = true
+
 @export var can_rotate: bool = false
 @export var rotation_speed: float = 0.5
+@export var max_rotation_angle: float = 45
+
+@export var movement_direction: String
+@export var can_move: bool = true
 @export var movement_speed: int = 90
 
 
@@ -16,12 +19,13 @@ signal PlayerDetected
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var detection_area = $DetectionArea
 
-
+var initial_direction: String
 var direction_vector = Vector2.ZERO
 var rotation_direction: String = "CW"
 
 func _ready():
 	detection_area.modulate = Color(1,1,1)
+	initial_direction = movement_direction
 	turn_off_cones()
 	change_direction()
 
@@ -33,15 +37,18 @@ func _physics_process(delta):
 	
 	if can_rotate:
 		rotate_sprite()
-
+	else:
+		rotation_degrees = 0
+	
+	
 func rotate_sprite():
 	if rotation_direction == "CW":
 			rotation_degrees += rotation_speed
-			if rotation_degrees > 45:
+			if rotation_degrees > max_rotation_angle:
 				rotation_direction = "ACW"
 	else:
 		rotation_degrees -= rotation_speed
-		if rotation_degrees <= 0:
+		if rotation_degrees <= -max_rotation_angle:
 			rotation_direction = "CW"
 
 func change_direction():
@@ -70,6 +77,11 @@ func change_direction():
 			left_cone.set_deferred("disabled", false)
 			animated_sprite_2d.play("Left")
 			direction_vector = Vector2.LEFT
+		"Stop":
+			turn_off_cones()
+			can_move = false
+			movement_direction = initial_direction
+			change_direction()
 
 func turn_off_cones():
 	left_cone.visible = false
