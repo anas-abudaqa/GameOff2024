@@ -5,15 +5,16 @@ signal EnterCave
 @onready var sprite_2d = $Sprite2D
 @onready var entrance = $Entrance
 
-
-
-var is_locked: bool = true
+#var is_locked: bool = true
 
 func _ready():
-	entrance.visible = false
+	if AllKnowing.cave_locked:
+		entrance.visible = false
+	else:
+		entrance.visible = true
 
 func interact():
-	if is_locked:
+	if AllKnowing.cave_locked:
 		if AllKnowing.obtained_damnedtongue: 
 			Dialogic.start("Unlock_Star")
 		else:
@@ -22,8 +23,10 @@ func interact():
 		enter()
 		
 
+##called by main level when dialogic emits signal
 func unlock_entrance():
-	is_locked = false
+	AllKnowing.cave_locked = false
+	#is_locked = false
 	entrance.visible = true
 
 func enter():

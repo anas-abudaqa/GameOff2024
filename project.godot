@@ -32,6 +32,7 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"BlockEntrance": "res://Dialogue/Interactions/BlockEntrance.dtl",
 "Corvus_Chapter1": "res://Dialogue/DrCorvus/Corvus_Chapter1.dtl",
 "Corvus_Chapter2": "res://Dialogue/DrCorvus/Corvus_Chapter2.dtl",
 "Corvus_Chapter3": "res://Dialogue/DrCorvus/Corvus_Chapter3.dtl",
@@ -55,6 +56,7 @@ directories/dtl_directory={
 "Notes_MotorControl": "res://Dialogue/DrCorvus/Notes_MotorControl.dtl",
 "Notes_Perception": "res://Dialogue/DrCorvus/Notes_Perception.dtl",
 "ObtainedBrainJar": "res://Dialogue/Interactions/ObtainedBrainJar.dtl",
+"ObtainedSacrificeBlood": "res://Dialogue/Interactions/ObtainedSacrificeBlood.dtl",
 "Obtained_Heart": "res://Dialogue/Ezekiel/Obtained_Heart.dtl",
 "Obtained_LabKey": "res://Dialogue/DrCorvus/Obtained_LabKey.dtl",
 "Obtained_Undead_Heart": "res://Dialogue/Ezekiel/Obtained_Undead_Heart.dtl",

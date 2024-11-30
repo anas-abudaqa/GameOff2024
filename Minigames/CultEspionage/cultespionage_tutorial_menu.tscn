@@ -1,0 +1,112 @@
+[gd_scene load_steps=9 format=3 uid="uid://dimibuhp2vn00"]
+
+[ext_resource type="Script" path="res://Minigames/CultEspionage/cultespionage_tutorial_menu.gd" id="1_hh15e"]
+[ext_resource type="Texture2D" uid="uid://dto1g6epo0x6t" path="res://Art/Abstract_background_pack/abstractbackground (19).png" id="2_63dlb"]
+[ext_resource type="Texture2D" uid="uid://fmw7clqmty20" path="res://Art/Pixel UI pack 3/02.png" id="3_2g5sx"]
+[ext_resource type="Texture2D" uid="uid://b14ke7qanosni" path="res://Art/Abstract_background_pack/abstractbackground (15).png" id="4_87tm0"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="5_s2acd"]
+[ext_resource type="Texture2D" uid="uid://2ek6vupeb2l4" path="res://Art/Abstract_background_pack/abstractbackground (29).png" id="6_b3thh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_31p6a"]
+texture = ExtResource("3_2g5sx")
+region_rect = Rect2(128, 128, 32, 32)
+modulate_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rl4xv"]
+texture = ExtResource("6_b3thh")
+modulate_color = Color(0.607843, 0, 0.282353, 1)
+
+[node name="PickPocketTutorialMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hh15e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.662745, 0.47451, 0.203922, 1)
+z_index = -2
+position = Vector2(238, 237.5)
+scale = Vector2(0.273958, 0.469444)
+texture = ExtResource("2_63dlb")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(240, 240)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_31p6a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+modulate = Color(0.176471, 0.431373, 0.223529, 1)
+z_index = -1
+position = Vector2(119.5, 120.5)
+scale = Vector2(0.124479, 0.221296)
+texture = ExtResource("4_87tm0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+custom_minimum_size = Vector2(200, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 0.682353, 1)
+theme_override_fonts/normal_font = ExtResource("5_s2acd")
+theme_override_font_sizes/normal_font_size = 12
+text = "Traverse the cave to find the item you need before escaping. 
+
+Avoid detection by the suspicious figures. Detection will lead to instant loss.
+
+Interact with the pots to distract the marked enemies"
+
+[node name="StartButton" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(50, 25)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = -63.0
+offset_right = 81.0
+offset_bottom = -38.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0.682353, 1)
+theme_override_fonts/font = ExtResource("5_s2acd")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_rl4xv")
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="Panel"]
+custom_minimum_size = Vector2(55, 25)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 160.0
+offset_top = -63.0
+offset_right = 215.0
+offset_bottom = -38.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0.682353, 1)
+theme_override_fonts/font = ExtResource("5_s2acd")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxTexture_rl4xv")
+text = "Go Back"
+
+[connection signal="pressed" from="Panel/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]

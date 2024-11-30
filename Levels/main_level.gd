@@ -5,7 +5,7 @@ const PICKPOCKETING_TUTORIAL_MENU = preload("res://Minigames/Pickpocketting/pick
 const HEARTPIECER_TUTORIAL_MENU = preload("res://Minigames/HeartPiecer/heartpiecer_tutorial_menu.tscn")
 const GHOSTHUNTER_TUTORIAL_MENU = preload("res://Minigames/GhostHunter/ghosthunter_tutorial_menu.tscn")
 const SHED_INTERIOR = preload("res://Levels/shed_interior.tscn")
-const SECRET_CAVE = preload("res://Levels/secret_cave.tscn")
+const CULTESPIONAGE_TUTORIAL_MENU = preload("res://Minigames/CultEspionage/cultespionage_tutorial_menu.tscn")
 
 @onready var syndra_marker_1 = $SyndraMarker1
 @onready var syndra = $Syndra
@@ -50,5 +50,8 @@ func _on_shed_exterior_enter_shed():
 
 
 func _on_star_entrance_enter_cave():
-	store_player_position()
-	get_tree().change_scene_to_packed(SECRET_CAVE)
+	if !AllKnowing.obtained_sacrificeblood:
+		store_player_position()
+		get_tree().change_scene_to_packed(CULTESPIONAGE_TUTORIAL_MENU)
+	else:
+		Dialogic.start("BlockEntrance")

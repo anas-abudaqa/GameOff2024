@@ -11,13 +11,13 @@ extends Node2D
 var on_cooldown: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#line_2d.add_point(global_position + size/2)
-	line_2d.add_point(enemy_to_connect.global_position)
+	##line2d add point works only with local coordinates, so we need to convert 
+	line_2d.add_point(to_local(enemy_to_connect.global_position))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	line_2d.set_point_position(1,to_local(enemy_to_connect.global_position))
 
 
 func interact():

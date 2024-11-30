@@ -144,7 +144,7 @@ position = Vector2(0, -3.33333)
 shape = SubResource("CircleShape2D_q00vk")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.5
+energy = 0.7
 texture = ExtResource("4_edii5")
 texture_scale = 0.3
 
@@ -189,5 +189,10 @@ polygon = PackedVector2Array(-15, -24.5, -12, -24.5, -12, -23.5, -10, -23.5, -10
 position = Vector2(3.8147e-06, 0)
 texture = ExtResource("3_37x3t")
 
+[node name="DetectionGraceTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="DetectionGraceTimer" to="." method="_on_detection_grace_timer_timeout"]

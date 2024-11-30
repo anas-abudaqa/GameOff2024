@@ -18,10 +18,12 @@ signal PlayerDetected
 @onready var up_cone = $DetectionArea/UpCone
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var detection_area = $DetectionArea
+@onready var detection_grace_timer = $DetectionGraceTimer
 
 var initial_direction: String
 var direction_vector = Vector2.ZERO
 var rotation_direction: String = "CW"
+var player_in_detection_area: bool = false
 
 func _ready():
 	detection_area.modulate = Color(1,1,1)
@@ -97,10 +99,17 @@ func turn_off_cones():
 
 func _on_detection_area_body_entered(body):
 	if body.is_in_group("Player"):
-		print("bomboclaat")
+		player_in_detection_area = true
 		detection_area.modulate = Color(1, 0, 0, 73)
-		PlayerDetected.emit()
+		detection_grace_timer.start()
+		#PlayerDetected.emit()
 
 
 func _on_detection_area_body_exited(body):
+	player_in_detection_area = false
 	detection_area.modulate = Color(1, 1, 1, 1)
+
+
+func _on_detection_grace_timer_timeout():
+	if player_in_detection_area:
+		PlayerDetected.emit()
