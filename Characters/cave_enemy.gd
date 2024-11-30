@@ -1,5 +1,7 @@
 extends Area2D
 
+class_name CaveEnemy
+
 signal PlayerDetected
 
 
@@ -105,7 +107,7 @@ func _on_detection_area_body_entered(body):
 		#PlayerDetected.emit()
 
 
-func _on_detection_area_body_exited(body):
+func _on_detection_area_body_exited(_body):
 	player_in_detection_area = false
 	detection_area.modulate = Color(1, 1, 1, 1)
 

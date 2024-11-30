@@ -1,0 +1,15 @@
+Syndra: Thank you for your help brave stranger. \
+Without you, I would not have survived. 
+Syndra: I am Syndra the witch. Who might you be? And what are you doing here?
+Player: A witch? My name is Aveline. I was on my way  to, uh, pay respects to my dead husband
+Player: Uhm with that being said, I have so many questions right now
+Player: Wasn't there a cat just now? What were those ghosts? Where did they come from?
+Syndra: Hmmm I suppose you deserve to know. \
+This place is not safe
+Syndra: I am a witch here to investigate the anomalies occurring in this church.
+Syndra: To avoid raising suspicion while I'm investigating, I transformed to a cat using my magic 
+Syndra: During my investigation I found this tongue pulsing with weird energy. After I picked it up, these ghosts started attacking me. 
+Syndra: Somehow they prevented me from transforming back or using any of my magic. I'm very thankful for your help
+Syndra: I will rest here for a while before continuing on my adventure. I'm feeling quite exhausted
+Player: (Tongue?)
+set {SyndraQuest.current_chapter} = 6

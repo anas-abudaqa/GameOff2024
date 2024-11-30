@@ -11,9 +11,6 @@ func _ready():
 		enemy.connect("PlayerDetected", _on_player_detected)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func interact():
 	exit_cave()

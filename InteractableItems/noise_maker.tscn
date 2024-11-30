@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_y0ncj")
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0)
 width = 1.0
-default_color = Color(1, 0.254902, 0.533333, 1)
+default_color = Color(0.498039, 0.0862745, 0.647059, 1)
 
 [node name="StopTimer" type="Timer" parent="."]
 wait_time = 5.0

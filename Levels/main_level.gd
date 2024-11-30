@@ -37,12 +37,11 @@ func _on_dialogic_signal(trigger: String):
 			get_tree().change_scene_to_packed(HEARTPIECER_TUTORIAL_MENU)
 		"UndeadHeart":
 			Dialogic.start("Obtained_Undead_Heart")
-		"Ghosthunt":
+		"GhostHunt":
 			store_player_position()
 			get_tree().change_scene_to_packed(GHOSTHUNTER_TUTORIAL_MENU)
 		"UnlockEntrance":
 			star_entrance.unlock_entrance()
-
 
 func _on_shed_exterior_enter_shed():
 	store_player_position()

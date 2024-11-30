@@ -1,5 +1,6 @@
 extends Node
 
+const MAIN_LEVEL = preload("res://Levels/main_level.tscn")
 
 var has_lab_key: bool = false
 var has_heart: bool = false
@@ -9,9 +10,10 @@ var obtained_undeadheart: bool = false
 var obtained_damnedtongue: bool = false
 var obtained_sacrificeblood: bool = false
 var cave_locked: bool = true
+var syndra_transformed: bool = false
 
 var player_spawn_location: Vector2 = Vector2.ZERO
-const MAIN_LEVEL = preload("res://Levels/main_level.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -36,4 +38,4 @@ func _on_ghosthunt_won():
 	#has_heart = true
 	#obtained_undeadheart = true
 	get_tree().change_scene_to_packed(MAIN_LEVEL)
-	Dialogic.start("Ghosts_Whacked")
+	Dialogic.start("Ghosts_Wacked")

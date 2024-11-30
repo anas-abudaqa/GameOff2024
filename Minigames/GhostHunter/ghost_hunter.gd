@@ -141,7 +141,7 @@ func choose_ghost_type():
 		else: 
 			return curse_ghost_scene.instantiate()
 
-func _consume_ghost(letter: String, score: int, effect: String):
+func _consume_ghost(_letter: String, score: int, effect: String):
 	total_score += score
 	total_score = clamp(total_score, 0, WINNING_SCORE)
 	#print("Score is now: ", total_score)

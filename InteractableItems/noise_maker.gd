@@ -16,7 +16,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	line_2d.set_point_position(1,to_local(enemy_to_connect.global_position))
 
 

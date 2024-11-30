@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyfg3pmgo8dmt"]
+
+[ext_resource type="Script" path="res://Characters/shaman.gd" id="1_5yd3c"]
+[ext_resource type="Texture2D" uid="uid://dnywm6dihsnhv" path="res://Art/Sprites/Shaman.png" id="1_h73p8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gagww"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k573w"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kb4f"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba5nm"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxtod"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjhvt"]
+atlas = ExtResource("1_h73p8")
+region = Rect2(32, 32, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bh2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gagww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k573w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kb4f")
+}],
+"loop": true,
+"name": &"Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba5nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxtod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qjhvt")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bgoju"]
+radius = 6.0
+
+[node name="Shaman" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_5yd3c")
+movement_speed = 50
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1bh2p")
+animation = &"Left"
+frame_progress = 0.848347
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_bgoju")
