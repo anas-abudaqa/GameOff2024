@@ -2,12 +2,12 @@ Player: Woah. What just happened?
 Ezekiel: Thank you, kind stranger. \
 I feel the pain going away slowly.
 Player: I can't believe what I'm seeing. What are you?
-Ezekiel: I.. do not know anymore. All I know is I am not alive
-Ezekiel: And this heart we melded, it is.. calling for you
+Ezekiel: I.. do not know anymore. I cannot answer your questions.
+Ezekiel: But here, listen, to this heart we melded. It is.. calling for you.
 Player: What?
-Ezekiel: Please, take it. I feel ominously compelled to give it you
-Ezekiel: I was "alive" without it so far, and now that it is whole again, I do not feel pain
+Ezekiel: Please, take it. I feel ominously compelled to give it you.
+Ezekiel: I was "alive" without it so far, and now that it is whole again, I do not feel pain.
 Player: Uhm... This is creeping me out.
 Player: (Hmmmm, this might be one of the items I need for the ritual)
-Syndra: How he's still standing up, I do not know....
 Player: I, uh, don't know what to say. Thanks!
+[signal arg="UndeadHeart"]

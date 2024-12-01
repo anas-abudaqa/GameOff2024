@@ -1,3 +1,4 @@
-The chest is unlocked. You open it and peak your hand inside. 
-You have obtained a strange piece of flesh. It is warm, and is beating
+The chest is unlocked. You open it and peak your hand inside.
+Player: Oh god... What is this? It's... warm.
+You have obtained a strange piece of flesh. It is warm, and is beating.
 set {EzekielQuest.current_chapter} = 6

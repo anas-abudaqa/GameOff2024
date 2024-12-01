@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3npaxs7od05v"]
+[gd_scene load_steps=7 format=3 uid="uid://c3npaxs7od05v"]
 
 [ext_resource type="Texture2D" uid="uid://dkdd3wliv3nm2" path="res://Art/Texture/TX Props.png" id="1_1s7n3"]
 [ext_resource type="Script" path="res://InteractableItems/noise_maker.gd" id="1_7vayg"]
 [ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="3_cnnkp"]
+[ext_resource type="AudioStream" uid="uid://idpyruld1jhc" path="res://Music/teacup-clink-sfx-156224.mp3" id="4_4qsb5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6vff"]
 atlas = ExtResource("1_1s7n3")
@@ -41,6 +42,10 @@ one_shot = true
 energy = 0.7
 texture = ExtResource("3_cnnkp")
 texture_scale = 0.3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4qsb5")
+volume_db = -3.0
 
 [connection signal="area_entered" from="Interactable" to="." method="_on_interactable_area_entered"]
 [connection signal="timeout" from="StopTimer" to="." method="_on_stop_timer_timeout"]

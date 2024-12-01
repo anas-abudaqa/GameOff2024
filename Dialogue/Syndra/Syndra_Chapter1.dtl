@@ -1,5 +1,5 @@
-Player: A.. cat? What are you doing here
+Player: A.. cat? What are you doing here?
 Cat: ......
 Cat: *Hissssssss*
-Player: (It doesn't seem fond of me) 
+Player: (It doesn't seem fond of me.)
 set {SyndraQuest.current_chapter} = 2

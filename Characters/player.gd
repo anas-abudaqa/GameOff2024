@@ -43,7 +43,8 @@ func _physics_process(delta):
 	
 	if direction_vector:
 		movement_animation(delta)
-		
+	else:
+		rotation_degrees = 0
 	move_and_slide()
 
 func movement_animation(delta):

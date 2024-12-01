@@ -6,6 +6,7 @@ extends Node2D
 @onready var line_2d = $Line2D
 @onready var stop_timer = $StopTimer
 @onready var cooldown_timer = $CooldownTimer
+@onready var audio_stream_player = $AudioStreamPlayer
 
 
 var on_cooldown: bool = false
@@ -28,6 +29,7 @@ func interact():
 	
 func call_enemy():
 	on_cooldown = true
+	audio_stream_player.play()
 	enemy_to_connect.movement_direction = starting_direction
 	enemy_to_connect.change_direction()
 	enemy_to_connect.can_rotate = false

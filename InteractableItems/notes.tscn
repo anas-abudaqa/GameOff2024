@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="3_wgcmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh4g7"]
-size = Vector2(55, 55)
+size = Vector2(68.5714, 76.875)
 
 [node name="Notes" type="Area2D"]
 z_index = 7

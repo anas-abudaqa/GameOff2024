@@ -20,5 +20,20 @@ func read_note():
 		4:
 			Dialogic.start("Notes_MotorControl")
 		5:
-			Dialogic.start("Notes_MotorControl")
-
+			Dialogic.start("Fountain")
+		6:
+			Dialogic.start("Statue2")
+		7:
+			Dialogic.start("BlueTree")
+		8:
+			Dialogic.start("LockedBuilding")
+		9:
+			Dialogic.start("BurialHouse")
+		10:
+			Dialogic.start("EzekielGrave")
+		11:
+			Dialogic.start("Grave")
+		12:
+			Dialogic.start("Notes1")
+		13:
+			Dialogic.start("Notes2")

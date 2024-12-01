@@ -1,15 +1,15 @@
 Player: Uhmmm, you found a strange tongue you said?
-Syndra: Indeed. I have my suspicion that it is used as part of an old ritual the shamans here are practicing
-Syndra: But I have not been able to find any clues about these shamans or the ritual
-Syndra: After I am done resting, I will continue investigating. You should leave this area and never come back
-Player: Hmmm, I can go search for some clues for you until you are rested
-Syndra: Nonsense, it is too dangerous for the untrained
-Player: I did just defend you from ghosts after all; I think I can handle myself
-Syndra: Hmmmmmmm
-Syndra: Fair enough, you may survey the area while I rest. You won't raise suspicion due to your low magic
-Syndra: Here you go, take this tongue and try to find a way to use it in the cemetery
-Syndra: The energy I sensed in it has dissipated, so you don't have to worry about ghosts attacking you
+Syndra: Indeed. I have my suspicion that it is used as part of an old ritual the shamans here are practicing.
+Syndra: But I have not been able to find any clues about these shamans or the ritual.
+Syndra: After I am done resting, I will continue investigating. You should leave this area and never come back.
+Player: Hmmm, I can go search for some clues for you until you are rested.
+Syndra: Nonsense, it is too dangerous for the untrained.
+Player: I did just defend you from ghosts after all; I think I can handle myself.
+Syndra: Hmmmmmmm.
+Syndra: Fair enough, you may survey the area while I rest. You won't raise suspicion due to your low magic.
+Syndra: Here you go, take this tongue and try to find a way to use it in the cemetery.
+Syndra: The energy I sensed in it has dissipated, so you don't have to worry about ghosts attacking you.
 Syndra: Report back to me immediately after you find something. Do not wander on your own!
-Player: Yes Ma'am! 
+Player: Yes Ma'am!
 Player: (sorry for lying to you...)
-set {SyndraQuest.current_chapter} = 7
+[signal arg="Tongue"]

@@ -39,7 +39,7 @@ func _ready():
 			Dialogic.VAR.SyndraQuest.current_chapter = 4
 			AllKnowing.syndra_chapter_moved = true
 			
-		if AllKnowing.obtained_damnedtongue and AllKnowing.obtained_undeadheart:
+		if AllKnowing.obtained_damnedtongue and AllKnowing.obtained_sacrificeblood:
 			shaman.visible = true
 			Dialogic.start("Closing_Chapter1")
 			
@@ -66,6 +66,9 @@ func _on_dialogic_signal(trigger: String):
 			animation_player.play("BlackFade")
 			await animation_player.animation_finished
 			get_tree().change_scene_to_packed(CLOSING_CUTSCENE)
+		"Tongue":
+			AllKnowing.obtained_damnedtongue = true
+			Dialogic.start("Obtained_Tongue")
 
 func _on_shed_exterior_enter_shed():
 	store_player_position()

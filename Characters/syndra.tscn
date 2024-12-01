@@ -12,6 +12,7 @@ height = 42.0
 radius = 25.0
 
 [node name="Syndra" type="Area2D"]
+z_index = 4
 script = ExtResource("1_lsukn")
 
 [node name="Cat" type="Sprite2D" parent="."]
