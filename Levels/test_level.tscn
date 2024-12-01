@@ -1680,6 +1680,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_onkur")
 
 [node name="TestLevel" type="Node2D"]
+visible = false
 script = ExtResource("1_kjvme")
 
 [node name="Ground" type="TileMap" parent="."]

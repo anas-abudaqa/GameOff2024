@@ -1,8 +1,10 @@
 Player: I'm Aveline.
 Ezekiel: I'm Ezekiel, I believe.
 Player: You're not sure?
-Ezekiel: My memory is still hazy and my chest hurts awfully bad.
+Ezekiel: My memory is still hazy. My chest also hurts awfully bad.
 Player: What happened? Are you okay?
-Ezekiel: .......... (Why am I here)
+Ezekiel: ..........
+Player: ?
+Ezekiel: (Why am I here.)
 Player: (Did I hear him mumbling to himself?)
 set {EzekielQuest.current_chapter} = 3

@@ -3,10 +3,11 @@ Shaman: Do you want to help your beloved?
 Player: What are you talking about?
 Shaman: There is a way to treat him.
 Player: W..what?\
-Wait, who are you and where did you come from?!
-Shaman: I am a shaman. I was passing by when I and heard your cries
+Who are you, and where did you come from?!
+Shaman: I am a shaman. I was passing by when I heard your cries
 Shaman: I know of a certain ritual, capable of curing the uncurable
-Shaman: To perform it, one must gather 4 ingredients. Are you interested to hear the rest?
+Shaman: To perform it, one requires 4 ingredients. Are you interested to hear the rest?
+Player: ......
 Player: Y...yes..
 Shaman: Head to the old church at the edge of this town. From there you must collect 4 items\:
 Shaman: Brain Jar 7\
@@ -16,15 +17,17 @@ Sacrifical Blood
 Player: The old church? Isn't that where the abandoned cemetery lies?
 Player: Uhmmmm.. that sounds quite horrid\
 Are you suggesting I "collect" these items from somebody?
-Shaman: Ha Ha Ha. No Aveline, that is not what I mean. All will reveal itself at the church
-Player: How do you know my name?
+Shaman: No Aveline, all will reveal itself at the church
+Player: How do you even know my name?
 Shaman: Surprised? I am a Shaman after all
-Shaman: Now, you must not trust anybody you meet in that place. It is abandoned for a reason after all
-Shaman: Do not tell them the true reason of your visit. Who knows how they may react.
-Player: I'm not sure how to react either. This is all too much.
+Shaman: Now, you must gather these ingredients in secret.
+Shaman: It is best if word does not get out that you are keeping of this ritual.
+Shaman: It should only be used in the most dire of situations
+Player: I'm not sure how to react...\
+This is too sudden
 Player: How do I know I can trust you? How do I know you are telling any shred of truth?
-Shaman: You do not. The decision is yours. I will not force you to do anything.
-Shaman: Are you gonna let this chance go to waste?
+Shaman: You do not. The decision is yours. I am merely offering to perform the ritual on your behalf.
+Shaman: If you do not wish to trust me, I will take my leave
 Erin: .......
 Player: Erin.....
 Player: *sobs*

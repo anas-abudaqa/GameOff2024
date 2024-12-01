@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bltw05l6hf763"]
+[gd_scene load_steps=5 format=3 uid="uid://bltw05l6hf763"]
 
 [ext_resource type="Script" path="res://InteractableItems/notes.gd" id="1_5yfc1"]
 [ext_resource type="Texture2D" uid="uid://67e8rmdn7l2t" path="res://Art/Misc/Notes.png" id="1_g2ft2"]
+[ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="3_wgcmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nh4g7"]
 size = Vector2(55, 55)
@@ -20,3 +21,8 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("RectangleShape2D_nh4g7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("3_wgcmj")
+texture_scale = 0.25

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4bl17ajw6gh3"]
+
+[ext_resource type="Script" path="res://GameTimer.gd" id="1_xvgf1"]
+[ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="2_rcjxt"]
+
+[node name="GameTimer" type="Node2D"]
+script = ExtResource("1_xvgf1")
+
+[node name="TimerText" type="RichTextLabel" parent="."]
+offset_right = 64.0
+offset_bottom = 29.0
+theme_override_fonts/normal_font = ExtResource("2_rcjxt")
+text = "1800"

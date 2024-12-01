@@ -11,17 +11,15 @@ var obtained_damnedtongue: bool = false
 var obtained_sacrificeblood: bool = false
 var cave_locked: bool = true
 var syndra_transformed: bool = false
-
+var syndra_chapter_moved: bool = false
 var player_spawn_location: Vector2 = Vector2.ZERO
+var game_just_started: bool = true
 
-# Called when the node enters the scene tree for the first time.
+var game_timer
+
+
 func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+	game_timer = get_tree().create_timer(1800)
 
 func _on_pickpocket_won():
 	has_lab_key = true

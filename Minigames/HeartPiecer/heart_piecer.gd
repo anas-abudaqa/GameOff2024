@@ -20,11 +20,20 @@ signal HeartPiecerWon
 @onready var image_piece_r_33 = $Round3ImagePieces/ImagePieceR33
 @onready var image_piece_r_3_last = $Round3ImagePieces/ImagePieceR3Last
 
-
+@onready var tries_left_text = $UI/TriesLeftText
+@onready var game_lost_text = $UI/GameLostText
 @onready var rich_text_label = $UI/RichTextLabel
 @onready var round_transition_timer = $RoundTransitionTimer
 @onready var round_timer = $RoundTimer
 @onready var heartbeat_animation = $HeartbeatAnimation
+
+
+@onready var background_audio = $BackgroundAudio
+@onready var round_won_audio = $RoundWonAudio
+@onready var round_lost_audio = $RoundLostAudio
+@onready var game_lost_audio = $GameLostAudio
+@onready var heartbeat_audio = $HeartbeatAudio
+
 
 #round number: round image pieces
 var remaining_rounds_dictionary: Dictionary = {}
@@ -50,7 +59,9 @@ func _ready():
 	image_pieces.visible = false
 	round_2_image_pieces.visible = false
 	round_3_image_pieces.visible = false
+	game_lost_text.visible = false
 	tries_left = 3
+	tries_left_text.text = "Tries Left " + str(tries_left)
 	start_round()
 
 func _process(_delta):
@@ -88,21 +99,28 @@ func round_won():
 	game_started = false
 	round_timer.stop()
 	clear_modulate()
-	print("ROUND WON")
+	round_won_audio.play()
 	round_transition_timer.start()
 
 func round_lost():
 	print("You ran out of time. Try again")
+	round_lost_audio.play()
+	#tries_left_text.text = "Tries Left " + str(tries_left)
 	start_round()
 
 func game_won():
 	rich_text_label.visible = false
 	heartbeat_animation.visible = true
 	heartbeat_animation.play("Idle")
+	heartbeat_audio.play()
 	await get_tree().create_timer(5).timeout
 	HeartPiecerWon.emit()
 
 func game_lost():
+	game_lost_text.visible = true
+	background_audio.stop()
+	game_lost_audio.play()
+	await game_lost_audio.finished
 	get_tree().change_scene_to_packed(HEARTPIECER_TUTORIAL_MENU)	
 	
 func clear_modulate():
@@ -114,13 +132,14 @@ func clear_modulate():
 func base_movement(image: Area2D, event: InputEvent):
 	if !game_started:
 		return
-	if event.is_action_pressed("LMB"):
+	if event.is_action_pressed("RMB"):
 		image.rotation_degrees += DISPLACEMENT_ANGLE
-	elif event.is_action_pressed("RMB"):
+	elif event.is_action_pressed("LMB"):
 		image.rotation_degrees -= DISPLACEMENT_ANGLE
 
 func _on_round_timer_timeout():
 	tries_left -= 1
+	tries_left_text.text = "Tries Left " + str(tries_left)
 	if tries_left <= 0:
 		game_lost()
 	else:

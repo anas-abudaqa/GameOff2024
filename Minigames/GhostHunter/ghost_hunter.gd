@@ -15,7 +15,15 @@ const GHOSTHUNTER_TUTORIAL_MENU = preload("res://Minigames/GhostHunter/ghosthunt
 @onready var score_label = $UI/ScoreLabel
 
 @onready var game_timer = $UI/GameTimer
-#@onready var score_progress_bar = $UI/ScoreProgressBar
+
+@onready var correct_ghost_audio = $CorrectGhostAudio
+@onready var wrong_ghost_audio = $WrongGhostAudio
+@onready var background_music = $BackgroundMusic
+@onready var game_lost_audio = $GameLostAudio
+@onready var game_lost_text = $UI/GameLostText
+@onready var game_won_audio = $GameWonAudio
+@onready var game_win_text = $UI/GameWinText
+
 
 const WINNING_SCORE: int = 200
 var good_ghost_scene = preload("res://Minigames/GhostHunter/ghost.tscn")
@@ -25,11 +33,11 @@ var mirror_ghost_scene = preload("res://Minigames/GhostHunter/mirror_ghost.tscn"
 
 var total_score: int = 0
 
-var unused_letter_array: Array = ["Q", "W", "E", "S", "A", "D", "Z", "X", "C", "R", "F", "V"]
+#var unused_letter_array: Array = ["Q", "W", "E", "S", "A", "D", "Z", "X", "C", "R", "F", "V"]
+var unused_letter_array: Array = ["Q", "W", "E", "R", "T", "Y"]
 var used_letter_array: Array
 
 var rng = RandomNumberGenerator.new()
-var good_ghosts_amount: int = int(floor(unused_letter_array.size()/2))
 var is_cursed: bool = false
 
 var current_round: Line2D
@@ -41,15 +49,17 @@ var current_slot: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GhostHuntWon.connect(AllKnowing._on_ghosthunt_won)
-	#score_progress_bar.max_value = WINNING_SCORE
+	
 	curse_label.visible = false
+	game_lost_text.visible = false
+	game_win_text.visible = false
 	#turn off visibility of each marker2D in the container. Use visibility state to check if a spot is used or not
 	for child in position_markers_container.get_children(): 
 		child.visible = false
 	for child in rounds_container.get_children(): 
 		child.visible = false
 	
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1).timeout
 	spawn_round()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -80,7 +90,7 @@ func spawn_round():
 	round_label.text = "Round: " + str(current_round_index + 1)
 	
 	#wait for 1.5s before spawning a ghost
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.7).timeout
 	spawn_ghost()
 
 func spawn_ghost():
@@ -107,13 +117,13 @@ func spawn_ghost():
 
 func choose_ghost_type():
 	var rand_number: float = rng.randf()
-	if current_round_index < 2:
+	if current_round_index < 4:
 		if rand_number <= 0.65:
 			return good_ghost_scene.instantiate()
 		else:
 			return bad_ghost_scene.instantiate()
 	
-	elif current_round_index < 4:
+	elif current_round_index < 8:
 		if rand_number <= 0.5:
 			return good_ghost_scene.instantiate()
 		elif rand_number <= 0.7:
@@ -121,7 +131,7 @@ func choose_ghost_type():
 		else:
 			return bad_ghost_scene.instantiate()
 		
-	elif current_round_index < 6:
+	elif current_round_index < 12:
 		if rand_number <= 0.4:
 			return good_ghost_scene.instantiate()
 		elif rand_number <= 0.7:
@@ -143,21 +153,23 @@ func choose_ghost_type():
 
 func _consume_ghost(_letter: String, score: int, effect: String):
 	total_score += score
-	total_score = clamp(total_score, 0, WINNING_SCORE)
-	#print("Score is now: ", total_score)
+	total_score = clamp(total_score, 0, WINNING_SCORE+20)
 	score_label.text = "Score: " + str(total_score)
 	
-	#if total_score >= WINNING_SCORE:
-		#print("WE WON")
-	
+	if score == -5:
+		wrong_ghost_audio.play()
+	elif score == 5:
+		correct_ghost_audio.play()
 	#go to next slot
 	current_slot += 1
-	
 	#apply curse effect  and screen text
 	if effect == "CURSE":
+		wrong_ghost_audio.play()
 		is_cursed = true
 		curse_label.visible = true
 		curse_timer.start()
+	
+	await get_tree().create_timer(0.1).timeout
 	spawn_ghost()
 
 #Round is done if we run out of letters to assign
@@ -168,7 +180,10 @@ func assign_letter() -> String:
 		unused_letter_array.erase(random_letter)
 			#add to used letter array to use for input detection
 		used_letter_array.append(random_letter)
+		#if random_letter:
 		return random_letter
+		#else:
+			#return ""
 	else:
 		##IDK IF THIS WILL CAUSE A BUG. WILL IT EVER RETURN IF I CALL ROUND_DONE FIRST?
 		round_done()
@@ -206,11 +221,19 @@ func round_done():
 		game_lost()
 
 func game_won():
-	await get_tree().create_timer(1.5).timeout
+	background_music.stop()
+	game_win_text.visible = true
+	game_won_audio.play()
+	await game_won_audio.finished
+	#await get_tree().create_timer(1.5).timeout
 	GhostHuntWon.emit()
 
 func game_lost():
-	await get_tree().create_timer(1.5).timeout
+	background_music.stop()
+	game_lost_text.visible = true
+	game_lost_audio.play()
+	await game_lost_audio.finished
+	#await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_packed(GHOSTHUNTER_TUTORIAL_MENU)
 
 func _on_game_timer_timeout():

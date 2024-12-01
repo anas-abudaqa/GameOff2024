@@ -44,7 +44,7 @@ animations = [{
 script = ExtResource("1_8rlxe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.396078, 0.282353, 0.529412, 1)
+modulate = Color(0.345098, 0.243137, 0.466667, 1)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_g5w7h")
 animation = &"Idle"
@@ -52,7 +52,6 @@ autoplay = "Idle"
 frame_progress = 0.0808264
 
 [node name="ExpiryTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

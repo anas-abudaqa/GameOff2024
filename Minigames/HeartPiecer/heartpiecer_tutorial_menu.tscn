@@ -68,12 +68,12 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(1, 1, 0.682353, 1)
 theme_override_fonts/normal_font = ExtResource("5_paew2")
 theme_override_font_sizes/normal_font_size = 12
-text = "Orient the layers of the photo correctly with respect to the top center of the window.
+text = "Orient the layers of the hearts correctly with respect to the top center of the window.
 
 If the timer runs out before you finish a round, you restart the round 
 
-LMB: Rotates clockwise
-RMB: Rotates anti-clockwise
+RMB: Rotates clockwise
+LMB: Rotates anti-clockwise
 
 "
 

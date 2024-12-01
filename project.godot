@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game Off 24"
-run/main_scene="res://Levels/main_level.tscn"
+run/main_scene="res://Levels/start_game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -34,6 +34,9 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "BlockEntrance": "res://Dialogue/Interactions/BlockEntrance.dtl",
+"Closing_Chapter1": "res://Dialogue/ClosingCutscene/Closing_Chapter1.dtl",
+"Closing_Chapter2": "res://Dialogue/ClosingCutscene/Closing_Chapter2.dtl",
+"Closing_Chapter3": "res://Dialogue/ClosingCutscene/Closing_Chapter3.dtl",
 "Corvus_Chapter1": "res://Dialogue/DrCorvus/Corvus_Chapter1.dtl",
 "Corvus_Chapter2": "res://Dialogue/DrCorvus/Corvus_Chapter2.dtl",
 "Corvus_Chapter3": "res://Dialogue/DrCorvus/Corvus_Chapter3.dtl",
@@ -64,6 +67,7 @@ directories/dtl_directory={
 "Opening_Chapter1": "res://Dialogue/OpeningCutscene/Opening_Chapter1.dtl",
 "Opening_Chapter2": "res://Dialogue/OpeningCutscene/Opening_Chapter2.dtl",
 "Opening_Chapter3": "res://Dialogue/OpeningCutscene/Opening_Chapter3.dtl",
+"Opening_Chapter4": "res://Dialogue/OpeningCutscene/Opening_Chapter4.dtl",
 "Syndra_Chapter1": "res://Dialogue/Syndra/Syndra_Chapter1.dtl",
 "Syndra_Chapter2": "res://Dialogue/Syndra/Syndra_Chapter2.dtl",
 "Syndra_Chapter3": "res://Dialogue/Syndra/Syndra_Chapter3.dtl",

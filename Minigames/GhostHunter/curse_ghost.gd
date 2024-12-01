@@ -1,5 +1,6 @@
 extends Ghost
 
+
 func _ready():
 	score = 0
 	effect = "CURSE"
@@ -8,7 +9,6 @@ func _ready():
 	
 func _on_assigned_letter_pressed(letter: String):
 	if letter == assigned_letter:
-		print("Oh no ", letter, " ", score)
 		GhostDespawned.emit(assigned_letter, score, effect)
 		#add music
 		queue_free()

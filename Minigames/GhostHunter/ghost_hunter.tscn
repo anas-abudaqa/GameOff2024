@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://jtf4ybrargj2"]
+[gd_scene load_steps=9 format=3 uid="uid://jtf4ybrargj2"]
 
 [ext_resource type="Script" path="res://Minigames/GhostHunter/ghost_hunter.gd" id="1_odkrd"]
 [ext_resource type="Texture2D" uid="uid://d3ep7rrtkribe" path="res://Art/Abstract_background_pack/abstractbackground (42).png" id="2_uhaf7"]
 [ext_resource type="FontFile" uid="uid://ewyn5annd01h" path="res://Art/Slime's Pixel Font Pack TrueType (one color versions)/Varnished.ttf" id="4_2hvbb"]
+[ext_resource type="AudioStream" uid="uid://bs6km78acr6vq" path="res://Music/GhostHunt/Puzzles.wav" id="4_yl8av"]
+[ext_resource type="AudioStream" uid="uid://dce6gb5u01e6o" path="res://Music/GameOver.wav" id="5_otl8a"]
+[ext_resource type="AudioStream" uid="uid://coakidpd1qq22" path="res://Music/Victory_trimmed.wav" id="6_qdqpg"]
+[ext_resource type="AudioStream" uid="uid://cgst7dbdy1jg1" path="res://Music/Pickpocket/PlayerImpact_error_006.ogg" id="7_ya022"]
+[ext_resource type="AudioStream" uid="uid://c0ameto5clxyr" path="res://Music/GhostHunt/confirm_style_2_001.wav" id="8_dmglj"]
 
 [node name="GhostHunter" type="Node2D"]
 script = ExtResource("1_odkrd")
@@ -48,8 +53,8 @@ text = "TEMPORARILY CURSED"
 layout_mode = 0
 offset_left = 19.0
 offset_top = 20.0
-offset_right = 170.0
-offset_bottom = 60.0
+offset_right = 209.0
+offset_bottom = 56.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("4_2hvbb")
 theme_override_font_sizes/normal_font_size = 30
@@ -59,60 +64,132 @@ text = "Round: 1"
 layout_mode = 0
 offset_left = 282.0
 offset_top = 20.0
-offset_right = 468.0
-offset_bottom = 60.0
+offset_right = 480.0
+offset_bottom = 58.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("4_2hvbb")
 theme_override_font_sizes/normal_font_size = 30
 text = "Score: 0"
 
+[node name="GameLostText" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 71.0
+offset_top = 225.0
+offset_right = 450.0
+offset_bottom = 299.0
+theme_override_colors/default_color = Color(0.988235, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_2hvbb")
+theme_override_font_sizes/normal_font_size = 20
+text = "You didn't hunt enough ghosts!"
+
+[node name="GameWinText" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 123.0
+offset_top = 226.0
+offset_right = 388.0
+offset_bottom = 268.0
+theme_override_colors/default_color = Color(0.988235, 1, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_2hvbb")
+theme_override_font_sizes/normal_font_size = 20
+text = "You hunted the ghosts!"
+
 [node name="RoundsContainer" type="Node2D" parent="."]
 
 [node name="Round1" type="Line2D" parent="RoundsContainer"]
 visible = false
-points = PackedVector2Array(101, 393, 140.354, 318.888, 196, 207, 238, 116, 285, 209, 349.624, 337.842, 384, 398, 240, 306, 71, 223, 239, 226, 399, 222, 101, 392)
+points = PackedVector2Array(142, 346, 240, 167, 339, 352, 121, 226, 356, 228, 151, 343)
 
 [node name="Round2" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(74, 14)
 scale = Vector2(0.806283, 0.814591)
-points = PackedVector2Array(58.2922, 139.948, 360.915, 139.948, 60.7727, 203.783, 355.954, 200.1, 59.5325, 271.302, 352.234, 271.302, 63.2532, 332.682, 346.032, 331.455, 65.7338, 376.876, 348.513, 375.649, 68.2143, 428.436, 347.273, 425.981)
+points = PackedVector2Array(124.026, 205.011, 281.539, 233.246, 135.188, 271.302, 287.74, 299.537, 136.429, 341.276, 285.26, 370.738)
 
 [node name="Round3" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(24, 58)
 scale = Vector2(0.874681, 0.786267)
-points = PackedVector2Array(441, 142, 433, 255, 391, 338, 294, 384, 196, 385, 98, 345, 57, 246, 51, 134, 113, 194, 190, 271, 290, 273, 433, 142)
+points = PackedVector2Array(129.19, 171.697, 165.775, 297.609, 261.81, 305.24, 353.272, 298.881, 386.427, 171.697, 131.477, 170.426)
 
 [node name="Round4" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(4, 39)
 scale = Vector2(0.884013, 0.880342)
-points = PackedVector2Array(222, 90, 310, 92, 313, 184, 411, 185, 413, 249, 318, 248, 314, 420, 207, 421, 208, 247, 114, 246, 116, 183, 210, 182)
+points = PackedVector2Array(266.964, 141.99, 152.713, 211.282, 263.571, 211.282, 369.904, 211.282, 261.308, 273.757, 262.44, 349.864)
 
 [node name="Round5" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(-70, 58)
 scale = Vector2(1.41885, 0.818681)
-points = PackedVector2Array(134, 80, 134, 193, 134, 301, 134, 416, 305, 72, 305, 195, 305, 306, 305, 416, 134, 240, 193, 239, 250, 239, 305, 241)
+points = PackedVector2Array(162.103, 131.92, 162.808, 373.772, 288.262, 130.698, 286.852, 374.993, 162.103, 238.188, 288.966, 239.409)
 
 [node name="Round6" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(-23, 39)
 scale = Vector2(1.04545, 0.868263)
-points = PackedVector2Array(350, 108, 250, 108, 151, 107, 151, 183.052, 151, 264, 248, 262, 345, 262, 152, 266, 153, 337, 153, 421, 248, 418, 351, 419)
+points = PackedVector2Array(330.958, 143.966, 177.914, 142.814, 176.957, 256.835, 345, 262, 175.044, 372.007, 349.132, 377.766)
 
 [node name="Round7" type="Line2D" parent="RoundsContainer"]
 visible = false
 position = Vector2(-32.5616, 61.4732)
 scale = Vector2(1.0411, 0.883929)
-points = PackedVector2Array(121, 165, 248, 166, 325, 131, 268, 83, 209, 83, 185, 104, 184, 252, 184, 343, 184, 399, 251, 399, 325, 399, 393, 399)
+points = PackedVector2Array(183.999, 101.283, 184.96, 206.495, 184.96, 273.242, 183.039, 345.646, 256.038, 345.646, 380.906, 346.778)
 
 [node name="Round8" type="Line2D" parent="RoundsContainer"]
 visible = false
-position = Vector2(-59, 58)
+position = Vector2(-49, 47)
 scale = Vector2(1.10256, 0.843137)
-points = PackedVector2Array(197, 413, 194, 324, 185, 267, 163, 203, 149, 124, 211, 86, 315, 76, 391, 120, 402, 189, 364, 227, 263, 237, 184, 243)
+points = PackedVector2Array(205.884, 379.535, 207.393, 224.401, 208.605, 99.6279, 324.699, 104.372, 324.699, 226.535, 216.768, 225.349)
+
+[node name="Round9" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(205.884, 379.535, 329.234, 379.535, 325.606, 279.907, 207.698, 276.349, 200.443, 158.93, 331.955, 157.744)
+
+[node name="Round10" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(195.001, 154.186, 251.233, 215.861, 302.931, 154.186, 249.42, 262.116, 250.327, 315.488, 250.327, 383.093)
+
+[node name="Round11" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(186.838, 355.814, 200.838, 267.047, 216.768, 166.047, 302.931, 354.628, 313.815, 247.884, 326.513, 158.93)
+
+[node name="Round12" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(208.605, 155.372, 204.978, 347.512, 300.21, 343.954, 318.35, 255, 297.489, 170.791, 218.582, 144.698)
+
+[node name="Round13" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(209.512, 367.675, 214.047, 176.721, 293.862, 176.721, 294.769, 246.698, 241.257, 270.419, 308.373, 358.186)
+
+[node name="Round14" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(190.466, 326.163, 258.489, 124.535, 317.443, 324.977, 268.705, 271.865, 224.931, 224.163, 280.257, 222.977)
+
+[node name="Round15" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(170.512, 136.395, 167.791, 330.907, 253.954, 327.349, 255.768, 142.326, 338.304, 144.698, 337.397, 322.605)
+
+[node name="Round16" type="Line2D" parent="RoundsContainer"]
+visible = false
+position = Vector2(-49, 47)
+scale = Vector2(1.10256, 0.843137)
+points = PackedVector2Array(315.629, 131.651, 183.21, 126.907, 185.931, 218.233, 310.187, 222.977, 312.908, 316.674, 181.396, 314.302)
 
 [node name="GhostContainer" type="Node2D" parent="."]
 
@@ -139,6 +216,25 @@ position = Vector2(412, 358)
 
 [node name="Marker2D7" type="Marker2D" parent="PositionMarkersContainer"]
 position = Vector2(378, 413)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yl8av")
+volume_db = -10.0
+autoplay = true
+
+[node name="GameLostAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_otl8a")
+volume_db = -10.0
+
+[node name="GameWonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qdqpg")
+
+[node name="WrongGhostAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ya022")
+
+[node name="CorrectGhostAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_dmglj")
+volume_db = 5.0
 
 [connection signal="timeout" from="CurseTimer" to="." method="_on_curse_timer_timeout"]
 [connection signal="timeout" from="UI/GameTimer" to="." method="_on_game_timer_timeout"]

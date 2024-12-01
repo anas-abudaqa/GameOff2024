@@ -1,8 +1,8 @@
-Player: You're starting to worry me . What happened to you Ezekiel?
-Ezekiel: Last I remember my wife and I fell ill
-Ezekiel: She did not survive her disease. I buried her myself
-Player: I'm sorry to hear that. How did you manage to survive?
+Player: Hello Ezekiel? What happened to you?
+Ezekiel: Last I remember my wife and I fell ill.
+Ezekiel: She did not survive, and I buried her myself.
+Player: I'm sorry to hear that. How did you manage to recover?
 Ezekiel: I.. don't know if I did. I, too, was very ill.
-Ezekiel:  Next thing I know, I woke up here and crawled my way out of  the broken gravestone....
+Ezekiel: Next thing I know, I woke up here and crawled my way out of  the broken gravestone....
 Ezekiel: Next to where I buried my wife....
 set {EzekielQuest.current_chapter} = 4

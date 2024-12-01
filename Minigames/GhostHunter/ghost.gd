@@ -10,7 +10,7 @@ signal GhostDespawned(assigned_letter: String, score: int, effect: String)
 var assigned_letter: String = ""
 var effect: String = ""
 var score: int = 5
-var lifetime: float = 2
+var lifetime: float = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dqvregjwuy0dy"]
+[gd_scene load_steps=40 format=3 uid="uid://dqvregjwuy0dy"]
 
 [ext_resource type="Script" path="res://Minigames/HeartPiecer/heart_piecer.gd" id="1_rgnox"]
 [ext_resource type="Texture2D" uid="uid://b5mrayrqt4sgt" path="res://Art/Abstract_background_pack/abstractbackground (43).png" id="2_1x75s"]
@@ -16,6 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bhedik8esvl24" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(1).png" id="12_7lpl7"]
 [ext_resource type="Texture2D" uid="uid://c78essm5l81p3" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(2).png" id="13_622ko"]
 [ext_resource type="Texture2D" uid="uid://gtk0ny8hhq76" path="res://Art/HeartPiecer/Heart3/Heart3_Background-modified(3).png" id="14_jqhst"]
+[ext_resource type="AudioStream" uid="uid://uewefb5mnami" path="res://Music/HeartPiecer/Whisperer.wav" id="17_rqlds"]
+[ext_resource type="AudioStream" uid="uid://ccj2etjgyheee" path="res://Music/HeartPiecer/confirm_style_1_echo_006.wav" id="18_onb04"]
+[ext_resource type="AudioStream" uid="uid://cgst7dbdy1jg1" path="res://Music/Pickpocket/PlayerImpact_error_006.ogg" id="19_6utkr"]
+[ext_resource type="AudioStream" uid="uid://dce6gb5u01e6o" path="res://Music/GameOver.wav" id="21_e3fnf"]
+[ext_resource type="AudioStream" uid="uid://ctiwyy14xijcm" path="res://Music/HeartPiecer/heartbeat-02-225103.mp3" id="22_y0l7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jk7qk"]
 size = Vector2(10, 240)
@@ -94,7 +99,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -161,7 +166,6 @@ points = PackedVector2Array(0, -239, 0, 0)
 default_color = Color(1, 1, 0, 0.678431)
 
 [node name="Round1ImagePieces" type="Node2D" parent="."]
-visible = false
 
 [node name="ImagePiece1" type="Area2D" parent="Round1ImagePieces"]
 rotation = 1.39626
@@ -430,11 +434,52 @@ grow_vertical = 2
 layout_mode = 0
 offset_left = 8.0
 offset_top = 10.0
-offset_right = 155.0
-offset_bottom = 52.0
+offset_right = 152.0
+offset_bottom = 47.0
 theme_override_fonts/normal_font = ExtResource("7_grft2")
 text = " Round: 
  Time Left: "
+
+[node name="TriesLeftText" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 326.0
+offset_top = 6.0
+offset_right = 470.0
+offset_bottom = 43.0
+theme_override_fonts/normal_font = ExtResource("7_grft2")
+text = "Tries Left: "
+
+[node name="GameLostText" type="RichTextLabel" parent="UI"]
+visible = false
+layout_mode = 0
+offset_left = 78.0
+offset_top = 222.0
+offset_right = 399.0
+offset_bottom = 252.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("7_grft2")
+theme_override_font_sizes/normal_font_size = 17
+text = "You failed to meld Ezekiel's heart!"
+
+[node name="BackgroundAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_rqlds")
+volume_db = -20.0
+pitch_scale = 0.5
+autoplay = true
+
+[node name="RoundWonAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_onb04")
+
+[node name="RoundLostAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_6utkr")
+
+[node name="GameLostAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_e3fnf")
+volume_db = -10.0
+
+[node name="HeartbeatAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_y0l7f")
+volume_db = 3.0
 
 [connection signal="timeout" from="RoundTimer" to="." method="_on_round_timer_timeout"]
 [connection signal="timeout" from="RoundTransitionTimer" to="." method="_on_round_transition_timer_timeout"]

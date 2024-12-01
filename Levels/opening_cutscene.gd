@@ -23,7 +23,7 @@ func _on_dialogic_signal(argument: String):
 		Dialogic.start("Opening_Chapter3")
 	
 	elif argument == "GameStart":
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(2).timeout
 		get_tree().change_scene_to_file(MAIN_LEVEL)
 
 func _on_redirection_area_area_entered(_area):

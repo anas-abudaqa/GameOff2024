@@ -15,8 +15,8 @@ signal PickpocketGameWon
 @onready var game_start_timer = $GameStartTimer
 @onready var shake_screen_timer = $ShakeScreenTimer
 @onready var transition_timer = $TransitionTimer
-@onready var info_label = $TracingArea/Path2D/InfoLabel
 @onready var countdown_text = $TracingArea/StartingArea/CountdownText
+@onready var game_lost_text = $Player/GameLostText
 
 #player and lives
 @onready var player = $Player
@@ -24,6 +24,9 @@ signal PickpocketGameWon
 
 #Audio
 @onready var hit_audio = $HitAudio
+@onready var game_lost_audio = $GameLostAudio
+@onready var game_won_audio = $GameWonAudio
+@onready var background_music = $BackgroundMusic
 
 
 #Camera stuff
@@ -53,23 +56,24 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	PickpocketGameWon.connect(AllKnowing._on_pickpocket_won)
+	game_lost_text.visible = false
+	countdown_text.visible = false
+	player.visible = false
+	#grace_light.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#idk what this offset is but if i don't put it in the position of the player is not correct
-	player.position = get_local_mouse_position()# - Vector2(6, 6)
+	player.position = get_local_mouse_position()
 	
 	#skew_background(delta)
 	
 	if game_started:
-		#idk what this offset is but if i don't put it in the position of the player is not correct
-		#player.position = get_local_mouse_position() - Vector2(6, 6)
 		path_follow_2d.progress += CAMERA_SPEED * delta
-		#info_label.look_at(player)
 	
 	if !game_start_timer.is_stopped():
 		countdown_text.text = str(int(game_start_timer.time_left))
 	
+	#if we get hit, check if we ar eoutside of game bounds. Recover only if we are within bounds
 	if is_hit:
 		var collision_array = keep_out_area.get_overlapping_areas()
 		if collision_array.size() > 0:
@@ -79,13 +83,6 @@ func _process(delta):
 			if shake_screen_timer.is_stopped():
 				is_hit = false
 				recover()
-			#for collider in collision_array:
-				
-	#if displace: 
-		#displace_area()
-	#
-	#if displace_vertical:
-		#displace_area_vertical()
 	
 	if shake_screen:
 		screen_shake(delta)
@@ -94,12 +91,10 @@ func screen_shake(delta):
 	shake_screen_strength = lerpf(shake_screen_strength, 0, shake_fade * delta)
 	camera_2d.offset = Vector2.ONE * rng.randf_range(-shake_screen_strength, shake_screen_strength)
 
-func edit_info_label(text: String, color: Color):
-	info_label.text = text
-	info_label.push_color(color)
-
 func reset():
 	game_started = false
+	countdown_text.visible = true
+	player.visible = true
 	player.global_position = starting_position.global_position
 	camera_2d.global_position = starting_position.global_position
 	game_start_timer.start()
@@ -123,7 +118,9 @@ func choose_spawn_position() -> Vector2:
 	return spawn_position_array[chosen_spot].global_position
 
 func hit():
-	#to prevent multiple calls of the method at once, return if a call has been made before the full hit -> shake -> timer -> recover cycle ends
+	#to prevent multiple calls of the method at once, 
+	#return if a call has been made before the full hit -> shake -> timer -> recover cycle ends
+	
 	if is_hit:
 		return
 	is_hit = true
@@ -134,8 +131,7 @@ func hit():
 	#activate shake screen
 	shake_screen = true
 	shake_screen_timer.start()
-	
-	
+
 
 func lose_life():
 	#subtract remaining tries and check for game lost 
@@ -153,23 +149,25 @@ func recover():
 
 func game_lost():
 	game_started = false
-	#transition_timer.start()
-	#await transition_timer.timeout
+	game_lost_text.visible = true
+	get_tree().paused = true
+	game_lost_audio.play()
+	#Audio is autoplaying when paused
+	
+	await game_lost_audio.finished
+	get_tree().paused = false
 	get_tree().change_scene_to_packed(PICKPOCKETING_TUTORIAL_MENU)
-	edit_info_label(YOU_LOST, RED)
+	
 
 func game_won():
 	game_started = false
-	transition_timer.start()
-	await transition_timer.timeout
+	#get_tree().paused = true
+	background_music.stop()
+	game_won_audio.play()
+	await game_won_audio.finished
+	#get_tree().paused = false
 	PickpocketGameWon.emit()
 	print("You win!")
-
-#func skew_background(delta):
-	#if background_image.skew >= 2:
-		#background_image.skew -= lerp(2, 0, 0.2*delta)
-	#else:
-		#background_image.skew -= lerp(0, -2, 0.2*delta)
 
 
 func _on_starting_area_input_event(_viewport, event, _shape_idx):
@@ -182,11 +180,17 @@ func _on_game_start_timer_timeout():
 func _on_spawn_timer_timeout():
 	spawn_obstacle()
 
-func _on_tracing_area_mouse_exited():
-	if !game_started:
-		return
+#func _on_tracing_area_mouse_exited():
+	#if !game_started:
+		#return
+	##grace_light.visible = true
+	##edit_info_label("Be Careful!", BLUE)
 
-	#edit_info_label("Be Careful!", BLUE)
+
+#func _on_tracing_area_mouse_entered():
+	#if !game_started:
+		#return
+	##grace_light.visible = false
 
 func _on_grace_area_mouse_exited():
 	if !game_started:
@@ -197,14 +201,6 @@ func _on_win_area_mouse_entered():
 	if !game_started:
 		return
 	game_won()
-
-
-
-
-
-
-
-
 
 
 
