@@ -7,3 +7,4 @@ func interact():
 func pick_up():
 	AllKnowing.has_heart = true
 	Dialogic.start("Obtained_Heart")
+	queue_free()

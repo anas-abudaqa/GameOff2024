@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://f7y8byyv4njt" path="res://Art/Stone_cemetery/Crosses_&_gravestones/Columns/Column_09.png" id="1_dlalb"]
 [ext_resource type="Texture2D" uid="uid://bt5t4mbm10vhy" path="res://Art/Torch/Torch Animated.png" id="1_lpcq5"]
 [ext_resource type="Texture2D" uid="uid://cxt0ycukp2si4" path="res://Art/Torch/Fire Animated.png" id="2_opdcp"]
-[ext_resource type="Texture2D" uid="uid://c4ivnna0rl3na" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="2_t78uy"]
+[ext_resource type="Texture2D" uid="uid://dn30iva1vtxj3" path="res://Art/Torch/2d_lights_and_shadows_neutral_point_light.webp" id="4_2itps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iiwm7"]
 atlas = ExtResource("2_opdcp")
@@ -149,12 +149,10 @@ autoplay = "Idle"
 frame_progress = 0.97398
 offset = Vector2(1, -5)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-scale = Vector2(1, 0.789063)
-shadow_enabled = true
-texture = ExtResource("2_t78uy")
-texture_scale = 1.75
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_eyxy7")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("4_2itps")
+texture_scale = 1.25

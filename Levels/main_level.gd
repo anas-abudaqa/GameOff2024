@@ -12,6 +12,7 @@ const CLOSING_CUTSCENE = preload("res://Levels/closing_cutscene.tscn")
 @onready var syndra = $Syndra
 @onready var star_entrance = $Graveyard/StarEntrance
 @onready var shaman = $Shaman
+@onready var player_cutscene = $PlayerCutscene
 
 
 #animation stuff
@@ -25,6 +26,7 @@ var player_node: CharacterBody2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player_node = find_child("Player")
+	player_cutscene.visible = false
 	if player_node and AllKnowing.player_spawn_location:
 		player_node.global_position = AllKnowing.player_spawn_location
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -41,6 +43,8 @@ func _ready():
 			
 		if AllKnowing.obtained_damnedtongue and AllKnowing.obtained_sacrificeblood:
 			shaman.visible = true
+			player_node.visible = false
+			player_cutscene.visible = true
 			Dialogic.start("Closing_Chapter1")
 			
 

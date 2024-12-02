@@ -72,7 +72,7 @@ text = "Traverse the cave to find the item you need before escaping.
 
 Avoid detection by the suspicious figures. Detection will lead to instant loss.
 
-Interact with the pots to distract the marked enemies"
+Interact with the pots to distract the marked enemies. You can reuse a pot after a cooldown period"
 
 [node name="StartButton" type="Button" parent="Panel"]
 custom_minimum_size = Vector2(50, 25)

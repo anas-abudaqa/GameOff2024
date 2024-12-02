@@ -27,7 +27,7 @@ func _physics_process(delta):
 		#AllKnowing.obtained_undeadheart = true
 		#AllKnowing.obtained_brainjar7 = true
 		#AllKnowing.obtained_damnedtongue = true
-		##AllKnowing.obtained_sacrificeblood= true
+		#AllKnowing.obtained_sacrificeblood= true
 		
 #-x, +x, -y, +y
 	direction_vector = Input.get_vector("Left", "Right", "Up", "Down")
