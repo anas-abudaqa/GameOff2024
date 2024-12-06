@@ -17,6 +17,7 @@ signal PickpocketGameWon
 @onready var transition_timer = $TransitionTimer
 @onready var countdown_text = $TracingArea/StartingArea/CountdownText
 @onready var game_lost_text = $Player/GameLostText
+@onready var spawn_timer = $SpawnTimer
 
 #player and lives
 @onready var player = $Player
@@ -102,6 +103,7 @@ func reset():
 func start_game():
 	print("Now we start the game")
 	game_started = true
+	spawn_timer.start()
 
 func spawn_obstacle():
 	if !game_started:
@@ -161,6 +163,7 @@ func game_lost():
 
 func game_won():
 	game_started = false
+	spawn_timer.stop()
 	#get_tree().paused = true
 	background_music.stop()
 	game_won_audio.play()

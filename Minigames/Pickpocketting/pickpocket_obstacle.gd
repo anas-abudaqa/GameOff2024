@@ -27,7 +27,7 @@ func _process(delta):
 
 func spawn(spawn_position: Vector2):
 	global_position = spawn_position
-	target_speed = rng.randf_range(55,75)
+	target_speed = rng.randf_range(55,65)
 	target_rotation = rng.randf_range(120, 200)
 	if player_node:
 		target_position = player_node.global_position

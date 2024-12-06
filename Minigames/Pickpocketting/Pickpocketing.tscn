@@ -110,8 +110,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
+wait_time = 3.0
 
 [node name="GameStartTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -155,16 +154,16 @@ rotation = -0.840885
 scale = Vector2(1.66667, 1.66667)
 
 [node name="Marker2D" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
-position = Vector2(35, 149)
+position = Vector2(35, 124.999)
 
 [node name="Marker2D2" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
-position = Vector2(5.72205e-06, 181)
+position = Vector2(-22.9999, 181.999)
 
 [node name="Marker2D3" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
-position = Vector2(35, 214)
+position = Vector2(34, 238.999)
 
 [node name="Marker2D4" type="Marker2D" parent="TracingArea/Path2D/PathFollow2D/ObstacleSpawnPositions"]
-position = Vector2(73, 181)
+position = Vector2(91.9999, 180.999)
 
 [node name="StartingArea" type="Area2D" parent="TracingArea"]
 z_index = 1
